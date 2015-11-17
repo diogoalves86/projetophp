@@ -20,7 +20,7 @@ class UserIdentity extends CUserIdentity
 	public function authenticate()
 	{
 
-		$record = Administrador::model()->findByAttributes(array('usuario'=>$this->username));
+		$record = Usuario::model()->findByAttributes(array('email'=>$this->username));
 
 		if($record === null){
 			$this->errorCode = self::ERROR_USERNAME_INVALID;
@@ -28,7 +28,7 @@ class UserIdentity extends CUserIdentity
 			$this->errorCode = self::ERROR_PASSWORD_INVALID;
 		} else {
 			$this->_id=$record->id;
-			$this->username=$record->usuario;
+			$this->username=$record->email;
 			$this->setState('nome', $record->nome);
 			$this->errorCode=self::ERROR_NONE;
 		}

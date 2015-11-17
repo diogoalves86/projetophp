@@ -1,0 +1,132 @@
+﻿body {
+    font-family: "Palatino Linotype";
+    background-color: rgb(195,195,195);
+}
+a{
+    text-decoration: none;
+    font-size: 13px;
+}
+
+header{
+    height: 120px;
+    background-color: #000;
+    border-radius: 2px;
+    width: 100%;
+}
+header img{
+    margin-left: 10px; 
+    width: 100px;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+header ul li{
+    display: inline-block;
+    float: right;
+    margin-right: 2px;
+}
+#loginForm ul{
+    list-style: none;
+    width: 260px;
+    margin: 45px auto;
+    margin-bottom: 0;
+}
+
+#loginForm ul li{
+    display: block;
+}
+
+#login-buton{
+    margin-left: 58%;
+}
+
+#loginForm fieldset{
+    margin: auto;
+    width: 50%;
+    height: 245px;
+}
+#loginForm fieldset input[type="submit"]{
+    border-radius: 10px;
+    margin: auto;
+    padding: 10px;
+    margin-left: 382px;
+}
+
+#loginForm fieldset .textbox_login{
+    margin-left: 20px;
+    width: 160px;
+}
+
+.header_action{
+    margin-right: 10px;
+}
+
+
+.header_action a{
+    color: #FFF;
+}
+#login{
+    float:right;
+}
+
+#logo_cp2{
+    float:left;
+    width: 58%;
+}
+#logo_cp2 h2{
+    color: #FFF;
+    font-size: 33px;
+    font-family: Palatino Linotype;
+    float: right;
+}
+
+.data-table{
+  width: 100%;
+  border-collapse: collapse;
+  color: #777;
+  font-family: $font-regular;
+}
+table{
+    margin: 30px auto;
+}
+.row{
+    cursor: pointer;
+    &:nth-child(even) {background: #f1f1f1;}
+}
+table thead{
+    background: #ddd; 
+    text-transform: uppercase;
+    font-family: $font-withoutbold;
+    cursor: default;
+  }
+table th a{
+    text-decoration: none;
+    color: #777;
+}
+
+table td, th{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    cursor: pointer; 
+
+}
+table .id{//.code-value{
+    max-width: 60px;
+  }
+table .text-field{
+    width: 50%;
+    text-align: left;
+}
+table .column{
+    width: 70%;
+    text-align: left;
+}
+table.main1{@include background($blue);}
+table.main2{@include background(#CCCCFF);}
+table.main3{@include background(#33CCCC);}
+}
