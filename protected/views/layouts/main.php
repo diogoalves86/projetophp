@@ -21,45 +21,36 @@
 
 <body>
 
-<header>
-	<div class="container" id="page">
-	    <div class="content-wrapper">
-	        <div id="logo_cp2" class="site-title">
-	            <div>
-	                <h2>Diário Online</h2>
-	                <p>
-	                    <a href="~/">
-	                        <img src="<?php echo Yii::app()->baseUrl.'/images'?>/Pedro-II-logo-W.png" />
-	                    </a>
-	                </p>
-	            </div>
-	        </div>
+	<header>
+		
+		<div id="logo-cp2">	               
+            <a href="~/">
+                <img src="<?php echo Yii::app()->baseUrl.'/images'?>/Pedro-II-logo-W.png" />
+            </a>            
+        </div>
 
-		<div id="mainmenu">
-			<div class="header_action">
-				<?php $this->widget('zii.widgets.CMenu',array(
-				'items'=>array(
-						array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-					),
-				)); ?>
-	        </div>
-			
-		</div><!-- mainmenu -->
-		<div id="body">
+	    <div class="title">
+    		<h2>Diário Online</h2>
+		</div>
+        
+    	<div class="main-menu">
+    		<?php $this->widget('zii.widgets.CMenu',array(
+			'items'=>array(
+					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				),
+			)); ?>
+    	</div>			
+	</header>
+	<body>
 			<section id="loginForm">
 				<fieldset>
 					<?php echo $content; ?>
 				</fieldset>
 			</section>
-		</div>
 
-		<div class="clear"></div>
-
-		<div id="footer">
-			&copy; <?php echo date('Y'); ?> - Projeto Final CP2 ENII
-		</div><!-- footer -->
-	</div><!-- page -->
-</header>
-</body>
+	</body>
+	<footer>
+		<p><?php echo date('Y'); ?> - Projeto Final CP2 ENII</p>
+	</footer>
 </html>
