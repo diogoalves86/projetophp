@@ -8,6 +8,7 @@
  * @property string $nome
  * @property string $cpf
  * @property string $matricula
+ * @property integer $ativo
  * @property integer $nivel
  * @property string $email
  * @property string $senha
@@ -64,6 +65,7 @@ class Usuario extends CActiveRecord
 			'matricula' => 'Matricula',
 			'nivel' => 'Nivel',
 			'email' => 'Email',
+			'ativo'=>'Ativo/Inativo',
 			'senha' => 'Senha',
 		);
 	}
@@ -108,5 +110,14 @@ class Usuario extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function pegarDadosCadastro($matricula)
+	{
+		$usuario = $this->find("matricula='".$matricula."'");
+		if($usuario != null)
+			return $usuario;
+		else
+			return false;
 	}
 }

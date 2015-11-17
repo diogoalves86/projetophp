@@ -36,14 +36,6 @@
 
 		<li>
 			<div class="row">
-				<?php echo $form->labelEx($model,'matricula'); ?>
-				<?php echo $form->textField($model,'matricula',array('class'=>'textbox_login', 'size'=>20,'maxlength'=>20)); ?>
-				<?php echo $form->error($model,'matricula'); ?>
-			</div>
-		</li>
-
-		<li>
-			<div class="row">
 				<?php echo $form->labelEx($model,'nivel'); ?>
 				<?php echo $form->textField($model,'nivel'); ?>
 				<?php echo $form->error($model,'nivel'); ?>

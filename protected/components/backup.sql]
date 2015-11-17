@@ -1,0 +1,128 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Nov 17, 2015 at 12:03 PM
+-- Server version: 5.5.46-0ubuntu0.14.04.2
+-- PHP Version: 5.5.9-1ubuntu4.14
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `u993183977_adm`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Disciplina`
+--
+
+CREATE TABLE `Disciplina` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Regra`
+--
+
+CREATE TABLE `Regra` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Turma`
+--
+
+CREATE TABLE `Turma` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Usuario`
+--
+
+CREATE TABLE `Usuario` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(20) NOT NULL,
+  `cpf` varchar(20) NOT NULL,
+  `matricula` varchar(20) NOT NULL,
+  `ativo` int(2) NOT NULL,
+  `nivel` int(11) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `senha` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `Disciplina`
+--
+ALTER TABLE `Disciplina`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `Regra`
+--
+ALTER TABLE `Regra`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `Turma`
+--
+ALTER TABLE `Turma`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `Usuario`
+--
+ALTER TABLE `Usuario`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nivel` (`nivel`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `Disciplina`
+--
+ALTER TABLE `Disciplina`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `Regra`
+--
+ALTER TABLE `Regra`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `Turma`
+--
+ALTER TABLE `Turma`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `Usuario`
+--
+ALTER TABLE `Usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

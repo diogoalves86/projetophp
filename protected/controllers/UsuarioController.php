@@ -28,19 +28,8 @@ class UsuarioController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('*'),
 				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
 			),
 		);
 	}
@@ -60,13 +49,12 @@ class UsuarioController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($id)
 	{
 		$model=new Usuario;
-
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
+		// $this->performAjaxValidation($model);;
+		$dados_usuario = $model->pegarDadosCadastro($matricula);
 		if(isset($_POST['Usuario']))
 		{
 			$model->attributes=$_POST['Usuario'];
@@ -76,6 +64,26 @@ class UsuarioController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'dados_usuario'=> $dados_usuario != null ? $dados_usuario : false,
+		));
+	}
+
+	public function actionCadastro()
+	{
+		$model=new Usuario;
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);;
+		if(isset($_POST['Usuario']['matricula']))
+		{
+			$dados_usuario = $model->pegarDadosCadastro($_POST['Usuario']['matricula']);
+			if($dados_usuario != null)
+				$this->redirect(array('usuario/create/', 'id'=>(int)$dados_usuario->matricula));
+				//$this->actionCreate($dados_usuario->matricula);
+		}
+
+		$this->render('create',array(
+			'model'=>$model,
+			'dados_usuario'=> isset($dados_usuario) ? $dados_usuario : false,
 		));
 	}
 
