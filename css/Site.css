@@ -57,7 +57,8 @@ header ul li{
 
 #loginForm fieldset .textbox_login{
     margin-left: 20px;
-    width: 160px;
+    margin-bottom: 10px;
+    width: 150px;
 }
 
 .header_action{
