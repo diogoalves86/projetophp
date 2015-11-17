@@ -57,6 +57,14 @@
 			</div>
 		</li>
 
+		<?php if(Yii::app()->user->isInRole('ADMIN')!= false) ?>
+			<li>
+				<div class="row">
+
+				</div>
+			</li>
+
+		<?php endif; ?>
 
 		<li>
 			<div class="row buttons">

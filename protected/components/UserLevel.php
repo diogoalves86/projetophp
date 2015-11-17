@@ -14,7 +14,7 @@ class UserLevel extends CWebUser
 
     protected function loadUser(){
         if ($this->_model === null) {
-            $this->_model = Administrador::model()->findByPk($this->id);
+            $this->_model = Usuario::model()->findByPk($this->id);
         }
         return $this->_model;
     }
