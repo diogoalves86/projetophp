@@ -17,6 +17,7 @@ $this->breadcrumbs=array(
 		'validateOnSubmit'=>true,
 	),
 )); ?>
+	<h2>aaaaaaa</h2>
 	<ul>
 		<li>
 			<div class="row">
