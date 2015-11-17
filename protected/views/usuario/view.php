@@ -25,6 +25,7 @@ $this->menu=array(
 		'nome',
 		'cpf',
 		'matricula',
+		'nivel',
 		'email',
 		'senha',
 	),

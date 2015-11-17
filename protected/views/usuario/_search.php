@@ -32,6 +32,11 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'nivel'); ?>
+		<?php echo $form->textField($model,'nivel'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'email'); ?>
 		<?php echo $form->textField($model,'email',array('size'=>20,'maxlength'=>20)); ?>
 	</div>

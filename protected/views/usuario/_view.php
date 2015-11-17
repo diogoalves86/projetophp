@@ -21,6 +21,10 @@
 	<?php echo CHtml::encode($data->matricula); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('nivel')); ?>:</b>
+	<?php echo CHtml::encode($data->nivel); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('email')); ?>:</b>
 	<?php echo CHtml::encode($data->email); ?>
 	<br />

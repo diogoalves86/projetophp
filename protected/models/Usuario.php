@@ -8,6 +8,7 @@
  * @property string $nome
  * @property string $cpf
  * @property string $matricula
+ * @property integer $nivel
  * @property string $email
  * @property string $senha
  */
@@ -29,13 +30,14 @@ class Usuario extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nome, cpf, matricula, email, senha', 'required'),
+			array('nome, cpf, matricula, nivel, email, senha', 'required'),
+			array('nivel', 'numerical', 'integerOnly'=>true),
 			array('nome', 'length', 'max'=>100),
 			array('cpf', 'length', 'max'=>14),
 			array('matricula, email, senha', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nome, cpf, matricula, email, senha', 'safe', 'on'=>'search'),
+			array('id, nome, cpf, matricula, nivel, email, senha', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +62,7 @@ class Usuario extends CActiveRecord
 			'nome' => 'Nome',
 			'cpf' => 'Cpf',
 			'matricula' => 'Matricula',
+			'nivel' => 'Nivel',
 			'email' => 'Email',
 			'senha' => 'Senha',
 		);
@@ -87,6 +90,7 @@ class Usuario extends CActiveRecord
 		$criteria->compare('nome',$this->nome,true);
 		$criteria->compare('cpf',$this->cpf,true);
 		$criteria->compare('matricula',$this->matricula,true);
+		$criteria->compare('nivel',$this->nivel);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('senha',$this->senha,true);
 

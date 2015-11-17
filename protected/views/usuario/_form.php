@@ -35,12 +35,21 @@
 		</li>
 
 		<li>
+			<div class="row">
 				<?php echo $form->labelEx($model,'matricula'); ?>
 				<?php echo $form->textField($model,'matricula',array('class'=>'textbox_login', 'size'=>20,'maxlength'=>20)); ?>
 				<?php echo $form->error($model,'matricula'); ?>
-			
-		</li>	
-		
+			</div>
+		</li>
+
+		<li>
+			<div class="row">
+				<?php echo $form->labelEx($model,'nivel'); ?>
+				<?php echo $form->textField($model,'nivel'); ?>
+				<?php echo $form->error($model,'nivel'); ?>
+			</div>
+		</li>
+
 		<li>
 			<div class="row">
 				<?php echo $form->labelEx($model,'email'); ?>
@@ -48,7 +57,7 @@
 				<?php echo $form->error($model,'email'); ?>
 			</div>
 		</li>
-		
+
 		<li>
 			<div class="row">
 				<?php echo $form->labelEx($model,'senha'); ?>
@@ -57,20 +66,13 @@
 			</div>
 		</li>
 
-		<?php if(Yii::app()->user->isInRole('ADMIN')!= false) ?>
-			<li>
-				<div class="row">
-
-				</div>
-			</li>
-
-		<?php endif; ?>
-
 		<li>
 			<div class="row buttons">
 				<?php echo CHtml::submitButton($model->isNewRecord ? 'Cadastrar' : 'Salvar'); ?>
 			</div>
 		</li>
+	</ul>
+
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
