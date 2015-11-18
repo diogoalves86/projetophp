@@ -66,15 +66,33 @@ class NotaController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($id)
+	public function actionCreate($id, $turma)
 	{
 		$model=new Nota;
 		$disciplinas = Disciplina::model()->find("id=".$id);
-		$alunos = Usuario::model()->findAll("nivel=2");
-		$aluno_turma = AlunoTurma::model()->findAll("turma_id=".$id);
-		var_dump($aluno_turma); exit;
+		$lista_alunos = array();
+		$turma = Turma::model()->find("nome='".$turma."'");
+		$aluno_turma = AlunoTurma::model()->findAll("turma_id=".$turma->id);
+		
+		if(Yii::app()->user->isInRole("PROFESSOR") !== false){
+			$disciplina = Usuario::model()->findByPk(Yii::app()->user->id);
+			$disciplina_professor = $disciplina->professorDisciplinas[0]->disciplina_id;	
+		}
+
+		foreach ($aluno_turma as $aluno) {
+			array_push($lista_alunos, Usuario::model()->find("id='".$aluno->aluno_id."'"));
+		}
+
 		$lista_disciplinas = CHtml::listData($disciplinas, "id", "nome");
-		$lista_alunos = CHtml::listData($alunos, "id", "nome");
+
+		if(Yii::app()->user->isInRole("ALUNO") !== false){
+			unset($lista_alunos);
+			$lista_alunos[] = Usuario::model()->find("id='".Yii::app()->user->id."'");	
+		}
+
+
+		//$lista_alunos = CHtml::listData($alunos, "id", "nome");
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -86,9 +104,10 @@ class NotaController extends Controller
 		}
 
 		$this->render('create',array(
-			'aluno'=>$lista_alunos,
-			'aluno_turma'=>$aluno_turma,
+			'aluno'=>Usuario::model()->findAll(),
+			'aluno_turma'=>$lista_alunos,
 			'disciplina'=>$lista_disciplinas,
+			'disciplina_professor'=>isset($disciplina_professor) ? $disciplina_professor : null,
 			'model'=>$model,
 		));
 	}
