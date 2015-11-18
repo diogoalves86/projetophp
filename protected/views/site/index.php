@@ -13,9 +13,9 @@
 	</dl>
 	<dl>
 		<dt>Configurações</dt>
-			<dd><a href="">Alterar senha</a></dd>
+			<dd><a href="<?php echo Yii::app()->createUrl('usuario/update', array('matricula'=>$model->matricula)) ?>">Alterar senha</a></dd>
 			<dd><a href="">Alterar cadastro</a></dd>
-			<dd><a href="">Sair do sistema</a></dd>
+			<dd><a href="<?php echo Yii::app()->createUrl('site/logout')?>">Sair do sistema</a></dd>
 	</dl>
 </div>
 

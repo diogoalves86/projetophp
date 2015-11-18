@@ -61,7 +61,7 @@
 		<li>
 			<div class="row">
 				<?php echo $form->labelEx($model,'senha'); ?>
-				<?php echo $form->passwordField($model,'senha',array('class'=>'textbox_login', 'size'=>20,'maxlength'=>20, 'disabled'=>'true')); ?>
+				<?php echo $form->passwordField($model,'senha',array('class'=>'textbox_login', 'size'=>20,'maxlength'=>20)); ?>
 				<?php echo $form->error($model,'senha'); ?>
 			</div>
 		</li>
