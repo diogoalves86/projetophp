@@ -69,7 +69,7 @@ header .main-menu ul li{
     height: 430px;    
 }
 /* FORMS */
-#loginForm{
+fieldset{
     background-color: rgb(195,195,195);
 }
 #loginForm ul{

@@ -603,3 +603,20 @@ Stack trace:
 #15 {main}
 REQUEST_URI=/projetophp/
 ---
+2015/11/18 01:29:30 [error] [php] Trying to get property of non-object (C:\Users\j\Xampp\htdocs\projetophp\protected\views\site\index.php:2)
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\SiteController.php(33): SiteController->render()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php
+in C:\Users\j\Xampp\htdocs\projetophp\protected\views\site\index.php (2)
+in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\SiteController.php (33)
+in C:\Users\j\Xampp\htdocs\projetophp\index.php (13)

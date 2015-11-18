@@ -1,5 +1,5 @@
 <div class="user-painel">
-	<h3>Bem vindo, <?php echo $model->nome?></h3>
+	<h3>Bem vindo, <?php if(Yii::app()->user->isGuest == false) echo $model->nome ?></h3>
 	<ul>
 		<li>Nome</li>
 		<li>Matrícula</li>
