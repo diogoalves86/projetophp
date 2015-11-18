@@ -18,64 +18,38 @@
 	<table data-table>
 		<?php echo $form->errorSummary($model); ?>
 		<thead>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-	
+			<th>Nomes</th>
+			<th>1ºC</th>
+			<th>REC 1</th>
+			<th>2º C</th>
+			<th>REC 2</th>
+			<th>3º C</th>
+			<th>REC 3</th>
+			<th>MÉDIA ANUAL</th>
 		</thead>
 		<tbody>
 			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+
+			<td><?php echo $form->numberField(($model->usuario,'primeira_certificacao', array('max'=>10, 'min'=>0)); ?>
+			<?php echo $form->error(($model->usuario,'primeira_certificacao'); ?></td>
+
+			<td><?php echo $form->numberField(($model->usuario,'primeira_recuperacao', array('max'=>10, 'min'=>0)); ?>
+			<?php echo $form->error(($model->usuario,'primeira_recuperacao'); ?></td>
+
+			<td><?php echo $form->numberField(($model->usuario,'segunda_certificacao', array('max'=>10, 'min'=>0)); ?>
+			<?php echo $form->error(($model->usuario,'segunda_certificacao'); ?></td>
+
+			<td><?php echo $form->numberField(($model->usuario,'segunda_recuperacao', array('max'=>10, 'min'=>0)); ?>
+			<?php echo $form->error(($model->usuario,'segunda_recuperacao'); ?></td>
+
+			<td><?php echo $form->numberField(($model->usuario,'terceira_certificacao', array('max'=>10, 'min'=>0)); ?>
+			<?php echo $form->error(($model->usuario,'terceira_certificacao'); ?></td>
+
+			<td><?php echo $form->numberField(($model->usuario,'terceira_recuperacao', array('max'=>10, 'min'=>0)); ?>
+			<?php echo $form->error(($model->usuario,'terceira_recuperacao'); ?></td>
 			<td></td>
 
 		</tbody>
-		<div class="row">
-			<?php echo $form->labelEx($model,'primeira_certificacao'); ?>
-			<?php echo $form->numberField($model,'primeira_certificacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error($model,'primeira_certificacao'); ?>
-		</div>
-
-		<div class="row">
-			<?php echo $form->labelEx($model,'segunda_certificacao'); ?>
-			<?php echo $form->numberField($model,'segunda_certificacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error($model,'segunda_certificacao'); ?>
-		</div>
-
-		<div class="row">
-			<?php echo $form->labelEx($model,'terceira_certificacao'); ?>
-			<?php echo $form->numberField($model,'terceira_certificacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error($model,'terceira_certificacao'); ?>
-		</div>
-
-		<div class="row">
-			<?php echo $form->labelEx($model,'primeira_recuperacao'); ?>
-			<?php echo $form->numberField($model,'primeira_recuperacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error($model,'primeira_recuperacao'); ?>
-		</div>
-
-		<div class="row">
-			<?php echo $form->labelEx($model,'segunda_recuperacao'); ?>
-			<?php echo $form->numberField($model,'segunda_recuperacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error($model,'segunda_recuperacao'); ?>
-		</div>
-
-		<div class="row">
-			<?php echo $form->labelEx($model,'terceira_recuperacao'); ?>
-			<?php echo $form->numberField($model,'terceira_recuperacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error($model,'terceira_recuperacao'); ?>
-		</div>
 
 		<div class="row">
 			<?php echo $form->labelEx($model,'disciplina_id'); ?>
