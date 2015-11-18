@@ -72,7 +72,7 @@ class UsuarioController extends Controller
 	{
 		if (Yii::app()->user->isInRole('ALUNO') || Yii::app()->user->isInRole('PROFESSOR') )
 			throw new CHttpException(403, "Você não possui autorização para acessar esta página");
-		
+
 		$model=new Usuario;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);;
@@ -135,6 +135,9 @@ class UsuarioController extends Controller
 	 */
 	public function actionIndex()
 	{
+		if(Yii::app()->user->isInRole('ALUNO') || Yii::app()->user->isInRole('PROFESSOR'))
+			throw new CHttpException(404, "A página solicitada não existe.");
+
 		$dataProvider=new CActiveDataProvider('Usuario');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,

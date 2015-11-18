@@ -56,7 +56,6 @@ class AlunoController extends Controller
 			throw new CHttpException(403, "Você não possui autorização para acessar esta página");
 
 		Yii::app()->runController('usuario/cadastro');
-		
 	}
 
 	/**
@@ -107,7 +106,6 @@ class AlunoController extends Controller
 
 		else
 			$criteria = "nivel=2 && ativo=1";
-
 
 		$dataProvider=new CActiveDataProvider('Usuario', array(
 		    'criteria'=>array(
