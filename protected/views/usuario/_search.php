@@ -10,41 +10,24 @@
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
-
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'nome'); ?>
-		<?php echo $form->textField($model,'nome',array('size'=>60,'maxlength'=>100)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'cpf'); ?>
-		<?php echo $form->textField($model,'cpf',array('size'=>14,'maxlength'=>14)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'matricula'); ?>
-		<?php echo $form->textField($model,'matricula',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'nivel'); ?>
-		<?php echo $form->textField($model,'nivel'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'senha'); ?>
-		<?php echo $form->textField($model,'senha',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
+	<table class="data-table">
+		<thead>
+			<th>Nome</th>
+			<th>CPF</th>
+			<th>Matricula</th>
+			<th>Nivel</th>
+			<th>Email</th>
+			<th>Senha</th>
+		</thead>
+		<tbody>
+			<td><?php echo $form->textField($model,'nome',array('size'=>60,'maxlength'=>100)); ?></td>
+			<td><?php echo $form->textField($model,'cpf',array('size'=>14,'maxlength'=>14)); ?></td>
+			<td><?php echo $form->textField($model,'matricula',array('size'=>20,'maxlength'=>20)); ?></td>
+			<td><?php echo $form->textField($model,'nivel'); ?></td>
+			<td><?php echo $form->textField($model,'email',array('size'=>20,'maxlength'=>20)); ?></td>
+			<td><?php echo $form->textField($model,'senha',array('size'=>20,'maxlength'=>20)); ?></td>
+		</tbody>
+	</table>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>

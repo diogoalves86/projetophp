@@ -195,21 +195,30 @@ table.main3{@include background(#33CCCC);}
     margin: auto;
 }
 
+.buttons input{
+    background: green none repeat scroll 0% 0%;
+    padding: 10px;
+    margin-right: 40px;
+    border-radius: 5px;
+    border: 2px solid green;
+}
+
 /* SHOW */
 .list-view{
-    width: 50%;
+    width: 100%;
     margin:auto;
     float: right;
 }
 .container h1{
     text-align: center;
 }
-.portlet{
-    width: 50%;
-    left: right;
+.container .span-19, .container .span-15.last, .container .sidebar{
+    width: 20%;
+
 }
+.user-index{
 
-
+}
 /* FOOTER */
 footer{
     background-color: black;
