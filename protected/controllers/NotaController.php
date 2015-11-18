@@ -49,7 +49,7 @@ class NotaController extends Controller
 	public function actionGerarBoletim($id)
 	{
 		$model = Nota::model()->findAll("usuario_id=".$id);
-		$this->render('view', array(
+		$this->render('boletim', array(
 				'model'=>$model,
 			));
 	}
