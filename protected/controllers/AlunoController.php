@@ -1,5 +1,5 @@
 <?php
-
+Yii::import('application.controllers.UsuarioController');
 class AlunoController extends Controller
 {
 	/**
@@ -50,42 +50,13 @@ class AlunoController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCadastro()
 	{
-		$model=new Nota;
-		$disciplina = Disciplina::model()->findAll();
-		$alunos = Usuario::model()->findAll("nivel=2");
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		if (Yii::app()->user->isInRole('ALUNO') || Yii::app()->user->isInRole('PROFESSOR') )
+			throw new CHttpException(403, "Você não possui autorização para acessar esta página");
 
-		$lista_alunos = array();
+		Yii::app()->runController('usuario/cadastro');
 		
-		if(Yii::app()->user->isInRole("PROFESSOR") !== false){
-			$disciplina = Usuario::model()->findByPk(Yii::app()->user->id);
-			$disciplina_professor = $disciplina->professorDisciplinas[0]->disciplina_id;	
-		}
-
-
-		//$lista_disciplinas = CHtml::listData($disciplinas, "id", "nome");
-		$lista_alunos = CHtml::listData($alunos, "id", "nome");
-
-		if(Yii::app()->user->isInRole("ALUNO") !== false){
-			unset($lista_alunos);
-			$lista_alunos[] = Usuario::model()->find("id='".Yii::app()->user->id."'");	
-		}
-
-		if(isset($_POST['Nota']))
-		{
-			$model->attributes=$_POST['Nota'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('boletim',array(
-			'lista_alunos'=>$lista_alunos,
-			'disciplina'=>$disciplina,
-			'model'=>$model,
-		));
 	}
 
 	/**
@@ -137,7 +108,7 @@ class AlunoController extends Controller
 		else
 			$criteria = "nivel=2 && ativo=1";
 
-		
+
 		$dataProvider=new CActiveDataProvider('Usuario', array(
 		    'criteria'=>array(
 		        'condition'=>$criteria,

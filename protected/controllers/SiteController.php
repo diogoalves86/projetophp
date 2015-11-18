@@ -30,6 +30,7 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$model = Usuario::model()->findByPk(Yii::app()->user->id); 
+		/*
 		$turmas_professor = ProfessorTurma::model()->findAll("professor_id='".$model->id."'");
 		$array = array();
 		foreach ($turmas_professor as $turma) {
@@ -44,9 +45,9 @@ class SiteController extends Controller
 		foreach ($array2 as $turma) {
 			array_push($array3, Turma::model()->find("id='".$turma."'"));
 		}
-
+		*/
 		if(Yii::app()->user->isGuest == false)
-			$this->render('index', array("model"=>$model, 'lista_turmas'=>$array3));
+			$this->render('index', array("model"=>$model /*, 'lista_turmas'=>$array3 */));
 		else
 			$this->redirect('site/login');
 			
@@ -124,6 +125,6 @@ class SiteController extends Controller
 	public function actionLogout()
 	{
 		Yii::app()->user->logout();
-		//$this->redirect(Yii::app()->homeUrl);
+		$this->redirect('login');
 	}
 }

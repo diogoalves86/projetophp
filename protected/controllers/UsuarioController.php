@@ -70,6 +70,9 @@ class UsuarioController extends Controller
 
 	public function actionCadastro()
 	{
+		if (Yii::app()->user->isInRole('ALUNO') || Yii::app()->user->isInRole('PROFESSOR') )
+			throw new CHttpException(403, "Você não possui autorização para acessar esta página");
+		
 		$model=new Usuario;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);;
