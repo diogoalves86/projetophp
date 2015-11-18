@@ -13,7 +13,7 @@
 	);
 	?>
 </div>
-<h1>Alunos</h1>
+<h1>Alunos cadastrados no sistema</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

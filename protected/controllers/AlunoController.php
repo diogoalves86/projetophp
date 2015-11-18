@@ -28,7 +28,9 @@ class AlunoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'users'=>array('*'),
+				'actions'=>array('index'),
+				'users'=>array('@'),
+				'expression'=>'$user->isInRole("PROFESSOR") == true',
 			),
 		);
 	}
@@ -129,9 +131,16 @@ class AlunoController extends Controller
 	 */
 	public function actionIndex()
 	{
+		if(Yii::app()->user->isInRole('ALUNO'))
+			$criteria = "id=".Yii::app()->user->id." && nivel=2 && ativo=1";
+
+		else
+			$criteria = "nivel=2 && ativo=1";
+
+		
 		$dataProvider=new CActiveDataProvider('Usuario', array(
 		    'criteria'=>array(
-		        'condition'=>'nivel=2',
+		        'condition'=>$criteria,
 	        ),
 		));
 
