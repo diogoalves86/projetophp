@@ -4,34 +4,21 @@
 ?>
 
 <div class="view">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('nome')); ?>:</b>
-	<?php echo CHtml::encode($data->nome); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cpf')); ?>:</b>
-	<?php echo CHtml::encode($data->cpf); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('matricula')); ?>:</b>
-	<?php echo CHtml::encode($data->matricula); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('nivel')); ?>:</b>
-	<?php echo CHtml::encode($data->nivel); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('email')); ?>:</b>
-	<?php echo CHtml::encode($data->email); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('senha')); ?>:</b>
-	<?php echo CHtml::encode($data->senha); ?>
-	<br />
-
+	<table class="data-table">
+		<thead>
+			<th>Nome</th>
+			<th>CPF</th>
+			<th>Matricula</th>
+			<th>Nivel</th>
+			<th>Email</th>
+		</thead>
+		<tbody>
+			<td><?php echo CHtml::encode($data->nome); ?></td>
+			<td><?php echo CHtml::encode($data->cpf); ?></td>
+			<td><?php echo CHtml::encode($data->matricula); ?></td>
+			<td><?php echo CHtml::encode($data->nivel); ?></td>
+			<td><?php echo CHtml::encode($data->email); ?></td>
+		</tbody>
+	</table>
 
 </div>

@@ -46,7 +46,7 @@ class NotaController extends Controller
 		));
 	}
 
-	public function actionGerarBoletim($id)
+	public function actionCreate($id)
 	{
 		$model = Nota::model()->findAll("usuario_id=".$id);
 		$this->render('boletim', array(
@@ -66,7 +66,7 @@ class NotaController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($id, $turma)
+	public function actionGerarBoletim($id, $turma)
 	{
 		$model=new Nota;
 		$disciplinas = Disciplina::model()->find("id=".$id);
@@ -79,11 +79,10 @@ class NotaController extends Controller
 			$disciplina_professor = $disciplina->professorDisciplinas[0]->disciplina_id;	
 		}
 
+
 		foreach ($aluno_turma as $aluno) {
 			array_push($lista_alunos, Usuario::model()->find("id='".$aluno->aluno_id."'"));
 		}
-
-		$lista_disciplinas = CHtml::listData($disciplinas, "id", "nome");
 
 		if(Yii::app()->user->isInRole("ALUNO") !== false){
 			unset($lista_alunos);
@@ -98,6 +97,7 @@ class NotaController extends Controller
 
 		if(isset($_POST['Nota']))
 		{
+			$model->setAttribute('disciplina_id', $disciplinas->id);
 			$model->attributes=$_POST['Nota'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
@@ -106,10 +106,41 @@ class NotaController extends Controller
 		$this->render('create',array(
 			'aluno'=>Usuario::model()->findAll(),
 			'aluno_turma'=>$lista_alunos,
-			'disciplina'=>$lista_disciplinas,
+			'disciplina'=>$disciplinas,
 			'disciplina_professor'=>isset($disciplina_professor) ? $disciplina_professor : null,
 			'model'=>$model,
 		));
+	}
+
+	public function actionGerarBoletimAluno($id)
+	{
+		$model= Usuario::model()->find("matricula='".$id."'");
+		$notas = Nota::model()->findAll("usuario_id='".$model->id."'");
+		$turma_aluno = AlunoTurma::model()->find("aluno_id='".$model->id."'");
+		$turma = Turma::model()->find("id='".$turma_aluno->turma_id."'");
+
+		//$lista_alunos = CHtml::listData($alunos, "id", "nome");
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Nota']))
+		{
+			$model->setAttribute('disciplina_id', $disciplinas->id);
+			$model->attributes=$_POST['Nota'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('boletim',array(
+			'notas'=>$notas,
+			'turma'=>$turma,
+			'model'=>$model,
+		));
+	}
+
+	private function calculaMedia(){
+		
 	}
 
 	/**

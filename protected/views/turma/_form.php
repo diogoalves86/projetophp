@@ -16,20 +16,18 @@
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'nome'); ?>
-		<?php echo $form->textField($model,'nome',array('size'=>20,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'nome'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'turno'); ?>
-		<?php echo $form->textField($model,'turno',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'turno'); ?>
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Cadastrar' : 'Salvar'); ?>
-	</div>
+	<table>
+		<thead>
+			<th>Nome</th>
+			<th>Turno</th>
+		</thead>
+			<tbody>
+				<td><?php echo $form->textField($model,'nome',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->error($model,'nome'); ?></td>
+				<td><?php echo $form->textField($model,'turno',array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->error($model,'turno'); ?></td>
+			</tbody>
+	</table>
 
 <?php $this->endWidget(); ?>
 

@@ -1,9 +1,9 @@
 <ul class="boletim-ul">
-	<li>Grau: Técnico</li>
-	<li>Matrícula: 23101513</li>
-	<li>Nome: Nathália Souza Ferreira</li>
-	<li>Turma: 307</li>
-	<li>Turno: </li>
+	<li>Grau: Médio</li>
+	<li>Matrícula: <?php echo $model->matricula ?></li>
+	<li>Nome: <?php echo $model->nome; ?></li>
+	<li>Turma: <?php echo $turma->nome ?></li>
+	<li>Turno: <?php echo $turma->turno ?></li>
 </ul>
 <table class='data-table'>
 	<thead>
@@ -30,19 +30,14 @@
 			<td colspan="1">MF</td>
 		</tr>
 		<tr>
-			<td rowspan="2">Português</td>
-			<td rowspan="2">8.5</td>
-			<td rowspan="2"></td>
-			<td rowspan="2">25.6</td>
-			<td rowspan="2">9.0</td>
-			<td rowspan="2"></td>
-			<td rowspan="2">27.0</td>
-			<td rowspan="2">7.1</td>
-			<td rowspan="2"></td>
-			<td rowspan="2">21.3</td>
-			<td rowspan="2"></td>
-			<td rowspan="2"></td>
-			<td rowspan="2"></td>
+			<?php foreach ($notas as $nota): ?>
+				<td rowspan="2"><?php echo $nota->primeira_certificacao ?></td>
+				<td rowspan="2"><?php echo $nota->segunda_certificacao ?></td>
+				<td rowspan="2"><?php echo $nota->terceira_certificacao ?></td>
+				<td rowspan="2"><?php echo $nota->primeira_recuperacao ?></td>
+				<td rowspan="2"><?php echo $nota->segunda_recuperacao ?></td>
+				<td rowspan="2"><?php echo $nota->terceira_recuperacao ?></td>
+			<?php endforeach; ?>
 		</tr>
 	</tbody>
 </table>

@@ -30,9 +30,18 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$model = Usuario::model()->findByPk(Yii::app()->user->id); 
+		$turmas_professor = ProfessorTurma::model()->findAll("professor_id='".$model->id."'");
+		$array = array();
+		foreach ($turmas_professor as $turma) {
+			array_push($array, $turma->id);	
+		} 
+		$array2 = array();
+		for ($i=0; $i < count($array); $i++) { 
+			array_push($array2, Turma::model()->find("id='"$array[$i]."'"));
+		}
 
 		if(Yii::app()->user->isGuest == false)
-			$this->render('index', array("model"=>$model));
+			$this->render('index', array("model"=>$model, 'turmas_professor'=>$turmas_professor));
 		else
 			$this->redirect('site/login');
 			
