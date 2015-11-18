@@ -29,24 +29,27 @@
 		</thead>
 		<tbody>
 			<td></td>
+			<?php foreach ($aluno_turma as $aluno) {
+				$notas_aluno = $model->findAll("usuario_id='".$aluno->id."'");
+				var_dump($notas_aluno); exit;
+			} ?>
+			<td><?php echo $form->numberField($model->usuario,'primeira_certificacao', array('max'=>10, 'min'=>0)); ?>
+			<?php echo $form->error($model->usuario,'primeira_certificacao'); ?></td>
 
-			<td><?php echo $form->numberField(($model->usuario,'primeira_certificacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error(($model->usuario,'primeira_certificacao'); ?></td>
+			<td><?php echo $form->numberField($model->usuario,'primeira_recuperacao', array('max'=>10, 'min'=>0)); ?>
+			<?php echo $form->error($model->usuario,'primeira_recuperacao'); ?></td>
 
-			<td><?php echo $form->numberField(($model->usuario,'primeira_recuperacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error(($model->usuario,'primeira_recuperacao'); ?></td>
+			<td><?php echo $form->numberField($model->usuario,'segunda_certificacao', array('max'=>10, 'min'=>0)); ?>
+			<?php echo $form->error($model->usuario,'segunda_certificacao'); ?></td>
 
-			<td><?php echo $form->numberField(($model->usuario,'segunda_certificacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error(($model->usuario,'segunda_certificacao'); ?></td>
+			<td><?php echo $form->numberField($model->usuario,'segunda_recuperacao', array('max'=>10, 'min'=>0)); ?>
+			<?php echo $form->error($model->usuario,'segunda_recuperacao'); ?></td>
 
-			<td><?php echo $form->numberField(($model->usuario,'segunda_recuperacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error(($model->usuario,'segunda_recuperacao'); ?></td>
+			<td><?php echo $form->numberField($model->usuario,'terceira_certificacao', array('max'=>10, 'min'=>0)); ?>
+			<?php echo $form->error($model->usuario,'terceira_certificacao'); ?></td>
 
-			<td><?php echo $form->numberField(($model->usuario,'terceira_certificacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error(($model->usuario,'terceira_certificacao'); ?></td>
-
-			<td><?php echo $form->numberField(($model->usuario,'terceira_recuperacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error(($model->usuario,'terceira_recuperacao'); ?></td>
+			<td><?php echo $form->numberField($model->usuario,'terceira_recuperacao', array('max'=>10, 'min'=>0)); ?>
+			<?php echo $form->error($model->usuario,'terceira_recuperacao'); ?></td>
 			<td></td>
 
 		</tbody>

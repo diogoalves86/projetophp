@@ -72,6 +72,7 @@ class NotaController extends Controller
 		$disciplinas = Disciplina::model()->find("id=".$id);
 		$alunos = Usuario::model()->findAll("nivel=2");
 		$aluno_turma = AlunoTurma::model()->findAll("turma_id=".$id);
+		var_dump($aluno_turma); exit;
 		$lista_disciplinas = CHtml::listData($disciplinas, "id", "nome");
 		$lista_alunos = CHtml::listData($alunos, "id", "nome");
 		// Uncomment the following line if AJAX validation is needed
