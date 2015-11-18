@@ -24,8 +24,8 @@
 	<header>
 		
 		<div id="logo-cp2">	               
-            <a href="~/">
-                <img src="<?php echo Yii::app()->baseUrl.'/images'?>/Pedro-II-logo-W.png" />
+            <a href="<?php echo Yii::app()->createUrl('site/index')?>">
+                <img src="<?php echo Yii::app()->baseUrl.'/images' ?>/Pedro-II-logo-W.png" />
             </a>            
         </div>
 
