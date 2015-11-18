@@ -7,6 +7,10 @@
  * @property integer $id
  * @property integer $professor_id
  * @property integer $disciplina_id
+ *
+ * The followings are the available model relations:
+ * @property Disciplina $disciplina
+ * @property Usuario $professor
  */
 class ProfessorDisciplina extends CActiveRecord
 {
@@ -42,6 +46,8 @@ class ProfessorDisciplina extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'disciplina' => array(self::BELONGS_TO, 'Disciplina', 'disciplina_id'),
+			'professor' => array(self::BELONGS_TO, 'Usuario', 'professor_id'),
 		);
 	}
 

@@ -14,6 +14,9 @@
  * @property string $senha
  *
  * The followings are the available model relations:
+ * @property AlunoTurma[] $alunoTurmas
+ * @property Nota[] $notas
+ * @property ProfessorDisciplina[] $professorDisciplinas
  * @property Regra $nivel_relacao
  */
 class Usuario extends CActiveRecord
@@ -34,7 +37,7 @@ class Usuario extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nome, cpf, matricula, nivel, ativo, email, senha', 'required'),
+			array('nome, cpf, matricula, nivel, email, senha', 'required'),
 			array('nivel, ativo', 'numerical', 'integerOnly'=>true),
 			array('nome', 'length', 'max'=>100),
 			array('cpf', 'length', 'max'=>14),
@@ -53,6 +56,9 @@ class Usuario extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'alunoTurmas' => array(self::HAS_MANY, 'AlunoTurma', 'aluno_id'),
+			'notas' => array(self::HAS_MANY, 'Nota', 'usuario_id'),
+			'professorDisciplinas' => array(self::HAS_MANY, 'ProfessorDisciplina', 'professor_id'),
 			'nivel_relacao' => array(self::BELONGS_TO, 'Regra', 'nivel'),
 		);
 	}

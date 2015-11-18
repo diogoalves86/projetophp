@@ -2,7 +2,6 @@
 /* @var $this NotaController */
 /* @var $model Nota */
 /* @var $form CActiveForm */
-
 ?>
 
 <div class="form">
@@ -28,64 +27,45 @@
 			<th>MÉDIA ANUAL</th>
 		</thead>
 		<tbody>
-			<td></td>
-			<?php foreach ($aluno_turma as $aluno) {
-				$notas_aluno = $model->findAll("usuario_id='".$aluno->id."'");
-				var_dump($notas_aluno); exit;
-			} ?>
-			<td><?php echo $form->numberField($model->usuario,'primeira_certificacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error($model->usuario,'primeira_certificacao'); ?></td>
+			<?php foreach ($aluno_turma as $aluno): ?>
+				<tr>
+					<td><?php echo $aluno->nome; ?></td>
+					
+					<?php if(Yii::app()->user->isInRole("PROFESSOR") !== false): ?>
+						<?php $notas_aluno = $model->findAll("usuario_id='".$aluno->id."' && disciplina_id='".$disciplina_professor."'"); ?>
+					
+					<?php elseif(Yii::app()->user->isInRole("ALUNO") !== false): ?>
+						<?php $notas_aluno = $model->findAll("usuario_id='".Yii::app()->user->id."'"); ?>
+					
+					<?php else: ?>
+						<?php $notas_aluno = $model->findAll("usuario_id='".$aluno->id."'"); ?>
 
-			<td><?php echo $form->numberField($model->usuario,'primeira_recuperacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error($model->usuario,'primeira_recuperacao'); ?></td>
+					<?php endif; ?>
 
-			<td><?php echo $form->numberField($model->usuario,'segunda_certificacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error($model->usuario,'segunda_certificacao'); ?></td>
+					<?php foreach ($notas_aluno as $nota_aluno): ?>
+						<td><?php echo $form->numberField($nota_aluno,'primeira_certificacao', array('max'=>10, 'min'=>0)); ?>
+						<?php echo $form->error($nota_aluno,'primeira_certificacao'); ?></td>
 
-			<td><?php echo $form->numberField($model->usuario,'segunda_recuperacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error($model->usuario,'segunda_recuperacao'); ?></td>
+						<td><?php echo $form->numberField($nota_aluno,'primeira_recuperacao', array('max'=>10, 'min'=>0)); ?>
+						<?php echo $form->error($nota_aluno,'primeira_recuperacao'); ?></td>
+					
+						<td><?php echo $form->numberField($nota_aluno,'segunda_certificacao', array('max'=>10, 'min'=>0)); ?>
+						<?php echo $form->error($nota_aluno,'segunda_certificacao'); ?></td>
 
-			<td><?php echo $form->numberField($model->usuario,'terceira_certificacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error($model->usuario,'terceira_certificacao'); ?></td>
+						<td><?php echo $form->numberField($nota_aluno,'segunda_recuperacao', array('max'=>10, 'min'=>0)); ?>
+						<?php echo $form->error($nota_aluno,'segunda_recuperacao'); ?></td>
 
-			<td><?php echo $form->numberField($model->usuario,'terceira_recuperacao', array('max'=>10, 'min'=>0)); ?>
-			<?php echo $form->error($model->usuario,'terceira_recuperacao'); ?></td>
-			<td></td>
+						<td><?php echo $form->numberField($nota_aluno,'terceira_certificacao', array('max'=>10, 'min'=>0)); ?>
+						<?php echo $form->error($nota_aluno,'terceira_certificacao'); ?></td>
+
+						<td><?php echo $form->numberField($nota_aluno,'terceira_recuperacao', array('max'=>10, 'min'=>0)); ?>
+						<?php echo $form->error($nota_aluno,'terceira_recuperacao'); ?></td>
+						<td></td>
+				</tr>
+					<?php endforeach; ?>
+			<?php endforeach; ?>
 
 		</tbody>
-
-		<div class="row">
-			<?php echo $form->labelEx($model,'disciplina_id'); ?>
-			<?php if($model->isNewRecord): ?>
-				<?php echo CHtml::dropDownList('Nota[disciplina_id]', Disciplina::model(), $disciplina, array(
-		    									'empty' => 'Selecione uma disciplina',
-		    									'class' => 'form-control')); 
-		    	?>
-	    	<?php else: ?>
-	    		<?php echo CHtml::dropDownList('Nota[disciplina_id]', Disciplina::model(), array($disciplina->id=>$disciplina->nome),
-	    		 		array(
-							'class' => 'form-control'
-							)); 
-		    	?>
-	    	<?php endif; ?>
-			<?php echo $form->error($model,'disciplina_id'); ?>
-		</div>
-
-		<div class="row">
-			<?php echo $form->labelEx($model,'usuario_id'); ?>
-			<?php if($model->isNewRecord): ?>
-				<?php echo CHtml::dropDownList('Nota[usuario_id]', Usuario::model(), $aluno, array(
-		    									'empty' => 'Selecione um aluno',
-		    									'class' => 'form-control')); ?>
-			<?php else: ?>
-				<?php echo CHtml::dropDownList('Nota[usuario_id]', Usuario::model(), array($aluno->id=>$aluno->nome),
-	    		 		array(
-							'class' => 'form-control'
-							)); 
-		    	?>
-			<?php endif; ?>
-			<?php echo $form->error($model,'usuario_id'); ?>
-		</div>
 	</table>
 	<div class="buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Cadastrar' : 'Salvar'); ?>
