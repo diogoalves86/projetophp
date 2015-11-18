@@ -9,6 +9,10 @@ a{
 ul{
     list-style: none;
 }
+.errorMessage{
+    color: red;
+    font-size: 10px;
+}
 
 /* LAYOUT */
 
@@ -189,6 +193,20 @@ table.main3{@include background(#33CCCC);}
     padding: 20px 50px;
     border: 1px solid #ddd;
     margin: auto;
+}
+
+/* SHOW */
+.list-view{
+    width: 50%;
+    margin:auto;
+    float: right;
+}
+.container h1{
+    text-align: center;
+}
+.portlet{
+    width: 50%;
+    left: right;
 }
 
 

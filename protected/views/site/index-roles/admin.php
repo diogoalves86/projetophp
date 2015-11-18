@@ -1,8 +1,6 @@
 <dl>
 	<dt>Turmas</dt>
-		<dd><a href="">Todas as turmas do 1ºF</a></dd>
-		<dd><a href="">Todas as turmas do 2ºF</a></dd>
-		<dd><a href="">Todas as turmas do Ensino Médio</a></dd>
+		<dd><a href="<?php echo $this->createUrl('turma/index')?>">Todas as turmas</a></dd>
 </dl>
 <dl>
 	<dt>Informações</dt>

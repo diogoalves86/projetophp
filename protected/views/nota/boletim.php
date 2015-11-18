@@ -11,7 +11,7 @@
 		<th colspan="3">1ªC</th>
 		<th colspan="3">2ªC</th>
 		<th colspan="3">3ªC</th>
-		<th>Média Final</th>
+		<th colspan="3">Média Final</th>
 	</thead>
 	<tbody>
 		<tr>
@@ -25,7 +25,9 @@
 			<td colspan="1">Graus</td>
 			<td colspan="1">Rec</td>
 			<td colspan="1">Média</td>
-			<td rowspan="2"></td>
+			<td colspan="1">MA</td>
+			<td colspan="1">PFV</td>
+			<td colspan="1">MF</td>
 		</tr>
 		<tr>
 			<?php foreach ($notas as $nota): ?>
