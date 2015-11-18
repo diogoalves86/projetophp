@@ -8,10 +8,13 @@
  * @property string $nome
  * @property string $cpf
  * @property string $matricula
- * @property integer $ativo
  * @property integer $nivel
+ * @property integer $ativo
  * @property string $email
  * @property string $senha
+ *
+ * The followings are the available model relations:
+ * @property Regra $nivel_relacao
  */
 class Usuario extends CActiveRecord
 {
@@ -31,14 +34,14 @@ class Usuario extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nome, cpf, matricula, nivel, email, senha', 'required'),
-			array('nivel', 'numerical', 'integerOnly'=>true),
+			array('nome, cpf, matricula, nivel, ativo, email, senha', 'required'),
+			array('nivel, ativo', 'numerical', 'integerOnly'=>true),
 			array('nome', 'length', 'max'=>100),
 			array('cpf', 'length', 'max'=>14),
 			array('matricula, email, senha', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nome, cpf, matricula, nivel, email, senha', 'safe', 'on'=>'search'),
+			array('id, nome, cpf, matricula, nivel, ativo, email, senha', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -50,6 +53,7 @@ class Usuario extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'nivel_relacao' => array(self::BELONGS_TO, 'Regra', 'nivel'),
 		);
 	}
 
@@ -64,8 +68,8 @@ class Usuario extends CActiveRecord
 			'cpf' => 'Cpf',
 			'matricula' => 'Matricula',
 			'nivel' => 'Nivel',
+			'ativo' => 'Ativo',
 			'email' => 'Email',
-			'ativo'=>'Ativo/Inativo',
 			'senha' => 'Senha',
 		);
 	}
@@ -93,6 +97,7 @@ class Usuario extends CActiveRecord
 		$criteria->compare('cpf',$this->cpf,true);
 		$criteria->compare('matricula',$this->matricula,true);
 		$criteria->compare('nivel',$this->nivel);
+		$criteria->compare('ativo',$this->ativo);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('senha',$this->senha,true);
 
@@ -110,14 +115,5 @@ class Usuario extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-	}
-
-	public function pegarDadosCadastro($matricula)
-	{
-		$usuario = $this->find("matricula='".$matricula."'");
-		if($usuario != null)
-			return $usuario;
-		else
-			return false;
 	}
 }
