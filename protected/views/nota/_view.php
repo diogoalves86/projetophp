@@ -4,34 +4,28 @@
 ?>
 
 <div class="view">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('primeira_certificacao')); ?>:</b>
-	<?php echo CHtml::encode($data->primeira_certificacao); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('segunda_certificacao')); ?>:</b>
-	<?php echo CHtml::encode($data->segunda_certificacao); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('terceira_certificacao')); ?>:</b>
-	<?php echo CHtml::encode($data->terceira_certificacao); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('primeira_recuperacao')); ?>:</b>
-	<?php echo CHtml::encode($data->primeira_recuperacao); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('segunda_recuperacao')); ?>:</b>
-	<?php echo CHtml::encode($data->segunda_recuperacao); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('terceira_recuperacao')); ?>:</b>
-	<?php echo CHtml::encode($data->terceira_recuperacao); ?>
-	<br />
+	<table class="data-table">
+		<thead>
+			<th>1ªC</th>
+			<th>REC 1</th>
+			<th>2ªC</th>
+			<th>REC 2</th>
+			<th>3ªC</th>
+			<th>REC 3</th>
+			<th>Média</th>
+			<th>PFV</th>
+		</thead>
+		<tbody>
+			<td><?php echo CHtml::encode($data->primeira_certificacao); ?></td>
+			<td><?php echo CHtml::encode($data->primeira_recuperacao); ?></td>
+			<td><?php echo CHtml::encode($data->segunda_certificacao); ?></td>
+			<td><?php echo CHtml::encode($data->segunda_recuperacao); ?></td>
+			<td><?php echo CHtml::encode($data->terceira_certificacao); ?></td>
+			<td><?php echo CHtml::encode($data->terceira_recuperacao); ?></td>
+			<td></td>
+			<td></td>
+		</tbody>
+	</table>
 
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('disciplina_id')); ?>:</b>

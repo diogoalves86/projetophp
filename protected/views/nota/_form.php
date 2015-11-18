@@ -15,57 +15,39 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'primeira_certificacao'); ?>
-		<?php echo $form->textField($model,'primeira_certificacao'); ?>
-		<?php echo $form->error($model,'primeira_certificacao'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'segunda_certificacao'); ?>
-		<?php echo $form->textField($model,'segunda_certificacao'); ?>
-		<?php echo $form->error($model,'segunda_certificacao'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'terceira_certificacao'); ?>
-		<?php echo $form->textField($model,'terceira_certificacao'); ?>
-		<?php echo $form->error($model,'terceira_certificacao'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'primeira_recuperacao'); ?>
-		<?php echo $form->textField($model,'primeira_recuperacao'); ?>
-		<?php echo $form->error($model,'primeira_recuperacao'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'segunda_recuperacao'); ?>
-		<?php echo $form->textField($model,'segunda_recuperacao'); ?>
-		<?php echo $form->error($model,'segunda_recuperacao'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'terceira_recuperacao'); ?>
-		<?php echo $form->textField($model,'terceira_recuperacao'); ?>
-		<?php echo $form->error($model,'terceira_recuperacao'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'disciplina_id'); ?>
-		<?php echo $form->textField($model,'disciplina_id'); ?>
-		<?php echo $form->error($model,'disciplina_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'usuario_id'); ?>
-		<?php echo $form->textField($model,'usuario_id'); ?>
-		<?php echo $form->error($model,'usuario_id'); ?>
-	</div>
+	<table class="data-table">
+		<thead>
+			<th>1ªC</th>
+			<th>REC 1</th>
+			<th>2ªC</th>
+			<th>REC 2</th>
+			<th>3ªC</th>
+			<th>REC 3</th>
+			<th>Disciplina</th>
+			<th>Usuário</th>
+		</thead>
+		<tbody>
+			<td><?php echo $form->textField($model,'primeira_certificacao'); ?>
+		<?php echo $form->error($model,'primeira_certificacao'); ?></td>
+			<td><?php echo $form->textField($model,'primeira_recuperacao'); ?>
+		<?php echo $form->error($model,'primeira_recuperacao'); ?></td>
+			<td><?php echo $form->textField($model,'segunda_certificacao'); ?>
+		<?php echo $form->error($model,'segunda_certificacao'); ?></td>
+			<td><?php echo $form->textField($model,'segunda_recuperacao'); ?>
+		<?php echo $form->error($model,'segunda_recuperacao'); ?></td>
+			<td><?php echo $form->textField($model,'terceira_certificacao'); ?>
+		<?php echo $form->error($model,'terceira_certificacao'); ?></td>
+			<td><?php echo $form->textField($model,'terceira_recuperacao'); ?>
+		<?php echo $form->error($model,'terceira_recuperacao'); ?></td>
+			<td><?php echo $form->textField($model,'disciplina_id'); ?>
+		<?php echo $form->error($model,'disciplina_id'); ?></td>
+			<td><?php echo $form->textField($model,'usuario_id'); ?>
+		<?php echo $form->error($model,'usuario_id'); ?></td>
+		</tbody>
+	</table>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
