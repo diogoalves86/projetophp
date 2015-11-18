@@ -54,7 +54,7 @@ class UsuarioController extends Controller
 		$model=new Usuario;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);;
-		$dados_usuario = $model->pegarDadosCadastro($matricula);
+		$dados_usuario = $model->pegarDadosCadastro($id);
 		if(isset($_POST['Usuario']))
 		{
 			$model->attributes=$_POST['Usuario'];
@@ -75,9 +75,9 @@ class UsuarioController extends Controller
 		// $this->performAjaxValidation($model);;
 		if(isset($_POST['Usuario']['matricula']))
 		{
-			$dados_usuario = $model->pegarDadosCadastro($_POST['Usuario']['matricula']);
+			$dados_usuario = Usuario::model()->find("matricula='".$_POST['Usuario']['matricula']."'");
 			if($dados_usuario != null)
-				$this->redirect(array('usuario/create/', 'id'=>(int)$dados_usuario->matricula));
+				$this->redirect(array('usuario/update/', 'id'=>(int)$dados_usuario->matricula));
 				//$this->actionCreate($dados_usuario->matricula);
 		}
 
@@ -94,19 +94,21 @@ class UsuarioController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+		$model = Usuario::model()->find("matricula='".$id."'");
+		$nivel_usuario = $model->nivel_relacao;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Usuario']))
 		{
 			$model->attributes=$_POST['Usuario'];
-			if($model->save())
+			$model->setAttribute('ativo', 1);
+			$model->setAttribute('nivel', $model->nivel_relacao->id);
+			if($model->update())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
 		$this->render('update',array(
+			'nivel_usuario'=>$nivel_usuario,
 			'model'=>$model,
 		));
 	}

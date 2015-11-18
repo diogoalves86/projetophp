@@ -6,7 +6,7 @@ class UserLevel extends CWebUser
     public function isInRole($nomeRegra)
     {
         $usuario = $this->loadUser();
-        $nivelRegra = ManageLevel::getLevel($nomeRegra); 
+        $nivelRegra = ManageLevel::getLevel($nomeRegra);
         if ($usuario && $nivelRegra)
             return $usuario->nivel==$nivelRegra;
         return false;
