@@ -11,20 +11,12 @@
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'nome'); ?>
-		<?php echo $form->textField($model,'nome',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'turno'); ?>
-		<?php echo $form->textField($model,'turno',array('size'=>10,'maxlength'=>10)); ?>
-	</div>
+	<dl>
+		<dt><?php echo $form->label($model,'nome'); ?></dt>
+			<dd><?php echo $form->textField($model,'nome',array('size'=>20,'maxlength'=>20)); ?></dd>
+		<dt><?php echo $form->label($model,'turno'); ?></dt>
+			<dd><?php echo $form->textField($model,'turno',array('size'=>10,'maxlength'=>10)); ?></dd>
+	</dl>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>

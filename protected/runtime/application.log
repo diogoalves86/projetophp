@@ -888,3 +888,71 @@ REQUEST_URI=/projetophp/index.php/nota/GerarBoletim/6
 in C:\Users\j\Xampp\htdocs\projetophp\protected\views\nota\view.php (7)
 in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\NotaController.php (54)
 in C:\Users\j\Xampp\htdocs\projetophp\index.php (13)
+2015/11/18 09:29:03 [error] [php] Object of class SiteController could not be converted to string (C:\Users\j\Xampp\htdocs\projetophp\protected\views\site\index-roles\admin.php:3)
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\Users\j\Xampp\htdocs\projetophp\protected\views\site\index.php(28): SiteController->renderPartial()
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): SiteController->renderFile()
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#6 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\SiteController.php(35): SiteController->render()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(286): SiteController->runAction()
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php
+in C:\Users\j\Xampp\htdocs\projetophp\protected\views\site\index-roles\admin.php (3)
+in C:\Users\j\Xampp\htdocs\projetophp\protected\views\site\index.php (28)
+in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\SiteController.php (35)
+2015/11/18 09:45:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('turma/admin')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/turma/admin
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/turma/create
+---
+2015/11/18 09:46:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "GeraBoletim".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('GeraBoletim')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('GeraBoletim')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/GeraBoleti...')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/site/GeraBoletim
+---
+2015/11/18 09:46:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "GeraBoletim".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('GeraBoletim')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('GeraBoletim')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nota/GeraBoleti...')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/nota/GeraBoletim/6
+---
+2015/11/18 09:46:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "GeraBoletim".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('GeraBoletim')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('GeraBoletim')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nota/GeraBoleti...')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/nota/GeraBoletim/1
+---
