@@ -1,6 +1,6 @@
 <?php
 
-class NotaController extends Controller
+class AlunoController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -79,7 +79,7 @@ class NotaController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('//aluno/boletim',array(
+		$this->render('boletim',array(
 			'lista_alunos'=>$lista_alunos,
 			'disciplina'=>$disciplina,
 			'model'=>$model,
@@ -129,7 +129,12 @@ class NotaController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Nota');
+		$dataProvider=new CActiveDataProvider('Usuario', array(
+		    'criteria'=>array(
+		        'condition'=>'nivel=2',
+	        ),
+		));
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
