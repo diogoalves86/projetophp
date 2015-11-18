@@ -11,9 +11,8 @@
 			<th>2ªC</th>
 			<th>REC 2</th>
 			<th>3ªC</th>
-			<th>REC 3</th>
-			<th>Média</th>
 			<th>PFV</th>
+			<th>Média</th>
 		</thead>
 		<tbody>
 			<td><?php echo CHtml::encode($data->primeira_certificacao); ?></td>
@@ -22,7 +21,6 @@
 			<td><?php echo CHtml::encode($data->segunda_recuperacao); ?></td>
 			<td><?php echo CHtml::encode($data->terceira_certificacao); ?></td>
 			<td><?php echo CHtml::encode($data->terceira_recuperacao); ?></td>
-			<td></td>
 			<td></td>
 		</tbody>
 	</table>

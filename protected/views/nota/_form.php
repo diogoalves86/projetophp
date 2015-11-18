@@ -25,7 +25,7 @@
 			<th>2ªC</th>
 			<th>REC 2</th>
 			<th>3ªC</th>
-			<th>REC 3</th>
+			<th>PFV</th>
 			<th>Disciplina</th>
 			<th>Usuário</th>
 		</thead>
