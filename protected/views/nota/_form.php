@@ -2,6 +2,7 @@
 /* @var $this NotaController */
 /* @var $model Nota */
 /* @var $form CActiveForm */
+
 ?>
 
 <div class="form">
@@ -15,60 +16,79 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'primeira_certificacao'); ?>
-		<?php echo $form->textField($model,'primeira_certificacao'); ?>
+		<?php echo $form->numberField($model,'primeira_certificacao', array('max'=>10, 'min'=>0)); ?>
 		<?php echo $form->error($model,'primeira_certificacao'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'segunda_certificacao'); ?>
-		<?php echo $form->textField($model,'segunda_certificacao'); ?>
+		<?php echo $form->numberField($model,'segunda_certificacao', array('max'=>10, 'min'=>0)); ?>
 		<?php echo $form->error($model,'segunda_certificacao'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'terceira_certificacao'); ?>
-		<?php echo $form->textField($model,'terceira_certificacao'); ?>
+		<?php echo $form->numberField($model,'terceira_certificacao', array('max'=>10, 'min'=>0)); ?>
 		<?php echo $form->error($model,'terceira_certificacao'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'primeira_recuperacao'); ?>
-		<?php echo $form->textField($model,'primeira_recuperacao'); ?>
+		<?php echo $form->numberField($model,'primeira_recuperacao', array('max'=>10, 'min'=>0)); ?>
 		<?php echo $form->error($model,'primeira_recuperacao'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'segunda_recuperacao'); ?>
-		<?php echo $form->textField($model,'segunda_recuperacao'); ?>
+		<?php echo $form->numberField($model,'segunda_recuperacao', array('max'=>10, 'min'=>0)); ?>
 		<?php echo $form->error($model,'segunda_recuperacao'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'terceira_recuperacao'); ?>
-		<?php echo $form->textField($model,'terceira_recuperacao'); ?>
+		<?php echo $form->numberField($model,'terceira_recuperacao', array('max'=>10, 'min'=>0)); ?>
 		<?php echo $form->error($model,'terceira_recuperacao'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'disciplina_id'); ?>
-		<?php echo $form->textField($model,'disciplina_id'); ?>
+		<?php if($model->isNewRecord): ?>
+			<?php echo CHtml::dropDownList('Nota[disciplina_id]', Disciplina::model(), $disciplina, array(
+	    									'empty' => 'Selecione uma disciplina',
+	    									'class' => 'form-control')); 
+	    	?>
+    	<?php else: ?>
+    		<?php echo CHtml::dropDownList('Nota[disciplina_id]', Disciplina::model(), array($disciplina->id=>$disciplina->nome),
+    		 		array(
+						'class' => 'form-control'
+						)); 
+	    	?>
+    	<?php endif; ?>
 		<?php echo $form->error($model,'disciplina_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'usuario_id'); ?>
-		<?php echo $form->textField($model,'usuario_id'); ?>
+		<?php if($model->isNewRecord): ?>
+			<?php echo CHtml::dropDownList('Nota[usuario_id]', Usuario::model(), $aluno, array(
+	    									'empty' => 'Selecione um aluno',
+	    									'class' => 'form-control')); ?>
+		<?php else: ?>
+			<?php echo CHtml::dropDownList('Nota[usuario_id]', Usuario::model(), array($aluno->id=>$aluno->nome),
+    		 		array(
+						'class' => 'form-control'
+						)); 
+	    	?>
+		<?php endif; ?>
 		<?php echo $form->error($model,'usuario_id'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Cadastrar' : 'Salvar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
