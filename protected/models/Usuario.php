@@ -17,6 +17,7 @@
  * @property AlunoTurma[] $alunoTurmas
  * @property Nota[] $notas
  * @property ProfessorDisciplina[] $professorDisciplinas
+ * @property ProfessorTurma[] $professorTurmas
  * @property Regra $nivel_relacao
  */
 class Usuario extends CActiveRecord
@@ -59,6 +60,7 @@ class Usuario extends CActiveRecord
 			'alunoTurmas' => array(self::HAS_MANY, 'AlunoTurma', 'aluno_id'),
 			'notas' => array(self::HAS_MANY, 'Nota', 'usuario_id'),
 			'professorDisciplinas' => array(self::HAS_MANY, 'ProfessorDisciplina', 'professor_id'),
+			'professorTurmas' => array(self::HAS_MANY, 'ProfessorTurma', 'professor_id'),
 			'nivel_relacao' => array(self::BELONGS_TO, 'Regra', 'nivel'),
 		);
 	}

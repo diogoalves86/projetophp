@@ -10,6 +10,7 @@
  *
  * The followings are the available model relations:
  * @property AlunoTurma[] $alunoTurmas
+ * @property ProfessorTurma[] $professorTurmas
  */
 class Turma extends CActiveRecord
 {
@@ -47,6 +48,7 @@ class Turma extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'alunoTurmas' => array(self::HAS_MANY, 'AlunoTurma', 'turma_id'),
+			'professorTurmas' => array(self::HAS_MANY, 'ProfessorTurma', 'turma_id'),
 		);
 	}
 
