@@ -64,7 +64,8 @@ header .main-menu ul li{
 
 .container {
     width: 100%;
-    height: 430px;    
+    height: 430px;  
+    overflow: auto;  
 }
 /* FORMS */
 
@@ -138,7 +139,7 @@ header .main-menu ul li{
   font-family: $font-regular;
 }
 table{
-    margin: 30px auto;
+    margin: 20px auto;
 }
 .row{
     cursor: pointer;
@@ -158,7 +159,7 @@ table th a{
 table td, th{
     padding: 10px;
     text-align: center;
-    border: 1px solid #ddd;
+    border: 1px solid gray;
     vertical-align: middle;
     cursor: pointer; 
 
@@ -177,6 +178,17 @@ table .column{
 table.main1{@include background($blue);}
 table.main2{@include background(#CCCCFF);}
 table.main3{@include background(#33CCCC);}
+}
+
+.container .boletim-ul{
+    height: 20%;
+    margin: 0 auto 0 85px;
+}
+.container .boletim-ul li{
+    display: inline-block;
+    padding: 20px 50px;
+    border: 1px solid #ddd;
+    margin: auto;
 }
 
 
