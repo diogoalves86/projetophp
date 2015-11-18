@@ -6,6 +6,10 @@
  * The followings are the available columns in table 'Disciplina':
  * @property integer $id
  * @property string $nome
+ *
+ * The followings are the available model relations:
+ * @property Nota[] $notas
+ * @property ProfessorDisciplina[] $professorDisciplinas
  */
 class Disciplina extends CActiveRecord
 {
@@ -41,6 +45,8 @@ class Disciplina extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'notas' => array(self::HAS_MANY, 'Nota', 'disciplina_id'),
+			'professorDisciplinas' => array(self::HAS_MANY, 'ProfessorDisciplina', 'disciplina_id'),
 		);
 	}
 
