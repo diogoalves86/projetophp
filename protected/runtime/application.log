@@ -830,3 +830,61 @@ Stack trace:
 #12 {main}
 REQUEST_URI=/projetophp/index.php/nota/gerarBoletim
 ---
+2015/11/18 07:52:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "6".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('6')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('6')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nota/6/GerarBol...')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/nota/6/GerarBoletim
+---
+2015/11/18 07:52:44 [error] [php] Trying to get property of non-object (C:\Users\j\Xampp\htdocs\projetophp\protected\views\nota\view.php:7)
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): NotaController->renderFile()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): NotaController->renderPartial()
+#2 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\NotaController.php(54): NotaController->render()
+#3 unknown(0): NotaController->actionGerarBoletim()
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): NotaController->filterAccessControl()
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): NotaController->run()
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/nota/GerarBoletim/6
+in C:\Users\j\Xampp\htdocs\projetophp\protected\views\nota\view.php (7)
+in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\NotaController.php (54)
+in C:\Users\j\Xampp\htdocs\projetophp\index.php (13)
+2015/11/18 07:53:34 [error] [php] Trying to get property of non-object (C:\Users\j\Xampp\htdocs\projetophp\protected\views\nota\view.php:7)
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): NotaController->renderFile()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): NotaController->renderPartial()
+#2 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\NotaController.php(54): NotaController->render()
+#3 unknown(0): NotaController->actionGerarBoletim()
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): NotaController->filterAccessControl()
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): NotaController->run()
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/nota/GerarBoletim/6
+in C:\Users\j\Xampp\htdocs\projetophp\protected\views\nota\view.php (7)
+in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\NotaController.php (54)
+in C:\Users\j\Xampp\htdocs\projetophp\index.php (13)

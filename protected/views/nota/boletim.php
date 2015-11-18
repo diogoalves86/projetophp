@@ -1,0 +1,46 @@
+<table class='data-table'>
+	<thead>
+		<th>Disciplina</th>
+		<th>1ªC</th>
+			<tr>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		<th>2ªC</th>
+			<tr>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		<th>3ªC</th>
+			<tr>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		<th>Média Final</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<td></td>
+		
+	</tbody>
+</table>
