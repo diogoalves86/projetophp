@@ -30,6 +30,7 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$model = Usuario::model()->findByPk(Yii::app()->user->id); 
+
 		if(Yii::app()->user->isGuest == false)
 			$this->render('index', array("model"=>$model));
 		else

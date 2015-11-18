@@ -21,10 +21,10 @@
 
 <div class="role-painel">
 	<?php if(Yii::app()->user->isInRole('PROFESSOR') !== false): ?>
-		<?php $this->renderPartial('professor', array('model'=>$model)); ?>
+		<?php $this->renderPartial('index-roles/professor', array('model'=>$model)); ?>
 	<?php elseif(Yii::app()->user->isInRole('ALUNO') !== false): ?>
-		<?php $this->renderPartial('aluno', array('model'=>$model)); ?>
+		<?php $this->renderPartial('index-roles/aluno', array('model'=>$model)); ?>
 	<?php else: ?>
-		<?php $this->renderPartial('admin', array('model'=>$model)); ?>
+		<?php $this->renderPartial('index-roles/admin', array('model'=>$model)); ?>
 	<?php endif; ?>
 </div>

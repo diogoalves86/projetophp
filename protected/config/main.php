@@ -25,7 +25,7 @@ return array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'projetofinal',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>Yii::app()->request->userHostAddress,
+			//'ipFilters'=>Yii::app()->request->userHostAddress,
 		),
 	),
 
