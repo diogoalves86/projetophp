@@ -66,11 +66,12 @@ class NotaController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($id)
 	{
 		$model=new Nota;
-		$disciplinas = Disciplina::model()->findAll();
+		$disciplinas = Disciplina::model()->find("id=".$id);
 		$alunos = Usuario::model()->findAll("nivel=2");
+		$aluno_turma = AlunoTurma::model()->findAll("turma_id=".$id);
 		$lista_disciplinas = CHtml::listData($disciplinas, "id", "nome");
 		$lista_alunos = CHtml::listData($alunos, "id", "nome");
 		// Uncomment the following line if AJAX validation is needed
@@ -85,6 +86,7 @@ class NotaController extends Controller
 
 		$this->render('create',array(
 			'aluno'=>$lista_alunos,
+			'aluno_turma'=>$aluno_turma,
 			'disciplina'=>$lista_disciplinas,
 			'model'=>$model,
 		));

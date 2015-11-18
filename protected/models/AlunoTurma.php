@@ -7,6 +7,10 @@
  * @property integer $id
  * @property integer $aluno_id
  * @property integer $turma_id
+ *
+ * The followings are the available model relations:
+ * @property Turma $turma
+ * @property Usuario $aluno
  */
 class AlunoTurma extends CActiveRecord
 {
@@ -42,6 +46,8 @@ class AlunoTurma extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'turma' => array(self::MANY_MANY, 'Turma', 'turma_id'),
+			'aluno' => array(self::MANY_MANY, 'Usuario', 'Aluno_Turma(aluno_id, turma_id)'),
 		);
 	}
 
