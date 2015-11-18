@@ -29,7 +29,8 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		$model = Usuario::model()->findByPk(Yii::app()->user->id); 
+		$this->render('index', array("model"=>$model));
 	}
 
 	/**
