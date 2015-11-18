@@ -13,6 +13,10 @@
  * @property integer $terceira_recuperacao
  * @property integer $disciplina_id
  * @property integer $usuario_id
+ *
+ * The followings are the available model relations:
+ * @property Usuario $usuario
+ * @property Disciplina $disciplina
  */
 class Nota extends CActiveRecord
 {
@@ -48,6 +52,8 @@ class Nota extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'usuario' => array(self::BELONGS_TO, 'Usuario', 'usuario_id'),
+			'disciplina' => array(self::BELONGS_TO, 'Disciplina', 'disciplina_id'),
 		);
 	}
 
