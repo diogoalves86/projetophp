@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Turma #<?php echo $model->id; ?></h1>
+<h1>Visualizar Turma #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

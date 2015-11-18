@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Nota', 'url'=>array('index')),
+	array('label'=>'Listar Nota', 'url'=>array('index')),
 	array('label'=>'Create Nota', 'url'=>array('create')),
 	array('label'=>'Update Nota', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete Nota', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Nota #<?php echo $model->id; ?></h1>
+<h1>Visualizar Nota #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
