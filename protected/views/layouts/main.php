@@ -42,15 +42,14 @@
 			)); ?>
     	</div>			
 	</header>
-	<body>
-			<section id="loginForm">
-				<fieldset>
-					<?php echo $content; ?>
-				</fieldset>
-			</section>
+	<div class="container">
+	
+		<?php echo $content; ?>
 
-	</body>
+	</div>
 	<footer>
 		<p><?php echo date('Y'); ?> - Projeto Final CP2 ENII</p>
 	</footer>
+
+	</body>
 </html>

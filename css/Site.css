@@ -1,23 +1,28 @@
 ﻿body {
     font-family: "Palatino Linotype";
-    background-color: rgb(195,195,195);
+    background-color: white;
 }
 a{
     text-decoration: none;
     font-size: 13px;
 }
+ul{
+    text-decoration: none;
+}
 
-/* HEADER */
+/* LAYOUT */
 
 header{
-    height: 25%;
+    height: 100px;
     background-color: #000;
     border-radius: 5px;
     width: 100%;
 }
+
 header #logo-cp2 img{
-    width: 129px;
+    width: 125px;
     border-radius-left: 5px;
+    height: 100px;
 }
 header .main-menu ul li{
     display: inline-block;
@@ -59,8 +64,14 @@ header .main-menu ul li{
     height: 100%
 }
 
+.container {
+    width: 100%;
+    height: 430px;    
+}
 /* FORMS */
-
+#loginForm{
+    background-color: rgb(195,195,195);
+}
 #loginForm ul{
     list-style: none;
     width: 260px;
@@ -145,12 +156,36 @@ table.main2{@include background(#CCCCFF);}
 table.main3{@include background(#33CCCC);}
 }
 
+/* INDEX */
+.user-painel{
+    width: 50%;
+    float: right;
+    background-color: rgb(195,195,195);
+    height: 100%;
+}
+
+.role-painel{
+    width: 50%;
+    float: left;
+}
+.user-painel ul{
+    text-decoration: none;
+    list-style: none;
+    display: block;
+    height: 20%;
+}
+.user-painel ul li{
+    color: gray;
+    float: left;
+    display: block;
+}
+
 /* FOOTER */
 footer{
     margin-top: 10px;
     background-color: black;
     width: 100%;
-    height: 15%;
+    height: 50px;
     border-radius: 5px;
 }
 footer p{
@@ -159,6 +194,4 @@ footer p{
     float: left;
     padding: 0;
     margin-left: 10px;
-}
-
 }
