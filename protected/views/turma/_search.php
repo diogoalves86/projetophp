@@ -21,6 +21,11 @@
 		<?php echo $form->textField($model,'nome',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'turno'); ?>
+		<?php echo $form->textField($model,'turno',array('size'=>10,'maxlength'=>10)); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

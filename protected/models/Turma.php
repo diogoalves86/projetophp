@@ -6,6 +6,10 @@
  * The followings are the available columns in table 'Turma':
  * @property integer $id
  * @property string $nome
+ * @property string $turno
+ *
+ * The followings are the available model relations:
+ * @property AlunoTurma[] $alunoTurmas
  */
 class Turma extends CActiveRecord
 {
@@ -25,11 +29,12 @@ class Turma extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nome', 'required'),
+			array('nome, turno', 'required'),
 			array('nome', 'length', 'max'=>20),
+			array('turno', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nome', 'safe', 'on'=>'search'),
+			array('id, nome, turno', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -41,6 +46,7 @@ class Turma extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'alunoTurmas' => array(self::HAS_MANY, 'AlunoTurma', 'turma_id'),
 		);
 	}
 
@@ -52,6 +58,7 @@ class Turma extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nome' => 'Nome',
+			'turno' => 'Turno',
 		);
 	}
 
@@ -75,6 +82,7 @@ class Turma extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nome',$this->nome,true);
+		$criteria->compare('turno',$this->turno,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
