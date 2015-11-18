@@ -27,10 +27,20 @@ class NotaController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',
-				'actions'=>array('create'),
-				'users'=>array(Yii::app()->user->name),
-				'expression'=>'Yii::app()->user->isInRole("ADMIN") !== false',
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
 			),
 		);
 	}
@@ -46,33 +56,19 @@ class NotaController extends Controller
 		));
 	}
 
-	public function actionCreate($id)
-	{
-		$model = Nota::model()->findAll("usuario_id=".$id);
-		$this->render('boletim', array(
-				'model'=>$model,
-			));
-	}
-
-	public function actionGerarNotas($id)
-	{
-		$model = Disciplina::model()->findAll("disciplina_id=".$id);
-		$this->render('view', array(
-				'model'=>$model,
-			));
-	}
-
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionGerarBoletim($id, $turma)
+	public function actionCreate()
 	{
 		$model=new Nota;
-		$disciplinas = Disciplina::model()->find("id=".$id);
+		$disciplina = Disciplina::model()->findAll();
+		$alunos = Usuario::model()->findAll("nivel=2");
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
 		$lista_alunos = array();
-		$turma = Turma::model()->find("nome='".$turma."'");
-		$aluno_turma = AlunoTurma::model()->findAll("turma_id=".$turma->id);
 		
 		if(Yii::app()->user->isInRole("PROFESSOR") !== false){
 			$disciplina = Usuario::model()->findByPk(Yii::app()->user->id);
@@ -80,67 +76,26 @@ class NotaController extends Controller
 		}
 
 
-		foreach ($aluno_turma as $aluno) {
-			array_push($lista_alunos, Usuario::model()->find("id='".$aluno->aluno_id."'"));
-		}
+		//$lista_disciplinas = CHtml::listData($disciplinas, "id", "nome");
+		$lista_alunos = CHtml::listData($alunos, "id", "nome");
 
 		if(Yii::app()->user->isInRole("ALUNO") !== false){
 			unset($lista_alunos);
 			$lista_alunos[] = Usuario::model()->find("id='".Yii::app()->user->id."'");	
 		}
 
-
-		//$lista_alunos = CHtml::listData($alunos, "id", "nome");
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Nota']))
 		{
-			$model->setAttribute('disciplina_id', $disciplinas->id);
 			$model->attributes=$_POST['Nota'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
-			'aluno'=>Usuario::model()->findAll(),
-			'aluno_turma'=>$lista_alunos,
-			'disciplina'=>$disciplinas,
-			'disciplina_professor'=>isset($disciplina_professor) ? $disciplina_professor : null,
+			'lista_alunos'=>$lista_alunos,
+			'disciplina'=>$disciplina,
 			'model'=>$model,
 		));
-	}
-
-	public function actionGerarBoletimAluno($id)
-	{
-		$model= Usuario::model()->find("matricula='".$id."'");
-		$notas = Nota::model()->findAll("usuario_id='".$model->id."'");
-		$turma_aluno = AlunoTurma::model()->find("aluno_id='".$model->id."'");
-		$turma = Turma::model()->find("id='".$turma_aluno->turma_id."'");
-
-		//$lista_alunos = CHtml::listData($alunos, "id", "nome");
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Nota']))
-		{
-			$model->setAttribute('disciplina_id', $disciplinas->id);
-			$model->attributes=$_POST['Nota'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('boletim',array(
-			'notas'=>$notas,
-			'turma'=>$turma,
-			'model'=>$model,
-		));
-	}
-
-	private function calculaMedia(){
-		
 	}
 
 	/**
@@ -151,9 +106,7 @@ class NotaController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		$disciplinas = $model->disciplina;
-		$lista_disciplinas = Disciplina::model()->find("id=".$model->disciplina_id);
-		$lista_alunos = Usuario::model()->find("id=".$model->usuario_id);
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -165,8 +118,6 @@ class NotaController extends Controller
 		}
 
 		$this->render('update',array(
-			'aluno'=>$lista_alunos,
-			'disciplina'=>$lista_disciplinas,
 			'model'=>$model,
 		));
 	}

@@ -21,7 +21,7 @@
 
 <div class="role-painel">
 	<?php if(Yii::app()->user->isInRole('PROFESSOR') !== false): ?>
-		<?php $this->renderPartial('index-roles/professor', array('model'=>$model)); ?>
+		<?php $this->renderPartial('index-roles/professor', array('model'=>$model, 'lista_turmas'=>$lista_turmas)); ?>
 	<?php elseif(Yii::app()->user->isInRole('ALUNO') !== false): ?>
 		<?php $this->renderPartial('index-roles/aluno', array('model'=>$model)); ?>
 	<?php else: ?>

@@ -34,14 +34,19 @@ class SiteController extends Controller
 		$array = array();
 		foreach ($turmas_professor as $turma) {
 			array_push($array, $turma->id);	
-		} 
+		}
 		$array2 = array();
-		for ($i=0; $i < count($array); $i++) { 
-			array_push($array2, Turma::model()->find("id='"$array[$i]."'"));
+
+		foreach ($array as $id_turma) {
+			array_push($array2, $id_turma);
+		}
+		$array3 = array();
+		foreach ($array2 as $turma) {
+			array_push($array3, Turma::model()->find("id='".$turma."'"));
 		}
 
 		if(Yii::app()->user->isGuest == false)
-			$this->render('index', array("model"=>$model, 'turmas_professor'=>$turmas_professor));
+			$this->render('index', array("model"=>$model, 'lista_turmas'=>$array3));
 		else
 			$this->redirect('site/login');
 			

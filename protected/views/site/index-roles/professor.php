@@ -2,9 +2,8 @@
 	<dt>Turmas</dt>
 		<dd><a href="">Nome da turma</a></dd>
 		<?php foreach ($lista_turmas as $turma): ?>
-			<?php var_dump($lista_turmas); ?>
+			<dd><a href=""><?php echo $turma->nome; ?></a></dd>
 		<?php endforeach; ?>
-		<dd><a href=""></a></dd>
 </dl>
 <dl>
 	<dt>Funções</dt>

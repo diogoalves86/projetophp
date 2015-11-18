@@ -14,61 +14,61 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
-	<table data-table>
-		<?php echo $form->errorSummary($model); ?>
-		<thead>
-			<th>Nomes</th>
-			<th>1ºC</th>
-			<th>REC 1</th>
-			<th>2º C</th>
-			<th>REC 2</th>
-			<th>3º C</th>
-			<th>REC 3</th>
-			<th>MÉDIA ANUAL</th>
-		</thead>
-		<tbody>
-			<?php foreach ($aluno_turma as $aluno): ?>
-				<tr>
-					<td><?php echo $aluno->nome; ?></td>
-					
-					<?php if(Yii::app()->user->isInRole("PROFESSOR") !== false): ?>
-						<?php $notas_aluno = $model->findAll("usuario_id='".$aluno->id."' && disciplina_id='".$disciplina_professor."'"); ?>
-					
-					<?php elseif(Yii::app()->user->isInRole("ALUNO") !== false): ?>
-						<?php $notas_aluno = $model->findAll("usuario_id='".Yii::app()->user->id."'"); ?>
-					
-					<?php else: ?>
-						<?php $notas_aluno = $model->findAll("usuario_id='".$aluno->id."'"); ?>
 
-					<?php endif; ?>
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
-					<?php foreach ($notas_aluno as $nota_aluno): ?>
-						<td><?php echo $form->numberField($nota_aluno,'primeira_certificacao', array('max'=>10, 'min'=>0)); ?>
-						<?php echo $form->error($nota_aluno,'primeira_certificacao'); ?></td>
+	<?php echo $form->errorSummary($model); ?>
 
-						<td><?php echo $form->numberField($nota_aluno,'primeira_recuperacao', array('max'=>10, 'min'=>0)); ?>
-						<?php echo $form->error($nota_aluno,'primeira_recuperacao'); ?></td>
-					
-						<td><?php echo $form->numberField($nota_aluno,'segunda_certificacao', array('max'=>10, 'min'=>0)); ?>
-						<?php echo $form->error($nota_aluno,'segunda_certificacao'); ?></td>
+	<div class="row">
+		<?php echo $form->labelEx($model,'primeira_certificacao'); ?>
+		<?php echo $form->textField($model,'primeira_certificacao'); ?>
+		<?php echo $form->error($model,'primeira_certificacao'); ?>
+	</div>
 
-						<td><?php echo $form->numberField($nota_aluno,'segunda_recuperacao', array('max'=>10, 'min'=>0)); ?>
-						<?php echo $form->error($nota_aluno,'segunda_recuperacao'); ?></td>
+	<div class="row">
+		<?php echo $form->labelEx($model,'segunda_certificacao'); ?>
+		<?php echo $form->textField($model,'segunda_certificacao'); ?>
+		<?php echo $form->error($model,'segunda_certificacao'); ?>
+	</div>
 
-						<td><?php echo $form->numberField($nota_aluno,'terceira_certificacao', array('max'=>10, 'min'=>0)); ?>
-						<?php echo $form->error($nota_aluno,'terceira_certificacao'); ?></td>
+	<div class="row">
+		<?php echo $form->labelEx($model,'terceira_certificacao'); ?>
+		<?php echo $form->textField($model,'terceira_certificacao'); ?>
+		<?php echo $form->error($model,'terceira_certificacao'); ?>
+	</div>
 
-						<td><?php echo $form->numberField($nota_aluno,'terceira_recuperacao', array('max'=>10, 'min'=>0)); ?>
-						<?php echo $form->error($nota_aluno,'terceira_recuperacao'); ?></td>
-						<td></td>
-				</tr>
-					<?php endforeach; ?>
-			<?php endforeach; ?>
+	<div class="row">
+		<?php echo $form->labelEx($model,'primeira_recuperacao'); ?>
+		<?php echo $form->textField($model,'primeira_recuperacao'); ?>
+		<?php echo $form->error($model,'primeira_recuperacao'); ?>
+	</div>
 
-		</tbody>
-	</table>
-	<div class="buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Cadastrar' : 'Salvar'); ?>
+	<div class="row">
+		<?php echo $form->labelEx($model,'segunda_recuperacao'); ?>
+		<?php echo $form->textField($model,'segunda_recuperacao'); ?>
+		<?php echo $form->error($model,'segunda_recuperacao'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'terceira_recuperacao'); ?>
+		<?php echo $form->textField($model,'terceira_recuperacao'); ?>
+		<?php echo $form->error($model,'terceira_recuperacao'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'disciplina_id'); ?>
+		<?php echo $form->textField($model,'disciplina_id'); ?>
+		<?php echo $form->error($model,'disciplina_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'usuario_id'); ?>
+		<?php echo $form->textField($model,'usuario_id'); ?>
+		<?php echo $form->error($model,'usuario_id'); ?>
+	</div>
+
+	<div class="row buttons">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

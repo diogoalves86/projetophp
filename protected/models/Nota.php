@@ -75,6 +75,12 @@ class Nota extends CActiveRecord
 		);
 	}
 
+	public static function calcularMediaAnual($primeiro_certificacao, $segunda_certificacao, $terceira_certificacao)
+	{
+		$media = (($primeiro_certificacao * 3) + ($segunda_certificacao * 3) + ($terceira_certificacao * 4)) / 10;
+		return $media;
+	}
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *
