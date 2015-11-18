@@ -49,6 +49,10 @@
 	</div>
 	<footer>
 		<p><?php echo date('Y'); ?> - Projeto Final CP2 ENII</p>
+		<ul>
+			<li><a href="">Sobre o Projeto</a></li>
+			<li><a href="">Fale Conosco</a></li>
+		</ul>
 	</footer>
 
 	</body>

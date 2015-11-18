@@ -1,18 +1,22 @@
 <div class="user-painel">
-	<h3>Bem vindo, <?php if(Yii::app()->user->isGuest == false) echo $model->nome ?></h3>
-	<ul>
-		<li>Nome</li>
-		<li>Matrícula</li>
-		<li>Email</li>
-			<ul>
-				<li><a href="">Editar</a></li>
-			</ul>
-	</ul>
-	<ul>
-		<li><a href="">Alterar senha</a></li>
-		<li><a href="">Alterar cadastro</a></li>
-		<li><a href="">Sair do sistema</a></li>
-	</ul>
+	<dl>
+		<dt>Dados</dt>
+			<dd>Nome: 
+				<?php if(Yii::app()->user->isGuest == false) echo $model->nome ?>
+			</dd>
+			<dd>Matrícula:
+				<?php if(Yii::app()->user->isGuest == false) echo $model->matricula ?>
+			</dd>
+			<dd>Email:
+				<?php if(Yii::app()->user->isGuest == false) echo $model->email ?>
+			</dd>
+	</dl>
+	<dl>
+		<dt>Configurações</dt>
+			<dd><a href="">Alterar senha</a></dd>
+			<dd><a href="">Alterar cadastro</a></dd>
+			<dd><a href="">Sair do sistema</a></dd>
+	</dl>
 </div>
 
 <div class="role-painel">

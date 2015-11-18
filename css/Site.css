@@ -7,7 +7,7 @@ a{
     font-size: 13px;
 }
 ul{
-    text-decoration: none;
+    list-style: none;
 }
 
 /* LAYOUT */
@@ -59,9 +59,7 @@ header .main-menu ul li{
     color: #FFF;
     font-size: 30px;
     font-family: Palatino Linotype;
-    width: 21%;
-    margin: 30px auto;
-    height: 100%
+    text-align: center;
 }
 
 .container {
@@ -69,22 +67,17 @@ header .main-menu ul li{
     height: 430px;    
 }
 /* FORMS */
-fieldset{
-    background-color: rgb(195,195,195);
-}
+
 #loginForm ul{
     list-style: none;
     width: 260px;
-    margin: 45px auto;
+    margin: 65px auto;
     padding: 0;
 }
 
 #loginForm ul li{
     display: block;
-}
-
-#login-buton{
-    margin-left: 58%;
+    padding: 5px 0 5px 0;
 }
 
 #loginForm fieldset{
@@ -92,22 +85,52 @@ fieldset{
     width: 50%;
     height: 75%;
     margin-top: 10px;
+    background-color: rgb(195,195,195);
 }
+
+#loginForm fieldset h2{
+    color: white;
+    font-size: 30px;
+    margin: auto;
+    text-align: center; 
+}
+
 #loginForm fieldset input[type="submit"]{
     border-radius: 10px;
     margin: auto;
     padding: 10px;
-    margin-left: 382px;
+    float: right;
 }
 
-#loginForm fieldset .textbox_login{
-    margin-left: 20px;
-    margin-bottom: 10px;
+#loginForm fieldset ul .textbox_login{
+    float: right;
     width: 150px;
 }
+#lofinForm fieldset ul label{
+    float: left;
+}
 
-/* TABLES */
+/* INDEX */
+.user-painel{
+    width: 45%;
+    float: right;
+    height: 100%;
+}
 
+.role-painel{
+    width: 45%;
+    float: right;
+    margin-top: auto;
+}
+
+.role-painel dt, .user-painel dt{
+    color: #808080;
+    font-size: 25px;
+}
+.role-painel dt dl dd, .role-painel a, 
+.user-painel a, .user-painel dt dl dd{
+    font-size: 18px;
+}
 .data-table{
   width: 100%;
   border-collapse: collapse;
@@ -156,33 +179,9 @@ table.main2{@include background(#CCCCFF);}
 table.main3{@include background(#33CCCC);}
 }
 
-/* INDEX */
-.user-painel{
-    width: 50%;
-    float: right;
-    background-color: rgb(195,195,195);
-    height: 100%;
-}
-
-.role-painel{
-    width: 50%;
-    float: left;
-}
-.user-painel ul{
-    text-decoration: none;
-    list-style: none;
-    display: block;
-    height: 20%;
-}
-.user-painel ul li{
-    color: gray;
-    float: left;
-    display: block;
-}
 
 /* FOOTER */
 footer{
-    margin-top: 10px;
     background-color: black;
     width: 100%;
     height: 50px;
@@ -194,4 +193,13 @@ footer p{
     float: left;
     padding: 0;
     margin-left: 10px;
+}
+footer ul{
+    width: 15%;
+    float: right;
+}
+footer ul li{
+    display: inline-block;
+    margin-right: 5px;
+    text-align: center;
 }
