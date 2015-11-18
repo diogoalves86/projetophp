@@ -70,7 +70,7 @@ class SiteController extends Controller
 	/**
 	 * Displays the contact page
 	 */
-	public function actionContact()
+	public function actionContato()
 	{
 		$model=new ContactForm;
 		if(isset($_POST['ContactForm']))
