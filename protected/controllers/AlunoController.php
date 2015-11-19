@@ -41,9 +41,27 @@ class AlunoController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+		$model = Usuario::model()->find("nivel=2 && matricula='".$id."'");
+		if($model != null)
+			Yii::app()->runController('usuario/view', array('id'=>$model->id));
+		else
+			throw new CHttpException(404, "A página solicitada não existe.");
+			
+	}
+
+	public function actionBoletim($matricula=0)
+	{
+		if(Yii::app()->user->isInRole('ALUNO'))
+			$model = Usuario::model()->find("matricula='".Yii::app()->user->id."'");
+		else if (Yii::app()->user->isInRole('ALUNO') == false && $id != 0)
+			$model = Usuario::model()->find("matricula='".$id."'");
+		else
+			throw new CHttpException(404, "A página solicitada não existe.");
+
+		$this->render('boletim', array(
+						'model'=>$model,
+					));
+			
 	}
 
 	/**
@@ -123,14 +141,10 @@ class AlunoController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Nota('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Nota']))
-			$model->attributes=$_GET['Nota'];
+		if (Yii::app()->user->isInRole('ALUNO') || Yii::app()->user->isInRole('PROFESSOR') )
+			throw new CHttpException(404, "A página solicitada não existe");
 
-		$this->render('admin',array(
-			'model'=>$model,
-		));
+		Yii::app()->runController('usuario/admin');
 	}
 
 	/**
