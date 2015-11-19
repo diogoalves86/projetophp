@@ -219,6 +219,15 @@ table.main3{@include background(#33CCCC);}
 .user-index{
 
 }
+
+.menu-opcoes{
+    float:right;
+}
+.menu-opcoes a{
+    font-size:22px;
+    margin-right: 40px;
+}
+
 /* FOOTER */
 footer{
     background-color: black;

@@ -43,7 +43,9 @@
     	</div>			
 	</header>
 	<div class="mainContent">
-	
+		<div class="menu-opcoes">
+			<a href="<?php echo Yii::app()->createUrl('site/index') ?>">Voltar para o início</a>
+		</div>
 		<?php echo $content; ?>
 
 	</div>
