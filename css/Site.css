@@ -155,6 +155,8 @@ table thead{
     font-family: $font-withoutbold;
     cursor: default;
   }
+
+
 table th a{
     text-decoration: none;
     color: #777;
@@ -226,6 +228,11 @@ table.main3{@include background(#33CCCC);}
 .menu-opcoes a{
     font-size:22px;
     margin-right: 40px;
+}
+
+.lista-turmas{
+    font-size: 15px; 
+    border: 1px solid gray;
 }
 
 /* FOOTER */

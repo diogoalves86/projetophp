@@ -20,8 +20,10 @@ $this->menu=array(
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
+	'htmlOptions'=>array(
+			'class'=> 'data-table',		
+	),
 	'attributes'=>array(
-		'id',
 		'nome',
 		'turno',
 	),
