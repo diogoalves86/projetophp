@@ -46,8 +46,31 @@ class TurmaController extends Controller
 
 	public function actionNotas($id)
 	{
-		$alunos = Turma::model()->find("nome='".$id."'");
-		var_dump($alunos); exit;
+		$turma = Turma::model()->find("nome='".$id."'");
+		$alunos_turma = AlunoTurma::model()->findAll("turma_id='".$turma->id."'");
+		$notas_turma = array();
+		$notas_aluno = array();
+
+		foreach ($alunos_turma as $aluno_turma) {
+			if(Yii::app()->user->isInRole('PROFESSOR')){
+				$professor_disciplina = ProfessorDisciplina::model()->find("professor_id='".Yii::app()->user->id."'");
+				$notas_aluno = Nota::model()->findAll("usuario_id='".$aluno_turma->aluno_id."' && disciplina_id='".$professor_disciplina->disciplina_id."'");
+			}
+			else
+				$notas_aluno = Nota::model()->findAll("usuario_id='".$aluno_turma->aluno_id."'");
+			array_push($notas_turma, $notas_aluno);
+		}
+		foreach ($notas_turma as $nota_turma) {
+			foreach ($nota_turma as $nota) {
+				array_push($notas_aluno, $nota);
+			}
+		}
+		//var_dump($notas_aluno[0]->usuario);exit;
+		$this->render('notas', array(
+					'model'=>$turma,
+					'notas_turma'=>$notas_turma,
+					'notas_aluno'=>$notas_aluno,
+			));
 	}
 
 	/**
