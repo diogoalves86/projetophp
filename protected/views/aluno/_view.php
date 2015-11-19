@@ -12,7 +12,7 @@
 			<th>Email</th>
 		</thead>
 		<tbody>
-			<td><?php echo CHtml::encode($data->nome); ?></td>
+			<td><a href="<?php echo Yii::app()->createUrl('aluno/'.$data->matricula) ?>"><?php echo CHtml::encode($data->nome); ?></a></td>
 			<td><?php echo CHtml::encode($data->cpf); ?></td>
 			<td><?php echo CHtml::encode($data->matricula); ?></td>
 			<td><?php echo CHtml::encode($data->email); ?></td>

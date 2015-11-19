@@ -39,11 +39,11 @@ class AlunoController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionVisualizar($id)
 	{
 		$model = Usuario::model()->find("nivel=2 && matricula='".$id."'");
 		if($model != null)
-			Yii::app()->runController('usuario/view', array('id'=>$model->id));
+			Yii::app()->runController('usuario/visualizar', array('id'=>$model->id));
 		else
 			throw new CHttpException(404, "A página solicitada não existe.");
 			
@@ -52,13 +52,29 @@ class AlunoController extends Controller
 	public function actionBoletim($id=0)
 	{
 		if(Yii::app()->user->isInRole('ALUNO'))
-			$model = Usuario::model()->find("matricula='".Yii::app()->user->id."'");
-		else if (Yii::app()->user->isInRole('ALUNO') == false && $id != 0)
+			$model = Usuario::model()->find("id='".Yii::app()->user->id."'");
+		elseif (Yii::app()->user->isInRole('ALUNO') == false && $id != 0)
 			$model = Usuario::model()->find("matricula='".$id."'");
 		else
 			throw new CHttpException(404, "A página solicitada não existe.");
 
+		$notas = Nota::model()->findAll();
+		$disciplinas = Disciplina::model()->findAll();
+		$disciplinas_nota_usuario = array();
+
+		foreach ($notas as $nota)
+			if($nota->usuario->id == $model->id){
+				//array_push($disciplinas, $nota->usuario->notas);
+				//var_dump(explode(" ", $nota->disciplina->id) + explode(" ", $nota->disciplina->nome));
+				foreach ($nota->disciplina as $disciplina) {
+					//if($disciplina->id == $nota->usuario->disciplina->id)
+						//var_dump($disciplina); exit;
+				}
+			}
+		exit;
+
 		$this->render('boletim', array(
+						'disciplinas_nota_usuario'=>$disciplinas_nota_usuario,
 						'model'=>$model,
 					));
 			
