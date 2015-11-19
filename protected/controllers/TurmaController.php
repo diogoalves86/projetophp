@@ -1,5 +1,5 @@
 <?php
-
+Yii::import('application.controllers.NotaController');
 class TurmaController extends Controller
 {
 	/**
@@ -37,11 +37,17 @@ class TurmaController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionVisualizar($id)
 	{
 		$this->render('view',array(
 			'model'=>Turma::model()->find("nome='".$id."'"),
 		));
+	}
+
+	public function actionNotas($id)
+	{
+		$alunos = Turma::model()->find("nome='".$id."'");
+		var_dump($alunos); exit;
 	}
 
 	/**
@@ -110,6 +116,9 @@ class TurmaController extends Controller
 	 */
 	public function actionIndex()
 	{
+		if(Yii::app()->user->isInRole('ALUNO'))
+			throw new CHttpException(403, "Você não possui autorização de acesso a esta página.");
+			
 		$dataProvider=new CActiveDataProvider('Turma');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
