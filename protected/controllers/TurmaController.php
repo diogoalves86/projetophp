@@ -27,9 +27,6 @@ class TurmaController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('deny',  // deny all users
-                    'users'=>array('*'),
-            ),
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'users'=>array("@"),
 			),
@@ -52,8 +49,7 @@ class TurmaController extends Controller
 		$turma = Turma::model()->find("nome='".$id."'");
 		$alunos_turma = AlunoTurma::model()->findAll("turma_id='".$turma->id."'");
 		$notas_turma = array();
-		$notas_aluno = array();
-
+		//$notas_aluno = array();
 		foreach ($alunos_turma as $aluno_turma) {
 			if(Yii::app()->user->isInRole('PROFESSOR')){
 				$professor_disciplina = ProfessorDisciplina::model()->find("professor_id='".Yii::app()->user->id."'");
@@ -63,11 +59,14 @@ class TurmaController extends Controller
 				$notas_aluno = Nota::model()->findAll("usuario_id='".$aluno_turma->aluno_id."'");
 			array_push($notas_turma, $notas_aluno);
 		}
-		foreach ($notas_turma as $nota_turma) {
-			foreach ($nota_turma as $nota) {
-				array_push($notas_aluno, $nota);
-			}
+
+		foreach ($notas_turma as $indice=>$nota_turma) {
+			array_push($notas_aluno, $notas_turma[$indice][0]);
 		}
+
+		//Resolve bug de pegar duas vezes o primeiro aluno
+		array_pop($notas_aluno);
+		//var_dump($notas_aluno); exit;
 		//var_dump($notas_aluno[0]->usuario);exit;
 		$this->render('notas', array(
 					'model'=>$turma,

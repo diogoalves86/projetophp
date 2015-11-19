@@ -1,11 +1,5 @@
 <?php 
-$notas_primeira_certificacao_aluno = array();
-$notas_segunda_certificacao_aluno = array();
-$notas_terceira_certificacao_aluno = array();
-$notas_primeira_recuperacao_aluno = array();
-$notas_segunda_recuperacao_aluno = array();
-$notas_terceira_recuperacao_aluno = array();
- ?>
+?>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -35,13 +29,12 @@ $notas_terceira_recuperacao_aluno = array();
 		<tbody>
 			<?php foreach ($notas_aluno as $nota_aluno):?>
 				<tr>
-					<?php $nome_aluno_atual = $nota_aluno->usuario->nome; ?>
 					<td><?php echo $nota_aluno->usuario->nome;?></td>
 					<td><?php echo $nota_aluno->primeira_certificacao; ?></td>
-					<td><?php echo $nota_aluno->segunda_certificacao; ?></td>
-					<td><?php echo $nota_aluno->terceira_certificacao; ?></td>
 					<td><?php echo $nota_aluno->primeira_recuperacao; ?></td>
+					<td><?php echo $nota_aluno->segunda_certificacao; ?></td>
 					<td><?php echo $nota_aluno->segunda_recuperacao; ?></td>
+					<td><?php echo $nota_aluno->terceira_certificacao; ?></td>
 					<td><?php echo $nota_aluno->terceira_recuperacao; ?></td>
 				</tr>
 			<?php endforeach; ?>
