@@ -129,8 +129,17 @@ class NotaController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Nota');
-		$this->render('index',array(
+		if(Yii::app()->user->isInRole('ALUNO'))
+			$criteria = "usuario_id='".Yii::app()->user->id."'";
+		else
+			$criteria = "";
+	
+		$dataProvider=new CActiveDataProvider('Nota', array(
+		    'criteria'=>array(
+		        'condition'=>$criteria,
+	        ),
+		));
+		$this->render('index', array(
 			'dataProvider'=>$dataProvider,
 		));
 	}
