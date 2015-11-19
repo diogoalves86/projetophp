@@ -49,7 +49,7 @@ class AlunoController extends Controller
 			
 	}
 
-	public function actionBoletim($matricula=0)
+	public function actionBoletim($id=0)
 	{
 		if(Yii::app()->user->isInRole('ALUNO'))
 			$model = Usuario::model()->find("matricula='".Yii::app()->user->id."'");
