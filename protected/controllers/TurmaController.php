@@ -40,7 +40,7 @@ class TurmaController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>Turma::model()->find("nome='".$id."'"),
 		));
 	}
 

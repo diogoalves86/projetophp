@@ -14,19 +14,21 @@
 		</dl>
 		<dl>
 			<dt>Configurações</dt>
-				<dd><a href="<?php echo Yii::app()->createUrl('usuario/update/', array('id'=>$model->matricula)) ?>">Alterar senha</a></dd>
-				<dd><a href="">Alterar cadastro</a></dd>
+				<dd><a href="<?php echo Yii::app()->createUrl('usuario/atualizarCadastro/', array('id'=>$model->matricula)) ?>">Alterar senha</a></dd>
 				<dd><a href="<?php echo Yii::app()->createUrl('site/logout')?>">Sair do sistema</a></dd>
 		</dl>
 	</div>
 
 	<div class="role-painel">
 		<?php if(Yii::app()->user->isInRole('PROFESSOR') !== false): ?>
-			<?php $this->renderPartial('index-roles/professor', array('model'=>$model, 'lista_turmas'=>$lista_turmas)); ?>
+			<?php $this->renderPartial('//professor/professor', array('model'=>$model,
+			 	'lista_turmas'=>ProfessorTurma::model()->listaTurmas(Yii::app()->user->id)
+
+			 )); ?>
 		<?php elseif(Yii::app()->user->isInRole('ALUNO') !== false): ?>
-			<?php $this->renderPartial('index-roles/aluno', array('model'=>$model)); ?>
+			<?php $this->renderPartial('//aluno/aluno', array('model'=>$model)); ?>
 		<?php else: ?>
-			<?php $this->renderPartial('index-roles/admin', array('model'=>$model)); ?>
+			<?php $this->renderPartial('//admin/admin', array('model'=>$model)); ?>
 		<?php endif; ?>
 	</div>
 </div>

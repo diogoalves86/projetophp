@@ -63,6 +63,17 @@ class ProfessorTurma extends CActiveRecord
 		);
 	}
 
+
+	public function listaTurmas($professor_id)
+	{	
+		$model_turmas = $this->findAll("professor_id='".$professor_id."'");
+		$turmas = array();
+		foreach ($model_turmas as $model) {
+			array_push($turmas, $model->turma);
+		}
+		return $turmas;
+	}
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *

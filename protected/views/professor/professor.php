@@ -2,7 +2,7 @@
 	<dt>Turmas</dt>
 		<dd><a href="">Nome da turma</a></dd>
 		<?php foreach ($lista_turmas as $turma): ?>
-			<dd><a href=""><?php echo $turma->nome; ?></a></dd>
+			<dd><a href="<?php echo Yii::app()->createUrl('turma/'.$turma->nome) ?>"><?php echo $turma->nome; ?></a></dd>
 		<?php endforeach; ?>
 </dl>
 <dl>
