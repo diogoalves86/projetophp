@@ -26,7 +26,13 @@
 		<?php echo $form->error($model,'nome'); ?></td>
 				<td><?php echo $form->textField($model,'turno',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'turno'); ?></td>
+				<td>
+					<div class="row buttons">
+						<?php echo CHtml::submitButton($model->isNewRecord ? 'Cadastrar' : 'Salvar'); ?>
+					</div>
+				</td>
 			</tbody>
+
 	</table>
 
 <?php $this->endWidget(); ?>

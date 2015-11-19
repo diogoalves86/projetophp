@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Turma</h1>
+<h1>Cadastrar Turma</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
