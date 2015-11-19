@@ -27,9 +27,11 @@ class UsuarioController extends Controller
 	public function accessRules()
 	{
 		return array(
+			array('deny',  // deny all users
+                    'users'=>array('*'),
+            ),
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('cadastrar'),
-				'expression'=>'Yii::app()->user->isInRole("ADMIN") !== false',
+				'users'=>array("@"),
 			),
 		);
 	}

@@ -27,8 +27,11 @@ class TurmaController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // deny all users
-				'users'=>array('*'),
+			array('deny',  // deny all users
+                    'users'=>array('*'),
+            ),
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'users'=>array("@"),
 			),
 		);
 	}
