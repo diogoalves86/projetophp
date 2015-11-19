@@ -46,6 +46,9 @@ class TurmaController extends Controller
 
 	public function actionNotas($id)
 	{
+		if(Yii::app()->user->isInRole('ALUNO'))
+			throw new CHttpException(404, "A página solicitada não existe");
+			
 		$turma = Turma::model()->find("nome='".$id."'");
 		$alunos_turma = AlunoTurma::model()->findAll("turma_id='".$turma->id."'");
 		$notas_turma = array();
