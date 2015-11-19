@@ -4,12 +4,12 @@
 
 $this->breadcrumbs=array(
 	'Turmas'=>array('index'),
-	'Create',
+	'Cadastrar',
 );
 
 $this->menu=array(
-	array('label'=>'List Turma', 'url'=>array('index')),
-	array('label'=>'Manage Turma', 'url'=>array('admin')),
+	array('label'=>'Exibir Turmas', 'url'=>array('index')),
+	array('label'=>'Gerenciar Turmas', 'url'=>array('admin')),
 );
 ?>
 

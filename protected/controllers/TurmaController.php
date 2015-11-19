@@ -48,7 +48,7 @@ class TurmaController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCadastrar()
 	{
 		$model=new Turma;
 
@@ -72,7 +72,7 @@ class TurmaController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
+	public function actionAtualizar($id)
 	{
 		$model=$this->loadModel($id);
 
