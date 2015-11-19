@@ -22,10 +22,10 @@
 			<th>Turno</th>
 		</thead>
 			<tbody>
-				<td><?php echo $form->textField($model,'nome',array('size'=>20,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'nome'); ?></td>
-				<td><?php echo $form->textField($model,'turno',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'turno'); ?></td>
+				<td><?php echo $form->numberField($model,'nome',array('size'=>20,'maxlength'=>20)); ?>
+				<?php echo $form->error($model,'nome'); ?></td>
+				<td><?php echo CHtml::dropDownList('Turma[turno]', 'Selecione', array("Integrado"=>"Integrado", "Manhã"=>"Manhã", "Tarde"=>"Tarde","Noite"=>"Noite")); ?>
+				<?php echo $form->error($model,'turno'); ?></td>
 				<td>
 					<div class="row buttons">
 						<?php echo CHtml::submitButton($model->isNewRecord ? 'Cadastrar' : 'Salvar'); ?>

@@ -65,7 +65,7 @@ class TurmaController extends Controller
 		{
 			$model->attributes=$_POST['Turma'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('visualizar','id'=>$model->nome));
 		}
 
 		$this->render('create',array(
