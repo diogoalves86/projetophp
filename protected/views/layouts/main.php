@@ -46,8 +46,9 @@
 		<div class="menu-opcoes">
 			<a href="<?php echo Yii::app()->createUrl('site/index') ?>">Voltar para o início</a>
 		</div>
-		<?php echo $content; ?>
-
+		<div class="container">
+			<?php echo $content; ?>
+		</div>
 	</div>
 	<footer>
 		<p><?php echo date('Y'); ?> - Projeto Final CP2 ENII</p>

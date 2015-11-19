@@ -80,7 +80,7 @@ class UsuarioController extends Controller
 		{
 			$dados_usuario = Usuario::model()->find("matricula='".$_POST['Usuario']['matricula']."'");
 			if($dados_usuario != null)
-				$this->redirect(array('usuario/update/', 'id'=>(int)$dados_usuario->matricula));
+				$this->redirect(array('usuario/atualizarCadastro/', 'id'=>(int)$dados_usuario->matricula));
 				//$this->actionCreate($dados_usuario->matricula);
 		}
 
@@ -108,7 +108,7 @@ class UsuarioController extends Controller
 			$model->setAttribute('ativo', 1);
 			$model->setAttribute('nivel', $model->nivel_relacao->id);
 			if($model->update())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('visualizar','id'=>$model->matricula));
 		}
 		$this->render('update',array(
 			'nivel_usuario'=>$nivel_usuario,
