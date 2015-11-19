@@ -28,7 +28,7 @@ class UsuarioController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('cadastro'),
+				'actions'=>array('cadastrar'),
 				'expression'=>'Yii::app()->user->isInRole("ADMIN") !== false',
 			),
 		);
@@ -68,7 +68,7 @@ class UsuarioController extends Controller
 		));
 	}
 
-	public function actionCadastro()
+	public function actionCadastrar()
 	{
 		if (Yii::app()->user->isInRole('ALUNO') || Yii::app()->user->isInRole('PROFESSOR') )
 			throw new CHttpException(403, "Você não possui autorização para acessar esta página");
