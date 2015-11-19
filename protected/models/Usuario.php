@@ -42,7 +42,8 @@ class Usuario extends CActiveRecord
 			array('nivel, ativo', 'numerical', 'integerOnly'=>true),
 			array('nome', 'length', 'max'=>100),
 			array('cpf', 'length', 'max'=>14),
-			array('matricula, email, senha', 'length', 'max'=>20),
+			array('email', 'max'=>50),
+			array('matricula, senha', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nome, cpf, matricula, nivel, ativo, email, senha', 'safe', 'on'=>'search'),
