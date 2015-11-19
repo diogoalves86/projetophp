@@ -8,8 +8,8 @@
 	);
 
 	$this->menu=array(
-		array('label'=>'Create Usuario', 'url'=>array('create')),
-		array('label'=>'Manage Usuario', 'url'=>array('admin')),
+		array('label'=>'Cadastrar Usuário', 'url'=>array('cadastro')),
+		array('label'=>'Gerenciar Usuários', 'url'=>array('admin')),
 	);
 	?>
 </div>

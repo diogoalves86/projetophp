@@ -51,7 +51,7 @@
 		<p><?php echo date('Y'); ?> - Projeto Final CP2 ENII</p>
 		<ul>
 			<li><a href="">Sobre o Projeto</a></li>
-			<li><a href="">Fale Conosco</a></li>
+			<li><a href="<?php echo Yii::app()->createUrl('site/contato')?>">Fale Conosco</a></li>
 		</ul>
 	</footer>
 

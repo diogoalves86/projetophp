@@ -1,6 +1,6 @@
 <?php
-/* @var $this NotaController */
-/* @var $model Nota */
+/* @var $this AlunoController */
+/* @var $model Usuario */
 /* @var $form CActiveForm */
 ?>
 
