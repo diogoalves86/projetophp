@@ -2058,3 +2058,25 @@ Stack trace:
 REQUEST_URI=/projetophp/
 in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\SiteController.php (33)
 in C:\Users\j\Xampp\htdocs\projetophp\index.php (13)
+2015/11/19 23:52:01 [error] [php] Trying to get property of non-object (C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\SiteController.php:33)
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/
+in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\SiteController.php (33)
+in C:\Users\j\Xampp\htdocs\projetophp\index.php (13)
+2015/11/19 23:52:03 [error] [php] Trying to get property of non-object (C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\SiteController.php:33)
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/
+in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\SiteController.php (33)
+in C:\Users\j\Xampp\htdocs\projetophp\index.php (13)
