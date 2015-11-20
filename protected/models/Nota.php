@@ -94,7 +94,7 @@ class Nota extends CActiveRecord
 	}
 
 	public static function calcularNota3Certificacao($primeiro_certificacao, $segunda_certificacao){
-		$nota_necessaria = (70 - ((($primeiro_certificacao*3)+($segunda_certificacao*3))/4);
+		$nota_necessaria = (70 - ((($primeiro_certificacao*3)+($segunda_certificacao*3))/4));
 			return $nota_necessaria;
 	}
 
