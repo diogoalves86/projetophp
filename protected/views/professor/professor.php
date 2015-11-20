@@ -5,7 +5,7 @@
 
 		<?php else: ?>
 			<?php foreach ($lista_turmas as $turma): ?>
-				<dd><a href="<?php echo Yii::app()->createUrl('turma/notas/'.$turma->nome) ?>"><?php echo $turma->nome; ?></a></dd>
+				<dd><a href="<?php echo Yii::app()->createUrl('professor/diario/'.$turma->nome) ?>"><?php echo $turma->nome; ?></a></dd>
 			<?php endforeach; ?>
 		<?php endif; ?>
 </dl>

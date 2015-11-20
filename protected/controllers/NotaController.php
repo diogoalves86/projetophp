@@ -93,6 +93,10 @@ class NotaController extends Controller
 			
 		$model= Nota::model()->find("usuario_id='".$id."' && disciplina_id='".$disciplina_id."'");
 
+		//Verifica se o usuário já possui nota 
+		if($model == null)
+			$model = new Nota();
+
 		//Os dados vem do javascript como string
 		foreach ($notas as $key=>$nota)
 			if($nota === "null")
@@ -103,8 +107,8 @@ class NotaController extends Controller
 			$model->setAttribute("disciplina_id", $disciplina_id);
 			$model->setAttribute("usuario_id", $id);
 			$model->attributes=$notas;
-			if($model->update())
-				$this->redirect(Yii::app()->createUrl('site/index'));
+			if($model->save())
+				$this->redirect(Yii::app()->createAbsoluteUrl(Yii::app()->user->returnUrl));
 		}
 	}
 

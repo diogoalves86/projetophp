@@ -50,6 +50,10 @@ class ProfessorController extends Controller
 			$notas_alunos["aluno"][$chave] = $aluno;
 			$notas_alunos["nota"][$chave] = $nota_aluno;
 		}
+
+		//Depois de salvar as notas, o professor volta ao diário
+		Yii::app()->user->setReturnUrl("professor/diario/".$id);
+
 		$this->render('diario', array(
 			'notas_alunos'=>$notas_alunos,
 			'disciplina_professor'=>$disciplina_professor,
