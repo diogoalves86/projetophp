@@ -41,13 +41,11 @@
 				),
 			)); ?>
     	</div>			
-	</header>
-	<div class="mainContent">
+	</header>		
+	<div class="container">
+		<?php echo $content; ?>
 		<div class="menu-opcoes">
 			<a href="<?php echo Yii::app()->createUrl('site/index') ?>">Voltar para o início</a>
-		</div>
-		<div class="container">
-			<?php echo $content; ?>
 		</div>
 	</div>
 	<footer>

@@ -74,11 +74,32 @@ class Nota extends CActiveRecord
 			'usuario_id' => 'Usuario',
 		);
 	}
+	/*
+	public static function calcularMediaTrimestral($value){
+		$media_trimestral = 0;
+		if $primeiro_certificacao || $segundo_certificacao || $terceiro_certificacao{
+			$media_trimestral = $value * 3;
+		}
+		if $primeiro_recuperacao || $segundo_recuperacao{
+			$media_trimestral = (($primeiro ou segundo + primeiro ou segundo)/2)*3
+		}
+
+	}*/
 
 	public static function calcularMediaAnual($primeiro_certificacao, $segunda_certificacao, $terceira_certificacao)
 	{
-		$media = (($primeiro_certificacao * 3) + ($segunda_certificacao * 3) + ($terceira_certificacao * 4)) / 10;
-		return $media;
+		$media_anual = (($primeiro_certificacao * 3) + ($segunda_certificacao * 3) + ($terceira_certificacao * 4)) / 10;
+		return $media_anual;
+	}
+
+	public static function calcularNota3Certificacao($primeiro_certificacao, $segunda_certificacao){
+		$nota_necessaria = (70 - ((($primeiro_certificacao*3)+($segunda_certificacao*3))/4);
+			return $nota_necessaria;
+	}
+
+	public static function calcularPFV(calcularMediaAnual){
+		$pfv = 25 - (($media_anual*3)/2);
+		return $pfv;
 	}
 
 	/**
