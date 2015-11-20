@@ -6,96 +6,81 @@
 
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'nota-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-	'action'=> Yii::app()->createUrl('nota/create/'.$_GET['id']),
-	'method'=>'get',
-)); ?>
+	<?php $form=$this->beginWidget('CActiveForm', array(
+		'id'=>'nota-form',
+		// Please note: When you enable ajax validation, make sure the corresponding
+		// controller action is handling ajax validation correctly.
+		// There is a call to performAjaxValidation() commented in generated controller code.
+		// See class documentation of CActiveForm for details on this.
+		'enableAjaxValidation'=>false,
+		'method'=>'get',
+	)); ?>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-		alert("a");
-	});
-</script>
-	<table data-table>
-		<?php echo $form->errorSummary($model); ?>
-		<thead>
-			<th>Nomes</th>
-			<th>1ºC</th>
-			<th>REC 1</th>
-			<th>2º C</th>
-			<th>REC 2</th>
-			<th>3º C</th>
-			<th>REC 3</th>
-			<th>MÉDIA ANUAL</th>
-			<th>Ação</th>
-		</thead>
-		<tbody>
-			<?php foreach ($aluno_turma as $aluno): ?>
-				<tr>
-					<td><?php echo $aluno->nome; ?></td>
-					
-					<?php if(Yii::app()->user->isInRole("PROFESSOR") !== false): ?>
-						<?php $notas_aluno = $model->findAll("usuario_id='".$aluno->id."' && disciplina_id='".$disciplina_professor."'"); ?>
-					
-					<?php elseif(Yii::app()->user->isInRole("ALUNO") !== false): ?>
-						<?php $notas_aluno = $model->findAll("usuario_id='".Yii::app()->user->id."'"); ?>
-					
-					<?php else: ?>
-						<?php $notas_aluno = $model->findAll("usuario_id='".$aluno->id."'"); ?>
+		<script type="text/javascript">
+			function cadastraNota(id){
+				var data = {
+					'primeira_certificacao':document.getElementById("primeira_certificacao_"+id).value,
+					'primeira_recuperacao':document.getElementById("primeira_recuperacao_"+id).value,
+					'segunda_certificacao':document.getElementById("segunda_certificacao_"+id).value,
+					'segunda_recuperacao':document.getElementById("segunda_recuperacao_"+id).value,
+					'terceira_certificacao':document.getElementById("terceira_certificacao_"+id).value,
+					'terceira_recuperacao':document.getElementById("terceira_recuperacao_"+id).value,
+				};
+					$.ajax({
+					  type: "POST",
+					  url: "<?php echo Yii::app()->createAbsoluteUrl('nota/novaNota'); ?>",
+					  data: JSON.parse(data),
+					  success: function(data){
+				  			alert(data);
+			  			},
+					  dataType: 'json'
+					});
+			}
+		</script>
+			<table data-table>
+				<?php echo $form->errorSummary($model); ?>
+				<thead>
+					<th>Nomes</th>
+					<th>1ºC</th>
+					<th>REC 1</th>
+					<th>2º C</th>
+					<th>REC 2</th>
+					<th>3º C</th>
+					<th>REC 3</th>
+					<th>MÉDIA ANUAL</th>
+					<th>Ação</th>
+				</thead>
+				<tbody>
+					<?php for ($i=0; $i < count($notas_alunos["aluno"]); $i++): ?>
+						<?php //var_dump(count($notas_alunos)); exit;?>	
+						<tr>
+							<td><?php echo $notas_alunos["aluno"][$i]->nome ?></td>
+							<?php if (empty($notas_alunos["nota"][$i])): ?>
+								<td><?php echo CHtml::numberField('', '' , array('min'=>0, 'max'=>10, 'id'=>'primeira_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::numberField('', '' , array('min'=>0, 'max'=>10, 'id'=>'primeira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::numberField('', '' , array('min'=>0, 'max'=>10, 'id'=>'segunda_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::numberField('', '' , array('min'=>0, 'max'=>10, 'id'=>'segunda_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::numberField('', '' , array('min'=>0, 'max'=>10, 'id'=>'terceira_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::numberField('', '' , array('min'=>0, 'max'=>10, 'id'=>'terceira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+							<?php else: ?>
+								<td><?php echo $notas_alunos["nota"][$i][0]->primeira_certificacao; ?></td>
+								<td><?php echo $notas_alunos["nota"][$i][0]->primeira_recuperacao; ?></td>
+								<td><?php echo $notas_alunos["nota"][$i][0]->segunda_certificacao; ?></td>
+								<td><?php echo $notas_alunos["nota"][$i][0]->segunda_recuperacao; ?></td>
+								<td><?php echo $notas_alunos["nota"][$i][0]->terceira_certificacao; ?></td>
+								<td><?php echo $notas_alunos["nota"][$i][0]->terceira_recuperacao; ?></td>
+							<?php endif; ?>
+							<td></td>
+							<td><?php echo CHtml::htmlButton('Salvar', array('onClick'=>'cadastraNota('.$notas_alunos["aluno"][$i]->id.');')); ?></td>
+						</tr>
+							
+							
+					<?php endfor; ?>
 
-					<?php endif; ?>
-
-					<?php foreach ($notas_aluno as $nota_aluno): ?>
-					<?php $form=$this->beginWidget('CActiveForm', array(
-					'id'=>'nota-form',
-						'htmlOptions'=>array(
-							'name'=>'Nota_'.$aluno->id."_Disciplina_".$_GET['id']
-							),
-						// Please note: When you enable ajax validation, make sure the corresponding
-						// controller action is handling ajax validation correctly.
-						// There is a call to performAjaxValidation() commented in generated controller code.
-						// See class documentation of CActiveForm for details on this.
-						'enableAjaxValidation'=>false,
-						'action'=> Yii::app()->createUrl('nota/create/'.$_GET['id']),
-						'method'=>'get',
-					)); ?>
-						<?php echo CHtml::hiddenField('nota_id['.$aluno->id."]", $nota_aluno->id); ?>
-						<td><?php echo $form->numberField($nota_aluno,'primeira_certificacao', array('max'=>10, 'min'=>0, 'name'=>'primeira_certificacao_'.$aluno->id)); ?>
-						<?php echo $form->error($nota_aluno,'primeira_certificacao'); ?></td>
-
-						<td><?php echo $form->numberField($nota_aluno,'primeira_recuperacao', array('max'=>10, 'min'=>0, 'name'=>'primeira_recuperacao_'.$aluno->id)); ?>
-						<?php echo $form->error($nota_aluno,'primeira_recuperacao'); ?></td>
-					
-						<td><?php echo $form->numberField($nota_aluno,'segunda_certificacao', array('max'=>10, 'min'=>0, 'name'=>'segunda_certificacao_'.$aluno->id)); ?>
-						<?php echo $form->error($nota_aluno,'segunda_certificacao'); ?></td>
-
-						<td><?php echo $form->numberField($nota_aluno,'segunda_recuperacao', array('max'=>10, 'min'=>0, 'name'=>'segunda_recuperacao_'.$aluno->id)); ?>
-						<?php echo $form->error($nota_aluno,'segunda_recuperacao'); ?></td>
-
-						<td><?php echo $form->numberField($nota_aluno,'terceira_certificacao', array('max'=>10, 'min'=>0, 'name'=>'terceira_certificacao_'.$aluno->id)); ?>
-						<?php echo $form->error($nota_aluno,'terceira_certificacao'); ?></td>
-
-						<td><?php echo $form->numberField($nota_aluno,'terceira_recuperacao', array('max'=>10, 'min'=>0, 'name'=>'terceira_recuperacao_'.$aluno->id)); ?>
-						<?php echo $form->error($nota_aluno,'terceira_recuperacao'); ?></td>
-						<td></td>
-
-						<td>
-							<input type="submit" value="Salvar" />
-						</td>
-					<?php $this->endWidget(); ?>
-				</tr>
-					<?php endforeach; ?>
-			<?php endforeach; ?>
-
-		</tbody>
-	</table>
-	<div class="buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Cadastrar' : 'Salvar'); ?>
-	</div>
+				</tbody>
+			</table>
+			<div class="buttons">
+				<?php echo CHtml::submitButton($model->isNewRecord ? 'Cadastrar' : 'Salvar'); ?>
+			</div>
+	<?php $this->endWidget(); ?>
 </div><!-- form -->
