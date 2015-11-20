@@ -2377,3 +2377,26 @@ Stack trace:
 REQUEST_URI=/projetophp/index.php/site/site/login
 HTTP_REFERER=http://localhost:1234/projetophp/index.php/site/login
 ---
+2015/11/20 17:15:41 [error] [exception.CException] exception 'CException' with message 'Property "ContactForm.Nome" is not defined.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(2729): CComponent->__get('Nome')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(2452): CHtml::resolveValue(Object(ContactForm), 'Nome')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(1534): CHtml::activeInputField('text', Object(ContactForm), 'Nome', Array)
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(ContactForm), 'Nome', Array)
+#4 C:\Users\j\Xampp\htdocs\projetophp\protected\views\site\contact.php(37): CActiveForm->textField(Object(ContactForm), 'Nome')
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('contact', Array, true)
+#9 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\SiteController.php(93): CController->render('contact', Array)
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionContato()
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('contato')
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/contato')
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/projetophp/index.php/site/contato
+---

@@ -73,19 +73,32 @@ header .main-menu ul li{
 }
 /* FORMS */
 
-#loginForm ul{
+.form ul{
     list-style: none;
-    width: 260px;
-    margin: 65px auto;
     padding: 0;
 }
-
-#loginForm ul li{
+.form #login-ul{
+    width: 260px;
+    margin: 65px auto;
+}
+.form #login-ul li{
+    padding-bottom: 20px;
+}
+.form #contact-ul{
+    width: 360px;
+    height: 100%;
+    margin: 40px auto 0 auto;
+}
+.form #contact-ul .row.code{
+    padding-right: 140px;
+}
+.form fieldset ul li{
     display: block;
-    padding: 5px 0 5px 0;
+    padding: 5px 0;
+    margin-bottom: 10px;
 }
 
-#loginForm fieldset{
+.form fieldset{
     margin: auto;
     width: 50%;
     height: 75%;
@@ -93,26 +106,33 @@ header .main-menu ul li{
     background-color: rgb(195,195,195);
 }
 
-#loginForm fieldset h2{
+.form fieldset h2{
     color: white;
     font-size: 30px;
     margin: auto;
     text-align: center; 
 }
 
-#loginForm fieldset input[type="submit"]{
+.form fieldset input[type="submit"]{
     border-radius: 10px;
     margin: auto;
     padding: 10px;
     float: right;
 }
 
-#loginForm fieldset ul .textbox_login{
+.form fieldset ul .textbox_login{
     float: right;
     width: 150px;
 }
-#lofinForm fieldset ul label{
+.form fieldset ul label{
     float: left;
+}
+.form fieldset div p{
+    padding: 0;
+    margin: 0;
+}
+.form fieldset .row input[type="text"]{
+    margin-left: 5px;
 }
 
 /* INDEX */

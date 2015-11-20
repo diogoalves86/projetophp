@@ -1,12 +1,8 @@
 <?php /* @var $this Controller */ ?>
 <?php $this->beginContent('//layouts/main'); ?>
-<div>
-	<div id="content">
-		<?php echo $content; ?>
-	</div><!-- content -->
-</div>
-<div class="span-5 last">
-	<div id="sidebar">
+
+	<?php echo $content; ?>
+
 	<?php
 		$this->beginWidget('zii.widgets.CPortlet', array(
 			'title'=>'Operações',
@@ -17,6 +13,5 @@
 		));
 		$this->endWidget();
 	?>
-	</div><!-- sidebar -->
-</div>
+	
 <?php $this->endContent(); ?>
