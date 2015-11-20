@@ -50,31 +50,18 @@ class AlunoController extends Controller
 	public function actionBoletim($id=0)
 	{
 		if(Yii::app()->user->isInRole('ALUNO'))
-			$model = Usuario::model()->find("id='".Yii::app()->user->id."'");
+			$aluno = Usuario::model()->find("id='".Yii::app()->user->id."'");
 		elseif (Yii::app()->user->isInRole('ALUNO') == false && $id != 0)
-			$model = Usuario::model()->find("matricula='".$id."'");
+			$aluno = Usuario::model()->find("matricula='".$id."'");
 		else
 			throw new CHttpException(404, "A página solicitada não existe.");
 
-		$notas = Nota::model()->findAll();
-		$disciplinas = Disciplina::model()->findAll();
-		$disciplinas_nota_usuario = array();
-
-		foreach ($notas as $nota)
-			if($nota->usuario->id == $model->id){
-				//array_push($disciplinas, $nota->usuario->notas);
-				//var_dump(explode(" ", $nota->disciplina->id) + explode(" ", $nota->disciplina->nome));
-				foreach ($nota->disciplina as $disciplina) {
-					//if($disciplina->id == $nota->usuario->disciplina->id)
-						//var_dump($disciplina); exit;
-				}
-			}
-		exit;
+		$notas_aluno = Nota::model()->findAll("usuario_id='".$aluno->id."'");
 
 		$this->render('boletim', array(
-						'disciplinas_nota_usuario'=>$disciplinas_nota_usuario,
-						'model'=>$model,
-					));
+				'aluno'=>$aluno,
+				'notas_aluno'=>$notas_aluno,
+		));
 			
 	}
 
