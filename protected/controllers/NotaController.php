@@ -86,15 +86,25 @@ class NotaController extends Controller
 		));
 	}
 
-	public function actionNovaNota()
+	public function actionNovaNota($id, $disciplina_id, array $notas)
 	{
-		$model=new Nota;
-		if(isset($_POST['Nota']))
+		if (Yii::app()->user->isInRole('ALUNO'))
+			throw new CHttpException(404, "A página solicitada não existe");
+			
+		$model= Nota::model()->find("usuario_id='".$id."' && disciplina_id='".$disciplina_id."'");
+
+		//Os dados vem do javascript como string
+		foreach ($notas as $key=>$nota)
+			if($nota === "null")
+				$notas[$key] = null;
+
+		if(isset($notas))
 		{
-			var_dump($_POST['Nota']); exit;
-			$model->attributes=$_POST['Nota'];
-			if($model->save())
-				$this->refresh();
+			$model->setAttribute("disciplina_id", $disciplina_id);
+			$model->setAttribute("usuario_id", $id);
+			$model->attributes=$notas;
+			if($model->update())
+				$this->redirect(Yii::app()->createUrl('site/index'));
 		}
 	}
 

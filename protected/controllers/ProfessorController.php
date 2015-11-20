@@ -52,6 +52,7 @@ class ProfessorController extends Controller
 		}
 		$this->render('diario', array(
 			'notas_alunos'=>$notas_alunos,
+			'disciplina_professor'=>$disciplina_professor,
 			'model'=>$model
 		));
 	}

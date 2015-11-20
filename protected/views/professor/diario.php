@@ -3,7 +3,6 @@
 /* @var $model Nota */
 /* @var $form CActiveForm */
 ?>
-
 <div class="form">
 
 	<?php $form=$this->beginWidget('CActiveForm', array(
@@ -17,24 +16,20 @@
 	)); ?>
 
 		<script type="text/javascript">
-			function cadastraNota(id){
+			function cadastrarNota(id, disciplina_id){
 				var data = {
-					'primeira_certificacao':document.getElementById("primeira_certificacao_"+id).value,
-					'primeira_recuperacao':document.getElementById("primeira_recuperacao_"+id).value,
-					'segunda_certificacao':document.getElementById("segunda_certificacao_"+id).value,
-					'segunda_recuperacao':document.getElementById("segunda_recuperacao_"+id).value,
-					'terceira_certificacao':document.getElementById("terceira_certificacao_"+id).value,
-					'terceira_recuperacao':document.getElementById("terceira_recuperacao_"+id).value,
+					'primeira_certificacao': $("#primeira_certificacao_"+id).val() == "" ? null : $("#primeira_certificacao_"+id).val(),
+					'primeira_recuperacao':  $("#primeira_recuperacao_"+id).val() == "" ? null : $("#primeira_recuperacao_"+id).val(),
+					'segunda_certificacao':  $("#segunda_certificacao_"+id).val() == "" ? null : $("#segunda_certificacao_"+id).val(),
+					'segunda_recuperacao':   $("#segunda_recuperacao_"+id).val() == "" ? null : $("#segunda_recuperacao_"+id).val(),
+					'terceira_certificacao': $("#terceira_certificacao_"+id).val() == "" ? null : $("#terceira_certificacao_"+id).val(),
+					'terceira_recuperacao':  $("#terceira_recuperacao_"+id).val() == "" ? null : $("#terceira_recuperacao_"+id).val()
 				};
-					$.ajax({
-					  type: "POST",
-					  url: "<?php echo Yii::app()->createAbsoluteUrl('nota/novaNota'); ?>",
-					  data: JSON.parse(data),
-					  success: function(data){
-				  			alert(data);
-			  			},
-					  dataType: 'json'
-					});
+				console.log(data);
+				var requisicao = "<?php echo Yii::app()->createAbsoluteUrl('nota/novaNota'); ?>/"+id+"/?disciplina_id="+disciplina_id+"&notas[primeira_certificacao]=" +data.primeira_certificacao +"&notas[primeira_recuperacao]="+ data.primeira_recuperacao + "&notas[segunda_certificacao]="+ data.segunda_certificacao + "&notas[segunda_recuperacao]="+ data.segunda_recuperacao + "&notas[terceira_certificacao]="+ data.terceira_certificacao + "&notas[terceira_recuperacao]="+ data.terceira_recuperacao;
+
+				location.href = requisicao;
+				
 			}
 		</script>
 			<table data-table>
@@ -56,22 +51,22 @@
 						<tr>
 							<td><?php echo $notas_alunos["aluno"][$i]->nome ?></td>
 							<?php if (empty($notas_alunos["nota"][$i])): ?>
-								<td><?php echo CHtml::numberField('', '' , array('min'=>0, 'max'=>10, 'id'=>'primeira_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
-								<td><?php echo CHtml::numberField('', '' , array('min'=>0, 'max'=>10, 'id'=>'primeira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
-								<td><?php echo CHtml::numberField('', '' , array('min'=>0, 'max'=>10, 'id'=>'segunda_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
-								<td><?php echo CHtml::numberField('', '' , array('min'=>0, 'max'=>10, 'id'=>'segunda_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
-								<td><?php echo CHtml::numberField('', '' , array('min'=>0, 'max'=>10, 'id'=>'terceira_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
-								<td><?php echo CHtml::numberField('', '' , array('min'=>0, 'max'=>10, 'id'=>'terceira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::textField('', '' , array('min'=>0, 'max'=>10, 'id'=>'primeira_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::textField('', '' , array('min'=>0, 'max'=>10, 'id'=>'primeira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::textField('', '' , array('min'=>0, 'max'=>10, 'id'=>'segunda_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::textField('', '' , array('min'=>0, 'max'=>10, 'id'=>'segunda_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::textField('', '' , array('min'=>0, 'max'=>10, 'id'=>'terceira_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::textField('', '' , array('min'=>0, 'max'=>10, 'id'=>'terceira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
 							<?php else: ?>
-								<td><?php echo $notas_alunos["nota"][$i][0]->primeira_certificacao; ?></td>
-								<td><?php echo $notas_alunos["nota"][$i][0]->primeira_recuperacao; ?></td>
-								<td><?php echo $notas_alunos["nota"][$i][0]->segunda_certificacao; ?></td>
-								<td><?php echo $notas_alunos["nota"][$i][0]->segunda_recuperacao; ?></td>
-								<td><?php echo $notas_alunos["nota"][$i][0]->terceira_certificacao; ?></td>
-								<td><?php echo $notas_alunos["nota"][$i][0]->terceira_recuperacao; ?></td>
+								<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->primeira_certificacao, array('min'=>0, 'max'=>10,  'id'=>'primeira_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->primeira_recuperacao,  array('min'=>0, 'max'=>10, 'id'=>'primeira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->segunda_certificacao,  array('min'=>0, 'max'=>10,  'id'=>'segunda_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->segunda_recuperacao,  array('min'=>0, 'max'=>10, 	'id'=>'segunda_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->terceira_certificacao, array('min'=>0, 'max'=>10,  'id'=>'terceira_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+								<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->terceira_recuperacao,  array('min'=>0, 'max'=>10, 'id'=>'terceira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
 							<?php endif; ?>
 							<td></td>
-							<td><?php echo CHtml::htmlButton('Salvar', array('onClick'=>'cadastraNota('.$notas_alunos["aluno"][$i]->id.');')); ?></td>
+							<td><?php echo CHtml::htmlButton('Salvar', array('onClick'=>'cadastrarNota('.$notas_alunos["aluno"][$i]->id.', '.$disciplina_professor->disciplina->id.');')); ?></td>
 						</tr>
 							
 							
