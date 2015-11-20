@@ -38,6 +38,32 @@ class ProfessorController extends Controller
 		
 	}
 
+	public function actionCadastrar()
+	{
+		if(Yii::app()->user->isInRole("ADMIN") == false)
+			throw new CHttpException(404, "A página solicitada não existe");
+
+		$model = new Usuario();
+		$disciplinas = Disciplina::model()->findAll();
+		$disciplinas = CHtml::listData($disciplinas, "id", "nome");
+		$professor_disciplina = new ProfessorDisciplina();
+
+		if (isset($_POST['Usuario'])) {
+			$model->attributes = $_POST['Usuario'];
+			var_dump($model); exit;
+			if($model->save()){
+
+				$professor_disciplina->setAttribute("professor_id");
+			}
+		}
+
+		$this->render('//professorTurma/create', array(
+				'disciplinas'=>$disciplinas,
+				'model'=>$model,
+		));
+			
+	}
+
 	public function actionDiario($id)
 	{
 		if(Yii::app()->user->isInRole("PROFESSOR") == false)

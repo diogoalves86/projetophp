@@ -1,6 +1,6 @@
 <?php
-Yii::import('application.controllers.UsuarioController');
-class AlunoController extends Controller
+
+class ProfessorTurmaController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -28,7 +28,19 @@ class AlunoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'users'=>array("@"),
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
 			),
 		);
 	}
@@ -37,44 +49,34 @@ class AlunoController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionVisualizar($id)
+	public function actionView($id)
 	{
-		$model = Usuario::model()->find("nivel=2 && matricula='".$id."'");
-		if($model != null)
-			Yii::app()->runController('usuario/visualizar', array('id'=>$model->id));
-		else
-			throw new CHttpException(404, "A página solicitada não existe.");
-			
-	}
-
-	public function actionBoletim($id=0)
-	{
-		if(Yii::app()->user->isInRole('ALUNO'))
-			$aluno = Usuario::model()->find("id='".Yii::app()->user->id."'");
-		elseif (Yii::app()->user->isInRole('ALUNO') == false && $id != 0)
-			$aluno = Usuario::model()->find("matricula='".$id."'");
-		else
-			throw new CHttpException(404, "A página solicitada não existe.");
-
-		$notas_aluno = Nota::model()->findAll("usuario_id='".$aluno->id."'");
-
-		$this->render('boletim', array(
-				'aluno'=>$aluno,
-				'notas_aluno'=>$notas_aluno,
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
 		));
-			
 	}
 
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCadastro()
+	public function actionCreate()
 	{
-		if (Yii::app()->user->isInRole('ALUNO') || Yii::app()->user->isInRole('PROFESSOR') )
-			throw new CHttpException(403, "Você não possui autorização para acessar esta página");
+		$model=new ProfessorTurma;
 
-		Yii::app()->runController('usuario/cadastro');
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['ProfessorTurma']))
+		{
+			$model->attributes=$_POST['ProfessorTurma'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('create',array(
+			'model'=>$model,
+		));
 	}
 
 	/**
@@ -89,9 +91,9 @@ class AlunoController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Nota']))
+		if(isset($_POST['ProfessorTurma']))
 		{
-			$model->attributes=$_POST['Nota'];
+			$model->attributes=$_POST['ProfessorTurma'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -120,18 +122,7 @@ class AlunoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		if(Yii::app()->user->isInRole('ALUNO'))
-			$criteria = "id=".Yii::app()->user->id." && nivel=2 && ativo=1";
-
-		else
-			$criteria = "nivel=2 && ativo=1";
-
-		$dataProvider=new CActiveDataProvider('Usuario', array(
-		    'criteria'=>array(
-		        'condition'=>$criteria,
-	        ),
-		));
-
+		$dataProvider=new CActiveDataProvider('ProfessorTurma');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -142,22 +133,26 @@ class AlunoController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		if (Yii::app()->user->isInRole('ALUNO') || Yii::app()->user->isInRole('PROFESSOR') )
-			throw new CHttpException(404, "A página solicitada não existe");
+		$model=new ProfessorTurma('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['ProfessorTurma']))
+			$model->attributes=$_GET['ProfessorTurma'];
 
-		Yii::app()->runController('usuario/admin');
+		$this->render('admin',array(
+			'model'=>$model,
+		));
 	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Nota the loaded model
+	 * @return ProfessorTurma the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Nota::model()->findByPk($id);
+		$model=ProfessorTurma::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -165,11 +160,11 @@ class AlunoController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Nota $model the model to be validated
+	 * @param ProfessorTurma $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='nota-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='professor-turma-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
