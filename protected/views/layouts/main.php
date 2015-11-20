@@ -30,7 +30,7 @@
         </div>
 
 	    <div class="title">
-    		<h2>Diário Online</h2>
+    		<a href="<?php echo Yii::app()->createUrl('site/index') ?>"><h2>Diário Online</h2></a>
 		</div>
         
     	<div class="main-menu">
@@ -41,14 +41,9 @@
 				),
 			)); ?>
     	</div>			
-	</header>
-	<div class="mainContent">
-		<div class="menu-opcoes">
-			<a href="<?php echo Yii::app()->createUrl('site/index') ?>">Voltar para o início</a>
-		</div>
-		<div class="container">
-			<?php echo $content; ?>
-		</div>
+	</header>		
+	<div class="container">
+		<?php echo $content; ?>
 	</div>
 	<footer>
 		<p><?php echo date('Y'); ?> - Projeto Final CP2 ENII</p>

@@ -1963,3 +1963,462 @@ Stack trace:
 #13 {main}
 REQUEST_URI=/projetophp/index.php/site/index
 ---
+2015/11/20 00:15:47 [error] [exception.CException] exception 'CException' with message 'Usuario has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php:289
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(547): CModel->getValidators()
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#5 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\UsuarioController.php(106): CActiveRecord->__set('attributes', Array)
+#6 [internal function]: UsuarioController->actionAtualizarCadastro('23145443')
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(UsuarioController), Array)
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UsuarioController), Object(ReflectionMethod), Array)
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('atualizarCadast...')
+#18 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/atualiz...')
+#19 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/projetophp/index.php/usuario/atualizarCadastro/23145443
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/usuario/atualizarCadastro/23145443
+---
+2015/11/20 00:18:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('boletim')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/boletim')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/aluno/boletim/1211212112
+HTTP_REFERER=http://localhost:1234/projetophp/index.php
+---
+2015/11/20 00:19:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('boletim')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/boletim')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/aluno/boletim/1211212112
+HTTP_REFERER=http://localhost:1234/projetophp/index.php
+---
+2015/11/20 00:43:08 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('notas')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('turma/notas')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/projetophp/index.php/turma/notas/
+---
+2015/11/20 00:44:30 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nota')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/nota/
+---
+2015/11/20 00:44:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "GerarBoletim".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('GerarBoletim')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('GerarBoletim')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nota/GerarBolet...')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/nota/GerarBoletim/6
+---
+2015/11/20 00:44:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "GerarBoletim".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('GerarBoletim')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('GerarBoletim')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nota/GerarBolet...')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/nota/GerarBoletim/6?turma=307
+---
+2015/11/20 02:04:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('notas')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('turma/notas')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/projetophp/index.php/turma/notas/
+---
+2015/11/20 02:05:21 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('notas')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('turma/notas')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/projetophp/index.php/turma/notas/
+---
+2015/11/20 02:05:35 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('notas')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('turma/notas')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/projetophp/index.php/turma/notas/
+---
+2015/11/20 02:08:07 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('notas')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('turma/notas')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/projetophp/index.php/turma/notas/
+---
+2015/11/20 02:31:06 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('notas')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('turma/notas')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/projetophp/index.php/turma/notas/
+---
+2015/11/20 02:31:08 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('notas')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('turma/notas')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/projetophp/index.php/turma/notas/
+---
+2015/11/20 02:31:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('boletim')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/boletim')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/aluno/boletim/1211212112
+HTTP_REFERER=http://localhost:1234/projetophp/index.php
+---
+2015/11/20 02:34:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('boletim')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/boletim')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/aluno/boletim/1211212112
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/site/index
+---
+2015/11/20 02:43:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('boletim')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/boletim')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/aluno/boletim/1211212112
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/site/index
+---
+2015/11/20 02:43:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('boletim')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/boletim')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/aluno/boletim/1211212112
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/site/index
+---
+2015/11/20 02:43:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('boletim')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/boletim')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/aluno/boletim/1211212112
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/site/index
+---
+2015/11/20 02:49:38 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('boletim')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/boletim')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/aluno/boletim/1211212112
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/site/index
+---
+2015/11/20 03:05:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('boletim')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/boletim')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/aluno/boletim/1211212112
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/site/index
+---
+2015/11/20 03:05:31 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/aluno/
+---
+2015/11/20 03:05:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('visualizar')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/visualiza...')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/aluno/5
+---
+2015/11/20 03:06:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('boletim')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/boletim')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/aluno/boletim/1211212112
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/
+---
+2015/11/20 16:42:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('site')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('site')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/site/login')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/site/site/login
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/site/login
+---
+2015/11/20 16:42:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/projetophp/index.php/login
+---
+2015/11/20 16:42:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('site')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('site')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/site/login')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/site/site/login
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/site/login
+---
+2015/11/20 17:15:41 [error] [exception.CException] exception 'CException' with message 'Property "ContactForm.Nome" is not defined.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(2729): CComponent->__get('Nome')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(2452): CHtml::resolveValue(Object(ContactForm), 'Nome')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(1534): CHtml::activeInputField('text', Object(ContactForm), 'Nome', Array)
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(ContactForm), 'Nome', Array)
+#4 C:\Users\j\Xampp\htdocs\projetophp\protected\views\site\contact.php(37): CActiveForm->textField(Object(ContactForm), 'Nome')
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('contact', Array, true)
+#9 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\SiteController.php(93): CController->render('contact', Array)
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionContato()
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('contato')
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/contato')
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/projetophp/index.php/site/contato
+---
+2015/11/20 17:48:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('site')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('site')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/site/login')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/site/site/login
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/site/login
+---
+2015/11/20 17:48:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('site')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('site')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/site/login')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/site/site/login
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/site/login
+---
