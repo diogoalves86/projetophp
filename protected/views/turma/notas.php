@@ -27,17 +27,27 @@
 			<th>Ação</th>
 		</thead>
 		<tbody>
-			<?php foreach ($notas_aluno as $nota_aluno):?>
+			<?php for ($i=0; $i < count($notas_turma["aluno"]); $i++):?>
 				<tr>
-					<td><?php echo $nota_aluno->usuario->nome;?></td>
-					<td><?php echo $nota_aluno->primeira_certificacao; ?></td>
-					<td><?php echo $nota_aluno->primeira_recuperacao; ?></td>
-					<td><?php echo $nota_aluno->segunda_certificacao; ?></td>
-					<td><?php echo $nota_aluno->segunda_recuperacao; ?></td>
-					<td><?php echo $nota_aluno->terceira_certificacao; ?></td>
-					<td><?php echo $nota_aluno->terceira_recuperacao; ?></td>
-				</tr>
-			<?php endforeach; ?>
+					<td><?php echo $notas_turma["aluno"][$i]->nome;?></td>
+					<?php if(empty($notas_turma["nota"][$i])): ?>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					<?php else: ?>
+							<td><?php echo $notas_turma["nota"][$i][0]->primeira_certificacao; ?></td>
+							<td><?php echo $notas_turma["nota"][$i][0]->primeira_recuperacao; ?></td>
+							<td><?php echo $notas_turma["nota"][$i][0]->segunda_certificacao; ?></td>
+							<td><?php echo $notas_turma["nota"][$i][0]->segunda_recuperacao; ?></td>
+							<td><?php echo $notas_turma["nota"][$i][0]->terceira_certificacao; ?></td>
+							<td><?php echo $notas_turma["nota"][$i][0]->terceira_recuperacao; ?></td>
+						</tr>
+					<?php endif; ?>
+			<?php endfor; ?>
 		</tbody>
 	</table>
 <?php $this->endWidget(); ?>

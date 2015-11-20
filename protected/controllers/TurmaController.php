@@ -53,28 +53,22 @@ class TurmaController extends Controller
 		$alunos_turma = AlunoTurma::model()->findAll("turma_id='".$turma->id."'");
 		$notas_turma = array();
 		//$notas_aluno = array();
-		foreach ($alunos_turma as $aluno_turma) {
+		foreach ($alunos_turma as $indice=>$aluno_turma) {
 			if(Yii::app()->user->isInRole('PROFESSOR')){
 				$professor_disciplina = ProfessorDisciplina::model()->find("professor_id='".Yii::app()->user->id."'");
 				$notas_aluno = Nota::model()->findAll("usuario_id='".$aluno_turma->aluno_id."' && disciplina_id='".$professor_disciplina->disciplina_id."'");
 			}
 			else
 				$notas_aluno = Nota::model()->findAll("usuario_id='".$aluno_turma->aluno_id."'");
-			array_push($notas_turma, $notas_aluno);
-		}
 
-		foreach ($notas_turma as $indice=>$nota_turma) {
-			array_push($notas_aluno, $notas_turma[$indice][0]);
-		}
+			$notas_turma["aluno"][$indice] = $aluno_turma->aluno;
+			$notas_turma["nota"][$indice] = $notas_aluno;
 
-		//Resolve bug de pegar duas vezes o primeiro aluno
-		array_pop($notas_aluno);
-		//var_dump($notas_aluno); exit;
-		//var_dump($notas_aluno[0]->usuario);exit;
+			//array_push($notas_turma, isset($notas_aluno) ? $notas_aluno : null);
+		}
 		$this->render('notas', array(
 					'model'=>$turma,
 					'notas_turma'=>$notas_turma,
-					'notas_aluno'=>$notas_aluno,
 			));
 	}
 
