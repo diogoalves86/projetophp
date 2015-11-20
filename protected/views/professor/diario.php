@@ -42,6 +42,8 @@
 						<td><?php echo CHtml::textField('', '' , array('min'=>0, 'max'=>10, 'id'=>'segunda_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
 						<td><?php echo CHtml::textField('', '' , array('min'=>0, 'max'=>10, 'id'=>'terceira_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
 						<td><?php echo CHtml::textField('', '' , array('min'=>0, 'max'=>10, 'id'=>'terceira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+						<td></td>
+						<td><?php echo CHtml::htmlButton('Salvar', array('onClick'=>'cadastrarNota('.$notas_alunos["aluno"][$i]->id.', '.$disciplina_professor->disciplina->id.');')); ?></td>
 					<?php else: ?>
 						<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->primeira_certificacao, array('min'=>0, 'max'=>10,  'id'=>'primeira_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
 						<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->primeira_recuperacao,  array('min'=>0, 'max'=>10, 'id'=>'primeira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
@@ -49,9 +51,10 @@
 						<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->segunda_recuperacao,  array('min'=>0, 'max'=>10, 	'id'=>'segunda_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
 						<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->terceira_certificacao, array('min'=>0, 'max'=>10,  'id'=>'terceira_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
 						<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->terceira_recuperacao,  array('min'=>0, 'max'=>10, 'id'=>'terceira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+						
+						<td><?php echo Nota::calcularMediaAnual($notas_alunos["nota"][$i][0]->primeira_certificacao, $notas_alunos["nota"][$i][0]->segunda_certificacao, $notas_alunos["nota"][$i][0]->terceira_certificacao) ?></td>
+						<td><?php echo CHtml::htmlButton('Salvar', array('onClick'=>'cadastrarNota('.$notas_alunos["aluno"][$i]->id.', '.$disciplina_professor->disciplina->id.');')); ?></td>
 					<?php endif; ?>
-					<td>Média</td>
-					<td><?php echo CHtml::htmlButton('Salvar', array('onClick'=>'cadastrarNota('.$notas_alunos["aluno"][$i]->id.', '.$disciplina_professor->disciplina->id.');')); ?></td>
 				</tr>
 			<?php endfor; ?>
 		</tbody>

@@ -33,23 +33,20 @@ class ProfessorController extends Controller
 		);
 	}
 
+	public function actionAlunosPFV()
+	{
+		
+	}
+
 	public function actionDiario($id)
 	{
 		if(Yii::app()->user->isInRole("PROFESSOR") == false)
 			throw new CHttpException(404, "A página solicitada não existe");
 			
-
 		$model = Usuario::model()->find("id='".Yii::app()->user->id."'");
-		$turma = Turma::model()->find("nome='".$id."'");
-		$alunos_turma = AlunoTurma::model()->findAll("turma_id='".$turma->id."'");
 		$disciplina_professor = ProfessorDisciplina::model()->find("professor_id='".Yii::app()->user->id."'");
-		$notas_alunos = array();
-		foreach ($alunos_turma as $chave=>$aluno_turma) {
-			$aluno = Usuario::model()->find("id='".$aluno_turma->aluno_id."'");
-			$nota_aluno = Nota::model()->findAll("usuario_id='".$aluno->id."' && disciplina_id='".$disciplina_professor->disciplina->id."'");
-			$notas_alunos["aluno"][$chave] = $aluno;
-			$notas_alunos["nota"][$chave] = $nota_aluno;
-		}
+
+		$notas_alunos = $this->notasAlunosPorTurma($id, $disciplina_professor);
 
 		//Depois de salvar as notas, o professor volta ao diário
 		Yii::app()->user->setReturnUrl("professor/diario/".$id);
@@ -59,5 +56,19 @@ class ProfessorController extends Controller
 			'disciplina_professor'=>$disciplina_professor,
 			'model'=>$model
 		));
+	}
+
+	private function notasAlunosPorTurma($id, $disciplina_professor)
+	{
+		$turma = Turma::model()->find("nome='".$id."'");
+		$alunos_turma = AlunoTurma::model()->findAll("turma_id='".$turma->id."'");
+		$notas_alunos = array();
+		foreach ($alunos_turma as $chave=>$aluno_turma) {
+			$aluno = Usuario::model()->find("id='".$aluno_turma->aluno_id."'");
+			$nota_aluno = Nota::model()->findAll("usuario_id='".$aluno->id."' && disciplina_id='".$disciplina_professor->disciplina->id."'");
+			$notas_alunos["aluno"][$chave] = $aluno;
+			$notas_alunos["nota"][$chave] = $nota_aluno;
+		}
+		return $notas_alunos;
 	}
 }

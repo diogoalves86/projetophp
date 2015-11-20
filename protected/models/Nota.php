@@ -87,18 +87,27 @@ class Nota extends CActiveRecord
 
 	}*/
 
-	public static function calcularMediaAnual($primeiro_certificacao, $segunda_certificacao, $terceira_certificacao)
+	public static function calcularMediaAnual($primeira_certificacao, $segunda_certificacao, $terceira_certificacao)
 	{
-		$media_anual = (($primeiro_certificacao * 3) + ($segunda_certificacao * 3) + ($terceira_certificacao * 4)) / 10;
+		if(is_null($primeira_certificacao) || is_null($segunda_certificacao) || is_null($terceira_certificacao))
+			return "";
+		
+		$media_anual = (($primeira_certificacao * 3) + ($segunda_certificacao * 3) + ($terceira_certificacao * 4)) / 10;
 		return $media_anual;
 	}
 
-	public static function calcularNota3Certificacao($primeiro_certificacao, $segunda_certificacao){
-		$nota_necessaria = (70 - ((($primeiro_certificacao*3)+($segunda_certificacao*3))/4));
+	public static function calcularNota3Certificacao($primeira_certificacao, $segunda_certificacao){
+		if(is_null($primeira_certificacao) || is_null($segunda_certificacao))
+			return "";
+
+		$nota_necessaria = (70 - ((($primeira_certificacao*3)+($segunda_certificacao*3))/4));
 			return $nota_necessaria;
 	}
 
 	public static function calcularPFV($media_anual){
+		if(is_null($media_anual))
+			return "";
+		
 		$pfv = 25 - (($media_anual*3)/2);
 		return $pfv;
 	}
