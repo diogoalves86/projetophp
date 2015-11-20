@@ -27,9 +27,6 @@ class NotaController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('deny',  // deny all users
-                    'users'=>array('*'),
-            ),
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'users'=>array("@"),
 			),
@@ -87,6 +84,18 @@ class NotaController extends Controller
 			'disciplina'=>$disciplina,
 			'model'=>$model,
 		));
+	}
+
+	public function actionNovaNota()
+	{
+		$model=new Nota;
+		if(isset($_POST['Nota']))
+		{
+			var_dump($_POST['Nota']); exit;
+			$model->attributes=$_POST['Nota'];
+			if($model->save())
+				$this->refresh();
+		}
 	}
 
 	/**
