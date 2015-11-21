@@ -2,36 +2,32 @@
 ?>
 <div class="form">
 
-	<?php $form=$this->beginWidget('CActiveForm', array(
-		'id'=>'nota-form',
-		// Please note: When you enable ajax validation, make sure the corresponding
-		// controller action is handling ajax validation correctly.
-		// There is a call to performAjaxValidation() commented in generated controller code.
-		// See class documentation of CActiveForm for details on this.
-		'enableAjaxValidation'=>false,
-		'action'=> Yii::app()->createUrl('nota/create/'.$_GET['id']),
-		'method'=>'get',
-	)); ?>
+	<h1>Aluno: <?php echo $aluno->nome; ?></h1>
+	<table data-table>
+		<thead>
+			<th>Disciplinas</th>
+			<th>1ºC</th>
+			<th>REC 1</th>
+			<th>2º C</th>
+			<th>REC 2</th>
+			<th>3º C</th>
+			<th>REC 3</th>
+			<th>MÉDIA ANUAL</th>
+		</thead>
+		<tbody>
+			<?php foreach ($notas_aluno as $nota_aluno):?>
+				<tr>
+					<td><?php echo $nota_aluno->disciplina->nome;  ?></td>				
+					<td><?php echo $nota_aluno->primeira_certificacao == null ? "" : $nota_aluno->primeira_certificacao ?></td>
+					<td><?php echo $nota_aluno->primeira_recuperacao == null ? "" : $nota_aluno->primeira_recuperacao ?></td>
+					<td><?php echo $nota_aluno->segunda_certificacao == null ? "" : $nota_aluno->segunda_certificacao ?></td>
+					<td><?php echo $nota_aluno->segunda_recuperacao == null ? "" : $nota_aluno->segunda_recuperacao ?></td>
+					<td><?php echo $nota_aluno->terceira_certificacao == null ? "" : $nota_aluno->terceira_certificacao ?></td>
+					<td><?php echo $nota_aluno->terceira_recuperacao == null ? "" : $nota_aluno->terceira_recuperacao ?></td>
 
-		<table data-table>
-			<?php echo $form->errorSummary($model); ?>
-			<thead>
-				<th>Nomes</th>
-				<th>1ºC</th>
-				<th>REC 1</th>
-				<th>2º C</th>
-				<th>REC 2</th>
-				<th>3º C</th>
-				<th>REC 3</th>
-				<th>MÉDIA ANUAL</th>
-				<th>Ação</th>
-			</thead>
-			<tbody>
-
-			</tbody>
-		</table>
-	<?php $this->endWidget(); ?>
-	<div class="buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Cadastrar' : 'Salvar'); ?>
-	</div>
+					<td><?php echo Nota::calcularMediaAnual($nota_aluno->primeira_certificacao, $nota_aluno->segunda_certificacao, $nota_aluno->terceira_certificacao) ?></td>
+				</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
 </div><!-- form -->

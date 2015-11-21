@@ -1,6 +1,6 @@
 <?php
 
-class NotaController extends Controller
+class ProfessorTurmaController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -28,7 +28,19 @@ class NotaController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'users'=>array("@"),
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
 			),
 		);
 	}
@@ -50,66 +62,21 @@ class NotaController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Nota;
-		$disciplina = Disciplina::model()->findAll();
-		$alunos = Usuario::model()->findAll("nivel=2");
+		$model=new ProfessorTurma;
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		$lista_alunos = array();
-		
-		if(Yii::app()->user->isInRole("PROFESSOR") !== false){
-			$disciplina = Usuario::model()->findByPk(Yii::app()->user->id);
-			$disciplina_professor = $disciplina->professorDisciplinas[0]->disciplina_id;	
-		}
-
-
-		//$lista_disciplinas = CHtml::listData($disciplinas, "id", "nome");
-		$lista_alunos = CHtml::listData($alunos, "id", "nome");
-
-		if(Yii::app()->user->isInRole("ALUNO") !== false){
-			unset($lista_alunos);
-			$lista_alunos[] = Usuario::model()->find("id='".Yii::app()->user->id."'");	
-		}
-
-		if(isset($_POST['Nota']))
+		if(isset($_POST['ProfessorTurma']))
 		{
-			$model->attributes=$_POST['Nota'];
+			$model->attributes=$_POST['ProfessorTurma'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('//aluno/boletim',array(
-			'lista_alunos'=>$lista_alunos,
-			'disciplina'=>$disciplina,
+		$this->render('create',array(
 			'model'=>$model,
 		));
-	}
-
-	public function actionNovaNota($id, $disciplina_id, array $notas)
-	{
-		if (Yii::app()->user->isInRole('ALUNO'))
-			throw new CHttpException(404, "A página solicitada não existe");
-			
-		$model= Nota::model()->find("usuario_id='".$id."' && disciplina_id='".$disciplina_id."'");
-
-		//Verifica se o usuário já possui nota 
-		if($model == null)
-			$model = new Nota();
-
-		//Os dados vem do javascript como string
-		foreach ($notas as $key=>$nota)
-			if($nota === "null")
-				$notas[$key] = null;
-
-		if(isset($notas))
-		{
-			$model->setAttribute("disciplina_id", $disciplina_id);
-			$model->setAttribute("usuario_id", $id);
-			$model->attributes=$notas;
-			if($model->save())
-				$this->redirect(Yii::app()->createAbsoluteUrl(Yii::app()->user->returnUrl));
-		}
 	}
 
 	/**
@@ -124,9 +91,9 @@ class NotaController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Nota']))
+		if(isset($_POST['ProfessorTurma']))
 		{
-			$model->attributes=$_POST['Nota'];
+			$model->attributes=$_POST['ProfessorTurma'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -155,17 +122,8 @@ class NotaController extends Controller
 	 */
 	public function actionIndex()
 	{
-		if(Yii::app()->user->isInRole('ALUNO'))
-			$criteria = "usuario_id='".Yii::app()->user->id."'";
-		else
-			$criteria = "";
-	
-		$dataProvider=new CActiveDataProvider('Nota', array(
-		    'criteria'=>array(
-		        'condition'=>$criteria,
-	        ),
-		));
-		$this->render('index', array(
+		$dataProvider=new CActiveDataProvider('ProfessorTurma');
+		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}
@@ -175,10 +133,10 @@ class NotaController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Nota('search');
+		$model=new ProfessorTurma('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Nota']))
-			$model->attributes=$_GET['Nota'];
+		if(isset($_GET['ProfessorTurma']))
+			$model->attributes=$_GET['ProfessorTurma'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -189,12 +147,12 @@ class NotaController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Nota the loaded model
+	 * @return ProfessorTurma the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Nota::model()->findByPk($id);
+		$model=ProfessorTurma::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -202,11 +160,11 @@ class NotaController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Nota $model the model to be validated
+	 * @param ProfessorTurma $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='nota-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='professor-turma-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

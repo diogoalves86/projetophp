@@ -5,18 +5,18 @@
  *
  * The followings are the available columns in table 'Nota':
  * @property integer $id
- * @property integer $primeira_certificacao
- * @property integer $segunda_certificacao
- * @property integer $terceira_certificacao
- * @property integer $primeira_recuperacao
- * @property integer $segunda_recuperacao
- * @property integer $terceira_recuperacao
+ * @property double $primeira_certificacao
+ * @property double $segunda_certificacao
+ * @property double $terceira_certificacao
+ * @property double $primeira_recuperacao
+ * @property double $segunda_recuperacao
+ * @property double $terceira_recuperacao
  * @property integer $disciplina_id
  * @property integer $usuario_id
  *
  * The followings are the available model relations:
- * @property Usuario $usuario
  * @property Disciplina $disciplina
+ * @property Usuario $usuario
  */
 class Nota extends CActiveRecord
 {
@@ -37,7 +37,8 @@ class Nota extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('disciplina_id, usuario_id', 'required'),
-			array('primeira_certificacao, segunda_certificacao, terceira_certificacao, primeira_recuperacao, segunda_recuperacao, terceira_recuperacao, disciplina_id, usuario_id', 'numerical', 'integerOnly'=>true),
+			array('disciplina_id, usuario_id', 'numerical', 'integerOnly'=>true),
+			array('primeira_certificacao, segunda_certificacao, terceira_certificacao, primeira_recuperacao, segunda_recuperacao, terceira_recuperacao', 'numerical'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, primeira_certificacao, segunda_certificacao, terceira_certificacao, primeira_recuperacao, segunda_recuperacao, terceira_recuperacao, disciplina_id, usuario_id', 'safe', 'on'=>'search'),
@@ -52,8 +53,8 @@ class Nota extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'usuario' => array(self::BELONGS_TO, 'Usuario', 'usuario_id'),
 			'disciplina' => array(self::BELONGS_TO, 'Disciplina', 'disciplina_id'),
+			'usuario' => array(self::BELONGS_TO, 'Usuario', 'usuario_id'),
 		);
 	}
 
@@ -86,18 +87,27 @@ class Nota extends CActiveRecord
 
 	}*/
 
-	public static function calcularMediaAnual($primeiro_certificacao, $segunda_certificacao, $terceira_certificacao)
+	public static function calcularMediaAnual($primeira_certificacao, $segunda_certificacao, $terceira_certificacao)
 	{
-		$media_anual = (($primeiro_certificacao * 3) + ($segunda_certificacao * 3) + ($terceira_certificacao * 4)) / 10;
+		if(is_null($primeira_certificacao) || is_null($segunda_certificacao) || is_null($terceira_certificacao))
+			return "";
+		
+		$media_anual = (($primeira_certificacao * 3) + ($segunda_certificacao * 3) + ($terceira_certificacao * 4)) / 10;
 		return $media_anual;
 	}
 
-	public static function calcularNota3Certificacao($primeiro_certificacao, $segunda_certificacao){
-		$nota_necessaria = (70 - ((($primeiro_certificacao*3)+($segunda_certificacao*3))/4);
+	public static function calcularNota3Certificacao($primeira_certificacao, $segunda_certificacao){
+		if(is_null($primeira_certificacao) || is_null($segunda_certificacao))
+			return "";
+
+		$nota_necessaria = (70 - ((($primeira_certificacao*3)+($segunda_certificacao*3))/4));
 			return $nota_necessaria;
 	}
 
-	public static function calcularPFV(calcularMediaAnual){
+	public static function calcularPFV($media_anual){
+		if(is_null($media_anual))
+			return "";
+		
 		$pfv = 25 - (($media_anual*3)/2);
 		return $pfv;
 	}
