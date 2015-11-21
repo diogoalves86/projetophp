@@ -70,8 +70,14 @@ header .main-menu ul li{
     width: 100%;
     min-height: 430px;  
     overflow: auto;  
+    margin-bottom: 20px;
 }
+
 /* FORMS */
+.form{
+    width: 75%;
+    float: right;
+}
 
 .form ul{
     list-style: none;
@@ -83,6 +89,9 @@ header .main-menu ul li{
 }
 .form #login-ul li{
     padding-bottom: 20px;
+}
+.form #login-ul li .row.error{
+    height: 22px;
 }
 .form #contact-ul{
     width: 360px;
@@ -158,6 +167,12 @@ header .main-menu ul li{
 .form dl .buttons{
     float: right;
 }
+.form .row.buttons{
+    float: right;
+}
+.grid-view table.items{
+    width: 80%;
+}
 
 /* INDEX */
 .user-painel{
@@ -188,6 +203,7 @@ header .main-menu ul li{
 }
 table{
     margin: 20px auto;
+    min-width: 80%;
 }
 .row{
     cursor: pointer;
@@ -248,15 +264,55 @@ table.main3{@include background(#33CCCC);}
     border-radius: 5px;
     border: 2px solid green;
 }
+/*MENU LATERAL */
+.container .portlet{
+    width: 20%;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    height: 150px;
+    float: left;
+}
+.containet .portlet .portlet-decoration{
+    width: 0;
+    height: 0;
+}
+.container .portlet .portlet-container{
+    float: left;
+    height: 100%;
+    width: 100%;
+}
 
+.container .portlet .portlet-title{
+    text-align: center;
+    color: #808080;
+    font-size: 20px;
+}
+.container .portlet ul{
+    margin: 0;
+    padding: 0;
+}
+.container .portlet ul li{
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+}
 /* SHOW */
 .list-view{
-    width: 100%;
+    width: 70%;
     margin:auto;
     float: right;
+    margin-top: 0;
+}
+.list-view .summary{
+    width: 10%;
+    float: right;
+    height: 100%;
+}
+.list-view .view{
+    width: 80%;
 }
 .container h1{
     text-align: center;
+    color: #808080;
 }
 .container .span-19, .container .span-15.last, .container .sidebar{
     width: 20%;

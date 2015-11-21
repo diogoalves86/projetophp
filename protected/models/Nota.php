@@ -75,17 +75,30 @@ class Nota extends CActiveRecord
 			'usuario_id' => 'Usuario',
 		);
 	}
-	/*
+	
 	public static function calcularMediaTrimestral($value){
 		$media_trimestral = 0;
-		if $primeiro_certificacao || $segundo_certificacao || $terceiro_certificacao{
+		if(is_null($primeira_certificacao) || is_null($segunda_certificacao))
+			return ""; 
+		elseif($primeira_certificacao >= 7 || $segunda_certificacao >= 7){
 			$media_trimestral = $value * 3;
+			return $media_trimestral;
 		}
-		if $primeiro_recuperacao || $segundo_recuperacao{
-			$media_trimestral = (($primeiro ou segundo + primeiro ou segundo)/2)*3
+		else{
+			return calcularRecuperacao();
 		}
-
-	}*/
+	}
+	public static function calcularRecuperacao(){
+		if($primeira_certificacao > 0){
+			$media_trimestral = (($primeira_certificacao+$primeira_recuperacao)/2)*3;
+		}
+		elseif($segunda_certificacao > 0){
+			$media_trimestral = (($segunda_certificacao+$segunda_recuperacao)/2)*3;
+		}
+		else{
+			"**";
+		}
+	}
 
 	public static function calcularMediaAnual($primeira_certificacao, $segunda_certificacao, $terceira_certificacao)
 	{
@@ -110,6 +123,20 @@ class Nota extends CActiveRecord
 		
 		$pfv = 25 - (($media_anual*3)/2);
 		return $pfv;
+	}
+
+	public static function situacaoAluno($media_anual){
+		if(is_null($media_anual))
+			return "Em Andamento";
+		elseif ($media_anual >= 70) {
+			return "Aprovado";
+		}
+		elseif ($media_anual >= 40 || $media_anual < 70) {
+			return "Recuperação Final";
+		}
+		else{
+			return "Reprovado";
+		}
 	}
 
 	/**

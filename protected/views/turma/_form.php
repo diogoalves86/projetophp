@@ -26,14 +26,11 @@
 				<?php echo $form->error($model,'nome'); ?></td>
 				<td><?php echo CHtml::dropDownList('Turma[turno]', 'Selecione', array("Integrado"=>"Integrado", "Manhã"=>"Manhã", "Tarde"=>"Tarde","Noite"=>"Noite")); ?>
 				<?php echo $form->error($model,'turno'); ?></td>
-				<td>
-					<div class="row buttons">
-						<?php echo CHtml::submitButton($model->isNewRecord ? 'Cadastrar' : 'Salvar'); ?>
-					</div>
-				</td>
 			</tbody>
-
 	</table>
+	<div class="row buttons">
+				<?php echo CHtml::submitButton($model->isNewRecord ? 'Cadastrar' : 'Salvar'); ?>
+			</div>
 
 <?php $this->endWidget(); ?>
 
