@@ -32,7 +32,7 @@ class ComentarioController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('inserir','update', 'listar'),
+				'actions'=>array('inserir','update', 'listar', 'paramim', 'visualizarComentario'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -64,6 +64,30 @@ class ComentarioController extends Controller
 				'aluno'=>$aluno,
 				'comentarios_aluno'=>$comentarios_aluno,
 			));
+	}
+
+	public function actionParaMim()
+	{
+		if(Yii::app()->user->isInRole('PROFESSOR') == false)
+			throw new CHttpException(404, "A página solicitada não existe.");
+
+		$professor = Usuario::model()->find("nivel=3 && id='".Yii::app()->user->id."'");
+		$comentarios_professor = Comentario::model()->findAll("professor_id='".Yii::app()->user->id."'");
+
+		Yii::app()->user->setReturnUrl("comentario/paramim");
+		$this->render('listar', array(
+					'comentarios_professor'=>$comentarios_professor,
+					'professor'=>$professor
+			));
+
+	}
+
+	public function actionVisualizarComentario($id, $visualizada_status)
+	{
+		$comentario = Comentario::model()->find("id='".$id."'");
+		$comentario->setAttribute("visualizada", $visualizada_status);
+		if($comentario->save())
+			$this->redirect(Yii::app()->createAbsoluteUrl(Yii::app()->user->returnUrl));
 	}
 
 	/**

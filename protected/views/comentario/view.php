@@ -24,6 +24,8 @@ $this->menu=array(
 		'id',
 		'assunto',
 		'mensagem',
+		'visualizada',
 		'aluno_id',
+		'professor_id',
 	),
 )); ?>
