@@ -2422,3 +2422,100 @@ Stack trace:
 REQUEST_URI=/projetophp/index.php/site/site/login
 HTTP_REFERER=http://localhost:1234/projetophp/index.php/site/login
 ---
+2015/11/20 18:27:16 [error] [exception.CException] exception 'CException' with message 'Usuario has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php:289
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(304): CModel->getValidators('matricula')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(1514): CModel->isAttributeRequired('matricula')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(Usuario), 'matricula', Array)
+#4 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\_formInicial.php(21): CActiveForm->labelEx(Object(Usuario), 'matricula')
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#8 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\create.php(9): CController->renderPartial('_formInicial', Array)
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\UsuarioController.php(89): CController->render('create', Array)
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionCadastrar()
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#24 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/cadastr...')
+#25 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/projetophp/index.php/usuario/cadastrar
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/usuario/
+---
+2015/11/20 18:27:23 [error] [exception.CException] exception 'CException' with message 'Usuario has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php:289
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(2436): CModel->getValidators('nivel')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(1534): CHtml::activeInputField('text', Object(Usuario), 'nivel', Array)
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Usuario), 'nivel', Array)
+#4 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\_search.php(26): CActiveForm->textField(Object(Usuario), 'nivel')
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#8 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\admin.php(40): CController->renderPartial('_search', Array)
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#13 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\UsuarioController.php(158): CController->render('admin', Array)
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAdmin()
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#24 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/admin')
+#25 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/projetophp/index.php/usuario/admin
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/usuario/
+---
+2015/11/20 18:28:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('create')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('turma/create')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/turma/create
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/turma/admin
+---
+2015/11/20 18:30:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "GerarBoletim".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('GerarBoletim')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('GerarBoletim')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nota/GerarBolet...')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/nota/GerarBoletim/6
+---
+2015/11/20 18:30:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "GerarBoletim".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('GerarBoletim')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('GerarBoletim')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nota/GerarBolet...')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/nota/GerarBoletim/12345678?turma=307
+---
