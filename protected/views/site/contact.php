@@ -9,8 +9,6 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1>Entre em contato</h1>
-
 <?php if(Yii::app()->user->hasFlash('contact')): ?>
 
 <div class="flash-success">
@@ -27,52 +25,55 @@ $this->breadcrumbs=array(
 		'clientOptions'=>array(
 			'validateOnSubmit'=>true,
 		),
-	)); ?>
+	)); ?>		
+	<fieldset>
+		<h2>Entre em contato</h2>
 
 		<?php echo $form->errorSummary($model); ?>
 
-		<div class="row">
-			<?php echo $form->labelEx($model,'name'); ?>
-			<?php echo $form->textField($model,'name'); ?>
-			<?php echo $form->error($model,'name'); ?>
-		</div>
+		<ul id="contact-ul">
+			<li><div class="row">
+				<?php echo $form->labelEx($model,'Nome'); ?>
+				<?php echo $form->textField($model,'name'); ?>
+				<?php echo $form->error($model,'name'); ?>
+			</div></li>
 
-		<div class="row">
-			<?php echo $form->labelEx($model,'email'); ?>
-			<?php echo $form->textField($model,'email'); ?>
-			<?php echo $form->error($model,'email'); ?>
-		</div>
+			<li><div class="row">
+				<?php echo $form->labelEx($model,'Email'); ?>
+				<?php echo $form->textField($model,'email'); ?>
+				<?php echo $form->error($model,'email'); ?>
+			</div></li>
 
-		<div class="row">
-			<?php echo $form->labelEx($model,'subject'); ?>
-			<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
-			<?php echo $form->error($model,'subject'); ?>
-		</div>
+			<li><div class="row">
+				<?php echo $form->labelEx($model,'Assunto'); ?>
+				<?php echo $form->textField($model,'subject',array('size'=>40,'maxlength'=>100)); ?>
+				<?php echo $form->error($model,'subject'); ?>
+			</div></li>
 
-		<div class="row">
-			<?php echo $form->labelEx($model,'body'); ?>
-			<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
-			<?php echo $form->error($model,'body'); ?>
-		</div>
+			<li><div class="row">
+				<?php echo $form->labelEx($model,'Contexto'); ?>
+				<?php echo $form->textArea($model,'body',array('rows'=>5, 'cols'=>40)); ?>
+				<?php echo $form->error($model,'body'); ?>
+			</div></li>
 
-		<?php if(CCaptcha::checkRequirements()): ?>
-		<div class="row">
-			<?php echo $form->labelEx($model,'verifyCode'); ?>
-			<div>
-			<?php $this->widget('CCaptcha'); ?>
-			<?php echo $form->textField($model,'verifyCode'); ?>
-			</div>
-			<div class="hint">Digite o código a seguir</div>
-			<?php echo $form->error($model,'verifyCode'); ?>
-		</div>
-		<?php endif; ?>
+			<?php if(CCaptcha::checkRequirements()): ?>
+			<li><div class="row code">
+				<?php echo $form->labelEx($model,'verifyCode'); ?>
+				<?php $this->widget('CCaptcha'); ?></div></li>
+			<li><div class="row">
+				<p>Digite o código a seguir</p>
+				<?php echo $form->textField($model,'verifyCode'); ?>
+				<?php echo $form->error($model,'verifyCode'); ?>
+			</div></li>
+			<?php endif; ?>
+		
+			<li><div class="row buttons">
+				<?php echo CHtml::submitButton('Enviar'); ?>
+			</div></li>
+		</ul>
 
-		<div class="row buttons">
-			<?php echo CHtml::submitButton('En'); ?>
-		</div>
-
+	</fieldset>
 	<?php $this->endWidget(); ?>
-
-	</div><!-- form -->
+</div><!-- form -->
 
 <?php endif; ?>

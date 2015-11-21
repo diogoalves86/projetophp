@@ -28,8 +28,7 @@ class UsuarioController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('cadastrar'),
-				'expression'=>'Yii::app()->user->isInRole("ADMIN") !== false',
+				'users'=>array("@"),
 			),
 		);
 	}

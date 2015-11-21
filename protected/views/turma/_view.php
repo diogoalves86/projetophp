@@ -5,6 +5,7 @@
 
 <div class="view">
 	<table class="data-table">
+
 		<thead>
 			<th>Nome</th>
 			<th>Turno</th>

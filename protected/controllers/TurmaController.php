@@ -27,8 +27,8 @@ class TurmaController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // deny all users
-				'users'=>array('*'),
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'users'=>array("@"),
 			),
 		);
 	}
@@ -46,8 +46,30 @@ class TurmaController extends Controller
 
 	public function actionNotas($id)
 	{
-		$alunos = Turma::model()->find("nome='".$id."'");
-		var_dump($alunos); exit;
+		if(Yii::app()->user->isInRole('ALUNO'))
+			throw new CHttpException(404, "A página solicitada não existe");
+			
+		$turma = Turma::model()->find("nome='".$id."'");
+		$alunos_turma = AlunoTurma::model()->findAll("turma_id='".$turma->id."'");
+		$notas_turma = array();
+		//$notas_aluno = array();
+		foreach ($alunos_turma as $indice=>$aluno_turma) {
+			if(Yii::app()->user->isInRole('PROFESSOR')){
+				$professor_disciplina = ProfessorDisciplina::model()->find("professor_id='".Yii::app()->user->id."'");
+				$notas_aluno = Nota::model()->findAll("usuario_id='".$aluno_turma->aluno_id."' && disciplina_id='".$professor_disciplina->disciplina_id."'");
+			}
+			else
+				$notas_aluno = Nota::model()->findAll("usuario_id='".$aluno_turma->aluno_id."'");
+
+			$notas_turma["aluno"][$indice] = $aluno_turma->aluno;
+			$notas_turma["nota"][$indice] = $notas_aluno;
+
+			//array_push($notas_turma, isset($notas_aluno) ? $notas_aluno : null);
+		}
+		$this->render('notas', array(
+					'model'=>$turma,
+					'notas_turma'=>$notas_turma,
+			));
 	}
 
 	/**
@@ -65,7 +87,7 @@ class TurmaController extends Controller
 		{
 			$model->attributes=$_POST['Turma'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('visualizar','id'=>$model->nome));
 		}
 
 		$this->render('create',array(

@@ -15,7 +15,7 @@
 	<!--<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">-->
 	<!--<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">-->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Site.css">
-
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -30,7 +30,7 @@
         </div>
 
 	    <div class="title">
-    		<h2>Diário Online</h2>
+    		<a href="<?php echo Yii::app()->createUrl('site/index') ?>"><h2>Diário Online</h2></a>
 		</div>
         
     	<div class="main-menu">
@@ -41,14 +41,9 @@
 				),
 			)); ?>
     	</div>			
-	</header>
-	<div class="mainContent">
-		<div class="menu-opcoes">
-			<a href="<?php echo Yii::app()->createUrl('site/index') ?>">Voltar para o início</a>
-		</div>
-		<div class="container">
-			<?php echo $content; ?>
-		</div>
+	</header>		
+	<div class="container">
+		<?php echo $content; ?>
 	</div>
 	<footer>
 		<p><?php echo date('Y'); ?> - Projeto Final CP2 ENII</p>

@@ -28,7 +28,7 @@ class NotaController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'users'=>array('*'),
+				'users'=>array("@"),
 			),
 		);
 	}
@@ -84,6 +84,32 @@ class NotaController extends Controller
 			'disciplina'=>$disciplina,
 			'model'=>$model,
 		));
+	}
+
+	public function actionNovaNota($id, $disciplina_id, array $notas)
+	{
+		if (Yii::app()->user->isInRole('ALUNO'))
+			throw new CHttpException(404, "A página solicitada não existe");
+			
+		$model= Nota::model()->find("usuario_id='".$id."' && disciplina_id='".$disciplina_id."'");
+
+		//Verifica se o usuário já possui nota 
+		if($model == null)
+			$model = new Nota();
+
+		//Os dados vem do javascript como string
+		foreach ($notas as $key=>$nota)
+			if($nota === "null")
+				$notas[$key] = null;
+
+		if(isset($notas))
+		{
+			$model->setAttribute("disciplina_id", $disciplina_id);
+			$model->setAttribute("usuario_id", $id);
+			$model->attributes=$notas;
+			if($model->save())
+				$this->redirect(Yii::app()->createAbsoluteUrl(Yii::app()->user->returnUrl));
+		}
 	}
 
 	/**
