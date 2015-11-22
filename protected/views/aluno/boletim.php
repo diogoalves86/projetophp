@@ -8,14 +8,14 @@
 			<th>Disciplinas</th>
 			<th>1ºC</th>
 			<th>REC 1</th>
-			<th>MÉDIA 1</th>
+			<!--<th>MÉDIA 1</th>-->
 			<th>2º C</th>
 			<th>REC 2</th>
-			<th>MÉDIA 2</th>
+			<!--<th>MÉDIA 2</th>-->
 			<th>3º C</th>
-			<th>MÉDIA ANUAL</th>
 			<th>PFV</th>
 			<th>MÉDIA FINAL</th>
+			<th>MÉDIA ANUAL</th>
 			<th>SITUAÇÃO</th>
 		</thead>
 		<tbody>
@@ -24,14 +24,25 @@
 					<td><?php echo $nota_aluno->disciplina->nome;  ?></td>				
 					<td><?php echo $nota_aluno->primeira_certificacao == null ? "" : $nota_aluno->primeira_certificacao ?></td>
 					<td><?php echo $nota_aluno->primeira_recuperacao == null ? "" : $nota_aluno->primeira_recuperacao ?></td>
-					<td></td>
 					<td><?php echo $nota_aluno->segunda_certificacao == null ? "" : $nota_aluno->segunda_certificacao ?></td>
 					<td><?php echo $nota_aluno->segunda_recuperacao == null ? "" : $nota_aluno->segunda_recuperacao ?></td>
-					<td></td>
 					<td><?php echo $nota_aluno->terceira_certificacao == null ? "" : $nota_aluno->terceira_certificacao ?></td>
-					<td><?php echo Nota::calcularMediaAnual($nota_aluno->primeira_certificacao, $nota_aluno->segunda_certificacao, $nota_aluno->terceira_certificacao) ?></td>
-					<td><?php echo $nota_aluno->terceira_recuperacao == null ? "" : $nota_aluno->terceira_recuperacao ?></td>
-					<td></td>
+
+					<?php if($nota_aluno->terceira_recuperacao == null): ?>
+						<?php //Se o aluno não ficou de PFV, então sua média anual é igual a média final. ?>
+						<td></td>
+						<td><?php echo Nota::calcularMediaAnual($nota_aluno->primeira_certificacao, $nota_aluno->segunda_certificacao, $nota_aluno->terceira_certificacao) ?></td>
+						<td><?php echo Nota::calcularMediaAnual($nota_aluno->primeira_certificacao, $nota_aluno->segunda_certificacao, $nota_aluno->terceira_certificacao) ?></td>
+						
+					<?php else: ?>
+						<td><?php echo $nota_aluno->terceira_recuperacao ?></td>
+						<td>
+							<?php $nota_final_terceira_recuperacao = ($nota_aluno->terceira_certificacao + $nota_aluno->terceira_recuperacao) / 2 ?>
+							<?php echo Nota::calcularMediaAnual($nota_aluno->primeira_certificacao, $nota_aluno->segunda_certificacao, $nota_final_terceira_recuperacao) ?></td>
+						</td>
+						<td><?php echo Nota::calcularMediaAnual($nota_aluno->primeira_certificacao, $nota_aluno->segunda_certificacao, $nota_aluno->terceira_certificacao) ?></td></td>
+					
+					<?php endif; ?>
 					<td><!--<?php /*echo Nota::situacaoAluno()*/ ?>--></td>
 				</tr>
 			<?php endforeach; ?>
