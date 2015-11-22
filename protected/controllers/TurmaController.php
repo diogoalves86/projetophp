@@ -28,7 +28,19 @@ class TurmaController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'users'=>array("@"),
+				'actions'=>array(),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('admin','view', 'notas','atualizar', 'create', 'delete', 'alunos', 'associarAluno', 'novoAluno'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin'),
+				'users'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
 			),
 		);
 	}
@@ -37,7 +49,7 @@ class TurmaController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionVisualizar($id)
+	public function actionView($id)
 	{
 		$this->render('view',array(
 			'model'=>Turma::model()->find("nome='".$id."'"),
@@ -76,7 +88,7 @@ class TurmaController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCadastrar()
+	public function actionCreate()
 	{
 		$model=new Turma;
 
@@ -100,7 +112,7 @@ class TurmaController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionAtualizar($id)
+	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
 
@@ -119,6 +131,58 @@ class TurmaController extends Controller
 		));
 	}
 
+	public function actionAlunos($id)
+	{
+		if(Yii::app()->user->isInRole('ADMIN') == false)
+			throw new CHttpException(404, "A página solicitada não existe.");
+			
+		$turma = Turma::model()->find("nome='".$id."'");
+		$alunos_turma = $turma->alunoTurmas;
+
+		$this->render('alunos', array(
+				'alunos_turma'=>$alunos_turma
+			));
+	}
+
+	public function actionAssociarAluno()
+	{
+		if(Yii::app()->user->isInRole('ADMIN') == false)
+			throw new CHttpException(404, "A página solicitada não existe.");
+
+		$alunos_sem_turma = array();
+		$alunos_turmas = AlunoTurma::model()->findAll();
+		$turmas = Turma::model()->findAll();
+		$lista_turmas = CHtml::listData($turmas, "id", "nome");
+		$alunos = Usuario::model()->findAll("nivel=2");
+
+		foreach ($alunos as $aluno){
+			$aluno_turma = AlunoTurma::model()->find("aluno_id='".$aluno->id."'");
+			if ($aluno_turma == null)
+				array_push($alunos_sem_turma, $aluno);
+		}
+
+		Yii::app()->user->setReturnUrl("turma/associarAluno");
+
+		$this->render('associarAlunos', array(
+				'alunos_sem_turma'=>$alunos_sem_turma,
+				'lista_turmas'=>$lista_turmas
+			));
+
+	}
+
+
+	public function actionNovoAluno($id, $aluno_id)
+	{
+		if(Yii::app()->user->isInRole('ADMIN') == false)
+			throw new CHttpException(404, "A página solicitada não existe.");
+		
+		$aluno_turma = new AlunoTurma();
+		$aluno_turma->setAttribute("aluno_id", $aluno_id);
+		$aluno_turma->setAttribute("turma_id", $id);
+		if($aluno_turma->save())
+			$this->redirect(Yii::app()->createAbsoluteUrl(Yii::app()->user->returnUrl));
+	}
+
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -130,7 +194,7 @@ class TurmaController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
 	}
 
 	/**
