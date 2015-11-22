@@ -128,10 +128,10 @@ class Nota extends CActiveRecord
 	public static function situacaoAluno($media_anual){
 		if(is_null($media_anual))
 			return "Em Andamento";
-		elseif ($media_anual >= 70) {
+		elseif ($media_anual >= 7) {
 			return "Aprovado";
 		}
-		elseif ($media_anual >= 40 || $media_anual < 70) {
+		elseif ($media_anual >= 4 || $media_anual < 7) {
 			return "Recuperação Final";
 		}
 		else{
