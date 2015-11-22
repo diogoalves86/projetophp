@@ -14,7 +14,11 @@
 	<div class="view">
 		<table class="data-table">
 			<thead>
-				<th>Professor</th>
+				<?php if(Yii::app()->user->isInRole('PROFESSOR')): ?>
+					<th>Aluno</th>
+				<?php elseif (Yii::app()->user->isInRole('ALUNO')): ?>
+					<th>Professor</th>
+				<?php endif; ?>
 				<th>Assunto</th>
 				<th>Mensagem</th>
 				<th>Visualizada</th>
@@ -42,7 +46,7 @@
 
 					<?php foreach ($comentarios_professor as $comentario_professor):?>
 						<tr>
-							<td><?php echo $comentario_professor->professor->nome ?></td>
+							<td><?php echo $comentario_professor->aluno->nome ?></td>
 							<td><?php echo $comentario_professor->assunto ?></td>
 							<td><?php echo $comentario_professor->mensagem ?></td>
 							<td><?php echo CHtml::checkBox('Comentario[visualizada]', $comentario_professor->visualizada, array('id'=>'comentario_'.$comentario_professor->id, 'onClick'=>"visualizarNota(".$comentario_professor->id.")")) ?></td>
@@ -51,9 +55,5 @@
 				<?php endif; ?>
 			</tbody>
 		</table>
-
-		<?php if(Yii::app()->user->isInRole('PROFESSOR')): ?>
-			<?php echo CHtml::submitButton("Salvar Alterações"); ?>
-		<?php endif; ?>
 	</div>
 <?php $this->endWidget(); ?>
