@@ -8,6 +8,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Cadastrar Turma', 'url'=>array('create')),
+	array('label'=>'Gerenciar Turmas', 'url'=>array('admin')),
 );
 ?>
 

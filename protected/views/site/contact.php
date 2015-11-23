@@ -29,8 +29,6 @@ $this->breadcrumbs=array(
 		<fieldset>
 			<h2>Entre em contato</h2>
 
-			<?php echo $form->errorSummary($model); ?>
-
 			<ul id="contact-ul">
 				<li><div class="row">
 					<?php echo $form->labelEx($model,'Nome'); ?>

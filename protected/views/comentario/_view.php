@@ -4,30 +4,20 @@
 ?>
 
 <div class="view">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('assunto')); ?>:</b>
-	<?php echo CHtml::encode($data->assunto); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('mensagem')); ?>:</b>
-	<?php echo CHtml::encode($data->mensagem); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('visualizada')); ?>:</b>
-	<?php echo CHtml::encode($data->visualizada); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('aluno_id')); ?>:</b>
-	<?php echo CHtml::encode($data->aluno_id); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('professor_id')); ?>:</b>
-	<?php echo CHtml::encode($data->professor_id); ?>
-	<br />
-
-
+	<table class="data-table">
+		<thead>
+			<th>Assunto</th>
+			<th>Mensagem</th>
+			<th>Visualizada</th>
+			<th>Aluno</th>
+			<th>Professor</th>
+		</thead>
+		<tbody>
+			<td><?php echo CHtml::encode($data->assunto); ?></td>
+			<td><?php echo CHtml::encode($data->mensagem); ?></td>
+			<td><?php echo CHtml::encode($data->visualizada); ?></td>
+			<td><?php echo CHtml::encode($data->aluno->nome); ?></td>
+			<td><?php echo CHtml::encode($data->professor->nome); ?></td>
+		</tbody>
+	</table>
 </div>

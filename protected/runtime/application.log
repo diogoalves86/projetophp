@@ -4496,3 +4496,334 @@ Stack trace:
 REQUEST_URI=/projetophp/index.php/comentario/admin
 HTTP_REFERER=http://localhost:1234/projetophp/index.php/comentario/index
 ---
+2015/11/23 04:03:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'É necessário ser aluno para cadastrar comentários.' in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\ComentarioController.php:99
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): ComentarioController->actionInserir()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('inserir')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('comentario/inse...')
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/projetophp/index.php/comentario/inserir
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/comentario/index
+---
+2015/11/23 04:09:03 [error] [php] Trying to get property of non-object (C:\Users\j\Xampp\htdocs\projetophp\protected\views\comentario\_view.php:19)
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\zii\widgets\CListView.php(291): ComentarioController->renderFile()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback()
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\zii\widgets\CBaseListView.php(149): CListView->renderContent()
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(181): CListView->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\protected\views\comentario\index.php(20): ComentarioController->widget()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require()
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): ComentarioController->renderInternal()
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): ComentarioController->renderFile()
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): ComentarioController->renderPartial()
+#11 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\ComentarioController.php(172): ComentarioController->render()
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): ComentarioController->actionIndex()
+#13 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): ComentarioController->runAction()
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#17 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): ComentarioController->filterAccessControl()
+#18 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#19 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): ComentarioController->runActionWithFilters()
+#21 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): ComentarioController->run()
+#22 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#23 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#24 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/comentario/index
+in C:\Users\j\Xampp\htdocs\projetophp\protected\views\comentario\_view.php (19)
+in C:\Users\j\Xampp\htdocs\projetophp\protected\views\comentario\index.php (20)
+in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\ComentarioController.php (172)
+2015/11/23 04:24:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "usuarios".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuarios')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/projetophp/index.php/usuarios/
+---
+2015/11/23 04:25:02 [error] [exception.CException] exception 'CException' with message 'Usuario has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php:289
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(304): CModel->getValidators('matricula')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(1514): CModel->isAttributeRequired('matricula')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(Usuario), 'matricula', Array)
+#4 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\_formInicial.php(21): CActiveForm->labelEx(Object(Usuario), 'matricula')
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#8 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\create.php(9): CController->renderPartial('_formInicial', Array)
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\UsuarioController.php(89): CController->render('create', Array)
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionCadastrar()
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#24 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/cadastr...')
+#25 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/projetophp/index.php/usuario/cadastrar
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/usuario/
+---
+2015/11/23 04:29:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "usuario".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('usuario')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('usuario')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/usuario')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/site/usuario
+---
+2015/11/23 04:29:41 [error] [exception.CException] exception 'CException' with message 'Usuario has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php:289
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(304): CModel->getValidators('matricula')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(1514): CModel->isAttributeRequired('matricula')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(Usuario), 'matricula', Array)
+#4 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\_formInicial.php(21): CActiveForm->labelEx(Object(Usuario), 'matricula')
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#8 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\create.php(9): CController->renderPartial('_formInicial', Array)
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\UsuarioController.php(89): CController->render('create', Array)
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionCadastrar()
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#24 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/cadastr...')
+#25 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/projetophp/index.php/usuario/cadastrar
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/usuario
+---
+2015/11/23 04:32:24 [error] [exception.CException] exception 'CException' with message 'Usuario has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php:289
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(304): CModel->getValidators('matricula')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(1514): CModel->isAttributeRequired('matricula')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(Usuario), 'matricula', Array)
+#4 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\_formInicial.php(21): CActiveForm->labelEx(Object(Usuario), 'matricula')
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#8 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\create.php(9): CController->renderPartial('_formInicial', Array)
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\UsuarioController.php(89): CController->render('create', Array)
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionCadastrar()
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#24 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/cadastr...')
+#25 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/projetophp/index.php/usuario/cadastrar
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/usuario
+---
+2015/11/23 04:32:40 [error] [exception.CException] exception 'CException' with message 'Usuario has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php:289
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(304): CModel->getValidators('matricula')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(1514): CModel->isAttributeRequired('matricula')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(Usuario), 'matricula', Array)
+#4 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\_formInicial.php(21): CActiveForm->labelEx(Object(Usuario), 'matricula')
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#8 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\create.php(9): CController->renderPartial('_formInicial', Array)
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\UsuarioController.php(89): CController->render('create', Array)
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionCadastrar()
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#24 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/cadastr...')
+#25 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/projetophp/index.php/usuario/cadastrar
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/usuario
+---
+2015/11/23 04:32:43 [error] [exception.CException] exception 'CException' with message 'Usuario has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php:289
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(304): CModel->getValidators('matricula')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(1514): CModel->isAttributeRequired('matricula')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(Usuario), 'matricula', Array)
+#4 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\_formInicial.php(21): CActiveForm->labelEx(Object(Usuario), 'matricula')
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#8 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\create.php(9): CController->renderPartial('_formInicial', Array)
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\UsuarioController.php(89): CController->render('create', Array)
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionCadastrar()
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#24 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/cadastr...')
+#25 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/projetophp/index.php/usuario/cadastrar
+---
+2015/11/23 04:35:24 [error] [exception.CException] exception 'CException' with message 'Usuario has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php:289
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(2436): CModel->getValidators('nivel')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(1534): CHtml::activeInputField('text', Object(Usuario), 'nivel', Array)
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Usuario), 'nivel', Array)
+#4 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\_search.php(26): CActiveForm->textField(Object(Usuario), 'nivel')
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#8 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\admin.php(40): CController->renderPartial('_search', Array)
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#13 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\UsuarioController.php(158): CController->render('admin', Array)
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAdmin()
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#24 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/admin')
+#25 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/projetophp/index.php/usuario/admin
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/usuario/index
+---
+2015/11/23 04:44:53 [error] [exception.CException] exception 'CException' with message 'Usuario has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php:289
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(304): CModel->getValidators('matricula')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(1514): CModel->isAttributeRequired('matricula')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(Usuario), 'matricula', Array)
+#4 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\_formInicial.php(21): CActiveForm->labelEx(Object(Usuario), 'matricula')
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#8 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\create.php(9): CController->renderPartial('_formInicial', Array)
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\UsuarioController.php(89): CController->render('create', Array)
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionCadastrar()
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#24 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/cadastr...')
+#25 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/projetophp/index.php/usuario/cadastrar
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/usuario/
+---
+2015/11/23 04:44:57 [error] [exception.CException] exception 'CException' with message 'Usuario has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php:289
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(2436): CModel->getValidators('nivel')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\helpers\CHtml.php(1534): CHtml::activeInputField('text', Object(Usuario), 'nivel', Array)
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Usuario), 'nivel', Array)
+#4 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\_search.php(26): CActiveForm->textField(Object(Usuario), 'nivel')
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#8 C:\Users\j\Xampp\htdocs\projetophp\protected\views\usuario\admin.php(40): CController->renderPartial('_search', Array)
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(126): require('C:\\Users\\j\\Xamp...')
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\j\\Xamp...', Array, true)
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\Users\\j\\Xamp...', Array, true)
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#13 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\UsuarioController.php(158): CController->render('admin', Array)
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAdmin()
+#15 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#24 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/admin')
+#25 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/projetophp/index.php/usuario/admin
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/usuario/
+---

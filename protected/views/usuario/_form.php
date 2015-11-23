@@ -15,7 +15,6 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<?php echo $form->errorSummary($model); ?>
 	<h2>Editar Dados</h2>
 	<dl>
 		<dt>Nome</dt>

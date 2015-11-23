@@ -23,7 +23,6 @@
 	});
 </script>
 	<table data-table>
-		<?php echo $form->errorSummary($model); ?>
 		<thead>
 			<th>Nomes</th>
 			<th>1ºC</th>

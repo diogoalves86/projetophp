@@ -294,7 +294,9 @@ button{
     height: 100%;
     width: 100%;
 }
-
+.container .portlet ul li:last-child{
+    border: none;
+}
 .container .portlet .portlet-title{
     text-align: center;
     color: #808080;

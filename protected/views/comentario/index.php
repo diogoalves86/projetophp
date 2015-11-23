@@ -7,7 +7,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Inserir Comentário', 'url'=>array('inserir')),
 	array('label'=>'Gerenciar Comentarios', 'url'=>array('admin')),
 );
 ?>

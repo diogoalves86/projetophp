@@ -15,7 +15,6 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<?php echo $form->errorSummary($model); ?>
 	<table>
 		<thead>
 			<th>Nome</th>

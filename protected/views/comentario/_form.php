@@ -16,7 +16,6 @@
 )); ?>
 	<fieldset>
 		<ul id="comment-ul">
-			<?php echo $form->errorSummary($model); ?>
 
 			<li><div class="row">
 				<?php echo $form->labelEx($model,'assunto'); ?>

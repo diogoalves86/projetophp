@@ -33,7 +33,7 @@ class Comentario extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('assunto, mensagem, visualizada, aluno_id, professor_id', 'required'),
+			array('assunto, mensagem, visualizada, aluno_id, professor_id', 'required', 'message'=>'O campo {attribute} não foi preenchido.'),
 			array('visualizada, aluno_id, professor_id', 'numerical', 'integerOnly'=>true),
 			array('assunto', 'length', 'max'=>100),
 			// The following rule is used by search().
