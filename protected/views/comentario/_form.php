@@ -40,7 +40,7 @@
 			</div></li>
 
 			<li><div class="row buttons">
-				<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+				<?php echo CHtml::submitButton('Enviar'); ?>
 			</div></li>
 		</ul>
 	</fieldset>

@@ -49,11 +49,13 @@ class ProfessorController extends Controller
 		$professor_disciplina = new ProfessorDisciplina();
 
 		if (isset($_POST['Usuario'])) {
+			$model->setAttribute("ativo", 1);
 			$model->attributes = $_POST['Usuario'];
-			var_dump($model); exit;
 			if($model->save()){
-
-				$professor_disciplina->setAttribute("professor_id");
+				$professor_disciplina->setAttribute("professor_id", $model->id);
+				$professor_disciplina->setAttribute("disciplina_id", $_POST['Usuario']['disciplina']);
+				if($professor_disciplina->save())
+					$this->redirect(Yii::app()->createAbsoluteUrl("/site/index"));
 			}
 		}
 
