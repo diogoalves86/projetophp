@@ -32,7 +32,7 @@ class UsuarioController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('cadastrar','update', 'visualizar', 'atualizarCadastro'),
+				'actions'=>array('cadastrar','update', 'view', 'atualizarCadastro', 'admin', 'delete'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -45,7 +45,7 @@ class UsuarioController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionVisualizar($id)
+	public function actionview($id)
 	{
 		$this->render('view',array(
 			'model'=>Usuario::model()->find("matricula='".$id."'"),
@@ -114,7 +114,7 @@ class UsuarioController extends Controller
 			$model->setAttribute('ativo', 1);
 			$model->setAttribute('nivel', $model->nivel_relacao->id);
 			if($model->update())
-				$this->redirect(array('visualizar','id'=>$model->matricula));
+				$this->redirect(array('view','id'=>$model->matricula));
 		}
 		$this->render('update',array(
 			'nivel_usuario'=>$nivel_usuario,
