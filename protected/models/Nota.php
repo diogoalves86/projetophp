@@ -76,11 +76,33 @@ class Nota extends CActiveRecord
 		);
 	}
 	
+	public static function calcularMediasTrimestrais($notas)
+	{
+		$medias = array();
+		$media_primeira = $notas->primeira_certificacao;
+		$media_segunda = $notas->segunda_certificacao;
+		$media_terceira = $notas->terceira_certificacao;
+		if (!is_null($notas->primeira_recuperacao))
+			$media_primeira = (($notas->primeira_certificacao + $notas->primeira_recuperacao) / 2);
+
+		 if (!is_null($notas->segunda_recuperacao))
+			$media_segunda = (($notas->segunda_certificacao + $notas->segunda_recuperacao) / 2);
+
+	 	if (!is_null($notas->terceira_recuperacao))
+			$media_terceira = $notas->terceira_certificacao;
+
+		$medias["primeira"] = $media_primeira;
+		$medias["segunda"] = $media_segunda;
+		$medias["terceira"] = $media_terceira;
+		return $medias;
+
+	}
+
 	public static function calcularMediaTrimestral($value){
 		$media_trimestral = 0;
 		if(is_null($primeira_certificacao) || is_null($segunda_certificacao))
 			return ""; 
-		elseif($primeira_certificacao >= 7 || $segunda_certificacao >= 7){
+		elseif($primeira_certificacao >= 5 || $segunda_certificacao >= 5){
 			$media_trimestral = $value * 3;
 			return $media_trimestral;
 		}
@@ -121,22 +143,34 @@ class Nota extends CActiveRecord
 		if(is_null($media_anual))
 			return "";
 		
-		$pfv = 25 - (($media_anual*3)/2);
+		$pfv = (25 - ($media_anual*3)) / 2;
 		return $pfv;
+	}
+
+	public static function calcularMediaComPfv($media_anual, $pfv)
+	{
+		$media_final = (($media_anual * 3) + ($pfv * 2)) / 5;
+		return $media_final;
 	}
 
 	public static function situacaoAluno($media_anual){
 		if(is_null($media_anual))
 			return "Em Andamento";
-		elseif ($media_anual >= 7) {
+		elseif ($media_anual >= 7) 
 			return "Aprovado";
-		}
-		elseif ($media_anual >= 4 || $media_anual < 7) {
+
+		elseif ($media_anual >= 4 || $media_anual < 7)
 			return "Recuperação Final";
-		}
-		else{
+		else
 			return "Reprovado";
-		}
+	}
+
+	public static function situacaoAlunoComPfv($pfv)
+	{
+		if($pfv >= 5)
+			return "Aprovado";
+		else
+			return "Reprovado";
 	}
 
 	/**

@@ -20,6 +20,7 @@
 		</thead>
 		<tbody>
 			<?php foreach ($notas_aluno as $nota_aluno):?>
+				<?php $medias = Nota::calcularMediasTrimestrais($nota_aluno); ?>
 				<tr>
 					<td><?php echo $nota_aluno->disciplina->nome;  ?></td>				
 					<td><?php echo $nota_aluno->primeira_certificacao == null ? "" : $nota_aluno->primeira_certificacao ?></td>
@@ -27,37 +28,23 @@
 					<td><?php echo $nota_aluno->segunda_certificacao == null ? "" : $nota_aluno->segunda_certificacao ?></td>
 					<td><?php echo $nota_aluno->segunda_recuperacao == null ? "" : $nota_aluno->segunda_recuperacao ?></td>
 					<td><?php echo $nota_aluno->terceira_certificacao == null ? "" : $nota_aluno->terceira_certificacao ?></td>
-
-					<?php if($nota_aluno->terceira_recuperacao == null): ?>
-						<?php //Se o aluno não ficou de PFV, então sua média anual é igual a média final. ?>
+					<?php $media_anual = Nota::calcularMediaAnual($medias["primeira"], $medias["segunda"], $medias["terceira"]); ?>
+					<?php if($nota_aluno->terceira_recuperacao == null): $media_final = $media_anual; ?>
 						<td></td>
-						<td>
-							<?php 
-								$media_anual = Nota::calcularMediaAnual($nota_aluno->primeira_certificacao, $nota_aluno->segunda_certificacao, $nota_aluno->terceira_certificacao);
-								$media_final = $media_anual;
-								echo $media_final;
-							 ?>
-						</td>
+						<td><?php echo $media_final ?></td>
 						<td><?php echo $media_anual ?></td>
 						<td><?php echo Nota::situacaoAluno($media_final); ?></td>
-						
-					<?php else: ?>
-						<td><?php echo $nota_aluno->terceira_recuperacao ?></td>
-						<td>
-							<?php $nota_final_terceira_recuperacao = ($nota_aluno->terceira_certificacao + $nota_aluno->terceira_recuperacao) / 2 ?>
-							<?php 
-								$media_final = Nota::calcularMediaAnual($nota_aluno->primeira_certificacao, $nota_aluno->segunda_certificacao, $nota_final_terceira_recuperacao); 
-								echo $media_final;
-							?>
-						</td>
-						<td>
-							<?php
-						 		$media_anual =  Nota::calcularMediaAnual($nota_aluno->primeira_certificacao, $nota_aluno->segunda_certificacao, $nota_aluno->terceira_certificacao);
-						 		echo $media_anual;
-						 	?>
-					 	</td>
-						<td><?php echo Nota::situacaoAluno($media_final); ?></td>
 					
+					<?php else: ?>
+						<?php
+							$pfv = $nota_aluno->terceira_recuperacao;
+							$media_com_pfv = Nota::calcularMediaComPfv($media_anual, $pfv);
+						?>
+						<td><?php echo $nota_aluno->terceira_recuperacao ?></td>
+						<td><?php echo $media_com_pfv; ?></td>
+						<td><?php echo $media_anual ?></td>
+						<td><?php echo Nota::situacaoAlunoComPfv($media_com_pfv); ?></td>
+
 					<?php endif; ?>
 				</tr>
 			<?php endforeach; ?>
