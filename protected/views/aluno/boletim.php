@@ -39,6 +39,15 @@
 								else $media_final="*"; 
 						?>
 						<td><?php echo $media_final ?></td>
+
+						<?php if (Nota::situacaoAluno($media_final) == "Aprovado"): ?>
+								<td class="approved"><?php echo Nota::situacaoAluno($media_final); ?></td>
+						<?php elseif (Nota::situacaoAluno($media_final) == "Reprovado"): ?>
+								<td class="reproved"><?php echo Nota::situacaoAluno($media_final); ?></td>
+						<?php elseif (Nota::situacaoAluno($media_final) == "Em Andamento"): ?>
+								<td class="progress"><?php echo Nota::situacaoAluno($media_final); ?></td>
+
+						<?php endif; ?>
 						<td><?php echo Nota::situacaoAluno($media_final); ?></td>
 					
 					<?php else: ?>
@@ -49,7 +58,14 @@
 						<td><?php echo $media_anual ?></td>
 						<td><?php echo $nota_aluno->terceira_recuperacao ?></td>
 						<td><?php echo $media_com_pfv; ?></td>
-						<td><?php echo Nota::situacaoAlunoComPfv($media_com_pfv); ?></td>
+						
+						<?php if (Nota::situacaoAlunoComPfv($media_com_pfv) == "Aprovado"): ?>
+							<td class="approved"><?php echo Nota::situacaoAlunoComPfv($media_com_pfv); ?></td>
+						<?php elseif (Nota::situacaoAlunoComPfv($media_com_pfv) == "Reprovado"): ?>
+							<td class="reproved"><?php echo Nota::situacaoAlunoComPfv($media_com_pfv); ?></td>	
+						<?php elseif (Nota::situacaoAlunoComPfv($media_com_pfv) == "Em Andamento"): ?>
+							<td class="progress"><?php echo Nota::situacaoAlunoComPfv($media_com_pfv); ?></td>
+						<?php endif; ?>
 
 					<?php endif; ?>
 				</tr>

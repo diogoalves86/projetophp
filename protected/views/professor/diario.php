@@ -67,7 +67,15 @@
 									else $media_final="*"; 
 							?>
 							<td><?php echo $media_final ?></td>
-							<td><?php echo Nota::situacaoAluno($media_final); ?></td>
+							<?php if (Nota::situacaoAluno($media_final) == "Aprovado"): ?>
+								<td class="approved"><?php echo Nota::situacaoAluno($media_final); ?></td>
+
+							<?php elseif (Nota::situacaoAluno($media_final) == "Reprovado"): ?>
+								<td class="reproved"><?php echo Nota::situacaoAluno($media_final); ?></td>
+
+							<?php elseif (Nota::situacaoAluno($media_final) == "Em Andamento"): ?>
+								<td class="progress"><?php echo Nota::situacaoAluno($media_final); ?></td>
+							<?php endif; ?>
 
 						<?php else: ?>
 							<?php
@@ -86,9 +94,8 @@
 							<?php elseif (Nota::situacaoAlunoComPfv($media_com_pfv) == "Em Andamento"): ?>
 								<td class="progress"><?php echo Nota::situacaoAlunoComPfv($media_com_pfv); ?></td>
 							<?php endif; ?>
+							<td><?php echo CHtml::htmlButton('Salvar', array('onClick'=>'cadastrarNota('.$notas_alunos["aluno"][$i]->id.', '.$disciplina_professor->disciplina->id.');')); ?></td>
 						<?php endif; ?>
-						<?php //Nota Final com a PFV inclusa ?>
-						<td><?php echo CHtml::htmlButton('Salvar', array('onClick'=>'cadastrarNota('.$notas_alunos["aluno"][$i]->id.', '.$disciplina_professor->disciplina->id.');')); ?></td>
 					<?php endif; ?>
 				</tr>
 			<?php endfor; ?>
