@@ -77,7 +77,15 @@
 							<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->terceira_recuperacao, array('min'=>0, 'max'=>10,  'id'=>'terceira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
 							<td><?php echo $media_anual ?></td>
 							<td><?php echo $media_com_pfv; ?></td>
-							<td><?php echo Nota::situacaoAlunoComPfv($media_com_pfv); ?></td>
+							
+							<?php if (Nota::situacaoAlunoComPfv($media_com_pfv) == "Aprovado"): ?>
+								<td class="approved"><?php echo Nota::situacaoAlunoComPfv($media_com_pfv); ?></td>
+							<?php elseif (Nota::situacaoAlunoComPfv($media_com_pfv) == "Reprovado"): ?>
+								<td class="reproved"><?php echo Nota::situacaoAlunoComPfv($media_com_pfv); ?></td>
+
+							<?php elseif (Nota::situacaoAlunoComPfv($media_com_pfv) == "Em Andamento"): ?>
+								<td class="progress"><?php echo Nota::situacaoAlunoComPfv($media_com_pfv); ?></td>
+							<?php endif; ?>
 						<?php endif; ?>
 						<?php //Nota Final com a PFV inclusa ?>
 						<td><?php echo CHtml::htmlButton('Salvar', array('onClick'=>'cadastrarNota('.$notas_alunos["aluno"][$i]->id.', '.$disciplina_professor->disciplina->id.');')); ?></td>

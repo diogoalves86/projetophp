@@ -348,6 +348,14 @@ button{
     border: 1px solid gray;
 }
 
+.approved{
+    color:green;
+}
+
+.reproved{
+    color:red;
+}
+
 /* FOOTER */
 footer{
     background-color: black;
