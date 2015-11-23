@@ -5086,3 +5086,25 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/projetophp/index.php/error
 ---
+2015/11/23 16:39:38 [error] [php] Undefined variable: code (C:\Users\j\Xampp\htdocs\projetophp\protected\views\site\error.php:11)
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): AlunoController->renderFile()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): AlunoController->renderPartial()
+#2 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\AlunoController.php(82): AlunoController->render()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): AlunoController->runAction()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): AlunoController->filterAccessControl()
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): AlunoController->runActionWithFilters()
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): AlunoController->run()
+#13 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/aluno/listaPaf
+in C:\Users\j\Xampp\htdocs\projetophp\protected\views\site\error.php (11)
+in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\AlunoController.php (82)
+in C:\Users\j\Xampp\htdocs\projetophp\index.php (13)

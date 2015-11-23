@@ -7,13 +7,13 @@ $this->breadcrumbs=array(
 	'Error',
 );
 ?>
-<<<<<<< HEAD
-<h2>Error <?php echo $code; ?></h2>
-=======
-
-<h2>Erro</h2>
->>>>>>> a0a44ee7a0cbc40a1a2044d26dc343a689fe5db9
 
 <div class="error">
+	<h2 id="error-title">Erro</h2>
 
+	<ul id="error-ul">
+		<li><a href="javascript:history.back()">Voltar para a página anterior</a></li>
+		<li><a href="<?php echo Yii::app()->createUrl('site/index') ?>">Voltar para o início</a></li>
+		<li><a href="<?php echo Yii::app()->createUrl('site/contato')?>">Informe o erro pra gente</a></li>
+	</ul>
 </div>

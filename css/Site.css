@@ -196,6 +196,29 @@ header .main-menu ul li{
 .form .reproved{
     color:red;
 }
+/* ERROR */
+.container .error{
+    height: 300px;
+}
+.container .error #error-title{
+    font-size: 55px;
+    text-align: center;
+    color: #993366;
+}
+.error #error-ul{
+    padding: 50px;
+    width: 50%;
+    margin: auto;
+}
+.error #error-ul li {
+    display: inline-block;
+}
+.error #error-ul li a{
+    background-color: #993366;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
 
 /* INDEX */
 .user-painel{
