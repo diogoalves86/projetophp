@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+<div class="form comment">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'comentario-form',
@@ -14,35 +14,37 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
+	<fieldset>
+		<ul id="comment-ul">
+			<?php echo $form->errorSummary($model); ?>
 
+			<li><div class="row">
+				<?php echo $form->labelEx($model,'assunto'); ?>
+				<?php echo $form->textField($model,'assunto',array('size'=>60,'maxlength'=>100)); ?>
+				<?php echo $form->error($model,'assunto'); ?>
+			</div></li>
 
-	<?php echo $form->errorSummary($model); ?>
+			<li><div class="row">
+				<?php echo $form->labelEx($model,'mensagem'); ?>
+				<?php echo $form->textArea($model,'mensagem',array('rows'=>6, 'cols'=>50)); ?>
+				<?php echo $form->error($model,'mensagem'); ?>
+			</div></li>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'assunto'); ?>
-		<?php echo $form->textField($model,'assunto',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'assunto'); ?>
-	</div>
+			<li><div class="row">
+				<?php if ($model->isNewRecord): ?>
+					<?php echo CHtml::dropDownList('Comentario[professor_id]', '', $lista_professores); ?>
+				
+				<?php else: ?>
+					<?php echo CHtml::dropDownList('Comentario[professor_id]', '', array($model->professor->id=>$model->professor->nome)); ?>
+				
+				<?php endif; ?>
+			</div></li>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'mensagem'); ?>
-		<?php echo $form->textArea($model,'mensagem',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'mensagem'); ?>
-	</div>
-
-	<div class="row">
-		<?php if ($model->isNewRecord): ?>
-			<?php echo CHtml::dropDownList('Comentario[professor_id]', '', $lista_professores); ?>
-		
-		<?php else: ?>
-			<?php echo CHtml::dropDownList('Comentario[professor_id]', '', array($model->professor->id=>$model->professor->nome)); ?>
-		
-		<?php endif; ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
+			<li><div class="row buttons">
+				<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+			</div></li>
+		</ul>
+	</fieldset>
 
 <?php $this->endWidget(); ?>
 

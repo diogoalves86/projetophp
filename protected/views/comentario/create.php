@@ -6,11 +6,6 @@ $this->breadcrumbs=array(
 	'Comentarios'=>array('index'),
 	'Cadastrar',
 );
-
-$this->menu=array(
-	array('label'=>'Exibir Comentários', 'url'=>array('index')),
-	array('label'=>'Gerenciar Comentário', 'url'=>array('admin')),
-);
 ?>
 
 <h2>Cadastrar novo comentário</h2>

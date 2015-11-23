@@ -1,9 +1,9 @@
 <?php 
 ?>
-<div class="form">
+<div class="form data-table">
 
 	<h1>Aluno: <?php echo $aluno->nome; ?></h1>
-	<table data-table>
+	<table class="data-table">
 		<thead>
 			<th>Disciplinas</th>
 			<th>1ºC</th>

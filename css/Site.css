@@ -78,6 +78,13 @@ header .main-menu ul li{
     width: 75%;
     float: right;
 }
+.container h2{
+    text-align: center;
+    color: #C3C3C3;
+}
+.form.contact, .form.login, .form.comment, .form.data-table, .form.user{
+    width: 100%;
+}
 
 .form ul{
     list-style: none;
@@ -93,7 +100,7 @@ header .main-menu ul li{
 .form #login-ul li .row.error{
     height: 22px;
 }
-.form #contact-ul{
+.form #contact-ul, #comment-ul{
     width: 360px;
     height: 100%;
     margin: 40px auto 0 auto;
