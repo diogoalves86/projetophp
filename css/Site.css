@@ -100,10 +100,16 @@ header .main-menu ul li{
 .form #login-ul li .row.error{
     height: 22px;
 }
-.form #contact-ul, #comment-ul{
+.form #contact-ul, #comment-ul, #inicial-user-ul{
     width: 360px;
     height: 100%;
     margin: 40px auto 0 auto;
+}
+.form #inicial-user-ul .row{
+    padding: 5px;
+}
+.form #inicial-user-ul li{
+    margin-bottom: 20px;
 }
 .form #contact-ul .row.code{
     padding-right: 140px;

@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+<div class="form user">
 
 	<?php $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'usuario-form',
@@ -14,7 +14,8 @@
 		// See class documentation of CActiveForm for details on this.
 		'enableAjaxValidation'=>false,
 	)); ?>
-	<ul>
+	<fieldset>
+	<ul id="inicial-user-ul">
 		<li>
 			<div class="row">
 				<?php echo $form->labelEx($model,'matricula'); ?>
@@ -29,7 +30,7 @@
 			</div>
 		</li>
 	</ul>
-
+	</fieldset>
 	<?php $this->endWidget(); ?>
 
 </div><!-- form -->
