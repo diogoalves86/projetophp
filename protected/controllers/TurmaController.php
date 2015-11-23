@@ -32,7 +32,7 @@ class TurmaController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('admin','view', 'notas','atualizar', 'create', 'delete', 'alunos', 'associarAluno', 'novoAluno'),
+				'actions'=>array('admin','view', 'notas','atualizar', 'create', 'delete', 'alunos', 'associarAluno', 'novoAluno', 'associarProfessor', 'novoProfessor'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -142,6 +142,40 @@ class TurmaController extends Controller
 		$this->render('alunos', array(
 				'alunos_turma'=>$alunos_turma
 			));
+	}
+
+	public function actionAssociarProfessor()
+	{
+		if(Yii::app()->user->isInRole('ADMIN') == false)
+			throw new CHttpException(404, "A página solicitada não existe.");
+
+		$professores_sem_turma = array();
+		$professores_turmas = ProfessorTurma::model()->findAll();
+		$turmas = Turma::model()->findAll();			
+		$lista_turmas = CHtml::listData($turmas, "id", "nome");
+		$professores =  Usuario::model()->findAll("nivel=3");
+		foreach ($professores as $professor){
+			$professor_turma = ProfessorTurma::model()->find("professor_id='".$professor->id."'");
+			if ($professor_turma == null)
+				array_push($professores_sem_turma, $professor);
+		}
+		Yii::app()->user->setReturnUrl("turma/associarProfessor");
+		$this->render('associarProfessores', array(
+				'professores_sem_turma'=>$professores_sem_turma,
+				'lista_turmas'=>$lista_turmas
+			));
+	}
+
+	public function actionNovoProfessor($id, $professor_id)
+	{
+		if(Yii::app()->user->isInRole('ADMIN') == false)
+			throw new CHttpException(404, "A página solicitada não existe.");
+		
+		$professor_turma = new ProfessorTurma();
+		$professor_turma->setAttribute("professor_id", $professor_id);
+		$professor_turma->setAttribute("turma_id", $id);
+		if($professor_turma->save())
+			$this->redirect(Yii::app()->createAbsoluteUrl(Yii::app()->user->returnUrl));
 	}
 
 	public function actionAssociarAluno()
