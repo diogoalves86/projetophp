@@ -79,7 +79,16 @@ class AlunoController extends Controller
 
 	public function actionListaPaf()
 	{
-		$notas_alunos = Nota::model()->findAll();
+		if(Yii::app()->user->isInRole('ALUNO'))
+			throw new CHttpException(404, "A página solicitada não existe");
+			
+		if(Yii::app()->user->isInRole('PROFESSOR')){
+			$professor_disciplina = ProfessorDisciplina::model()->find("professor_id='".Yii::app()->user->id."'");
+			$notas_alunos = Nota::model()->findAll("disciplina_id='".$professor_disciplina->disciplina->id."'");
+		}
+		else
+			$notas_alunos = Nota::model()->findAll();
+
 
 		$this->render('listaPaf', array(
 					'notas_alunos'=>$notas_alunos
