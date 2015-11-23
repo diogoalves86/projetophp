@@ -3,7 +3,7 @@
 /* @var $model Nota */
 /* @var $form CActiveForm */
 ?>
-<div class="form">
+<div class="form user">
 	<script type="text/javascript">
 		function simularNota () {
 			var primeira_certificacao = $("#primeira_certificacao").val();
@@ -15,7 +15,7 @@
 		}
 	</script>
 	<p>Entre com suas notas para simular os resultados.</p>
-	<table data-table>
+	<table class="data-table">
 		<thead>
 			<th>1ºC</th>
 			<th>2º C</th>
