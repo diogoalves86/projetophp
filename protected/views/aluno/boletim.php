@@ -31,7 +31,7 @@
 					<td><?php echo $nota_aluno->terceira_certificacao == null ? "" : $nota_aluno->terceira_certificacao ?></td>
 					<?php $media_anual = Nota::calcularMediaAnual($medias["primeira"], $medias["segunda"], $medias["terceira"]); ?>
 
-					<?php if($nota_aluno->terceira_recuperacao == null): $media_final = $media_anual; ?>
+					<?php if($nota_aluno->terceira_recuperacao == null): ?>
 						<td><?php echo $media_anual ?></td>
 						<td></td>
 						<?php 	if($media_anual >= 7) 
