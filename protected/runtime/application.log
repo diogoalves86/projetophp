@@ -5023,3 +5023,304 @@ Stack trace:
 REQUEST_URI=/projetophp/index.php/admin/admin
 HTTP_REFERER=http://localhost:8000/projetophp/index.php/professor/cadastrar
 ---
+2015/11/23 15:53:46 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (53)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 15:56:42 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (61)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 15:56:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "associarProfessor".' in C:\xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('associarProfess...')
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('associarProfess...')
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('turma/associarP...')
+#3 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/turma/associarProfessor
+HTTP_REFERER=http://localhost:8000/projetophp/index.php/site/index
+---
+2015/11/23 16:02:06 [error] [php] Undefined variable: aluno (C:\xampp\htdocs\projetophp\protected\controllers\TurmaController.php:160)
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): TurmaController->runAction()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): TurmaController->filterAccessControl()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): TurmaController->runActionWithFilters()
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): TurmaController->run()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/turma/associarProfessor
+in C:\xampp\htdocs\projetophp\protected\controllers\TurmaController.php (160)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 16:26:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "listapaf".' in C:\xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('listapaf')
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('listapaf')
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('turma/listapaf')
+#3 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/turma/listapaf
+---
+2015/11/23 16:27:07 [error] [exception.CException] exception 'CException' with message 'AlunoController cannot find the requested view "//site/eror".' in C:\xampp\htdocs\projetophp\yii\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('//site/eror', NULL, true)
+#1 C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php(82): CController->render('//site/eror')
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('listapaf')
+#12 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/listapaf')
+#13 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/projetophp/index.php/aluno/listapaf
+---
+2015/11/23 16:27:20 [error] [php] Undefined variable: code (C:\xampp\htdocs\projetophp\protected\views\site\error.php:11)
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(869): AlunoController->renderFile()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(782): AlunoController->renderPartial()
+#2 C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php(82): AlunoController->render()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): AlunoController->runAction()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): AlunoController->filterAccessControl()
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): AlunoController->runActionWithFilters()
+#12 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): AlunoController->run()
+#13 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/aluno/listapaf
+in C:\xampp\htdocs\projetophp\protected\views\site\error.php (11)
+in C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php (82)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 16:27:57 [error] [php] Undefined variable: message (C:\xampp\htdocs\projetophp\protected\views\site\error.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(869): AlunoController->renderFile()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(782): AlunoController->renderPartial()
+#2 C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php(82): AlunoController->render()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): AlunoController->runAction()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): AlunoController->filterAccessControl()
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): AlunoController->runActionWithFilters()
+#12 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): AlunoController->run()
+#13 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/aluno/listapaf
+in C:\xampp\htdocs\projetophp\protected\views\site\error.php (14)
+in C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php (82)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 16:28:37 [error] [php] Undefined variable: message (C:\xampp\htdocs\projetophp\protected\views\site\error.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(869): AlunoController->renderFile()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(782): AlunoController->renderPartial()
+#2 C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php(82): AlunoController->render()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): AlunoController->runAction()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): AlunoController->filterAccessControl()
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): AlunoController->runActionWithFilters()
+#12 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): AlunoController->run()
+#13 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/aluno/listapaf
+in C:\xampp\htdocs\projetophp\protected\views\site\error.php (14)
+in C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php (82)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 16:28:40 [error] [php] Undefined variable: message (C:\xampp\htdocs\projetophp\protected\views\site\error.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(869): AlunoController->renderFile()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(782): AlunoController->renderPartial()
+#2 C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php(82): AlunoController->render()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): AlunoController->runAction()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): AlunoController->filterAccessControl()
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): AlunoController->runActionWithFilters()
+#12 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): AlunoController->run()
+#13 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/aluno/listapaf
+in C:\xampp\htdocs\projetophp\protected\views\site\error.php (14)
+in C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php (82)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 16:45:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'A página solicitada não existe' in C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php:82
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('listapaf')
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/listapaf')
+#11 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/projetophp/index.php/aluno/listapaf
+---
+2015/11/23 16:46:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'A página solicitada não existe' in C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php:82
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('listapaf')
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/listapaf')
+#11 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/projetophp/index.php/aluno/listapaf
+---
+2015/11/23 16:48:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'A página solicitada não existe' in C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php:82
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('listapaf')
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/listapaf')
+#11 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/projetophp/index.php/aluno/listapaf
+---
+2015/11/23 16:48:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'A página solicitada não existe' in C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php:82
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('listapaf')
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/listapaf')
+#11 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/projetophp/index.php/aluno/listapaf
+---
+2015/11/23 16:48:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'A página solicitada não existe' in C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php:82
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('listapaf')
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/listapaf')
+#11 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/projetophp/index.php/aluno/listapaf
+---
+2015/11/23 16:59:19 [error] [exception.CException] exception 'CException' with message 'AlunoController cannot find the requested view "site/error".' in C:\xampp\htdocs\projetophp\yii\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('site/error', NULL, true)
+#1 C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php(83): CController->render('site/error')
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('listapaf')
+#12 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/listapaf')
+#13 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/projetophp/index.php/aluno/listapaf
+---
+2015/11/23 16:59:22 [error] [exception.CException] exception 'CException' with message 'AlunoController cannot find the requested view "site/error".' in C:\xampp\htdocs\projetophp\yii\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('site/error', NULL, true)
+#1 C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php(83): CController->render('site/error')
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('listapaf')
+#12 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/listapaf')
+#13 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/projetophp/index.php/aluno/listapaf
+---
+2015/11/23 17:00:12 [error] [exception.CException] exception 'CException' with message 'AlunoController cannot find the requested view "site/error".' in C:\xampp\htdocs\projetophp\yii\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(782): CController->renderPartial('site/error', NULL, true)
+#1 C:\xampp\htdocs\projetophp\protected\controllers\AlunoController.php(83): CController->render('site/error')
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('listapaf')
+#12 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('aluno/listapaf')
+#13 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/projetophp/index.php/aluno/listapaf
+---

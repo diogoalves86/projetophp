@@ -33,7 +33,9 @@ return array(
 
 	// application components
 	'components'=>array(
-
+        'errorHandler'=>array(
+            'errorAction'=>'site/error',
+        ),
 		'user'=>array(
 			'class'=>'application.components.UserLevel',
 			// enable cookie-based authentication
