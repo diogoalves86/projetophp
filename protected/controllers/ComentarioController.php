@@ -32,12 +32,8 @@ class ComentarioController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('inserir','update', 'listar', 'paramim', 'visualizarComentario'),
+				'actions'=>array('inserir','update', 'listar', 'paramim', 'visualizarComentario', 'admin'),
 				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -181,6 +177,9 @@ class ComentarioController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		if(Yii::app()->user->isInRole('ADMIN') == false)
+			throw new CHttpException(403, "É necessário ser aluno para cadastrar comentários.");
+
 		$model=new Comentario('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Comentario']))
