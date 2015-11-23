@@ -5,6 +5,6 @@
 </dl>
 <dl>
 	<dt>Informações</dt>
-		<dd><a href="">Alunos em PAF por Turma</a></dd>
+		<dd><a href="<?php echo $this->createUrl('aluno/listaPaf')?>">Alunos em PAF por Turma</a></dd>
 		<dd><a href="<?php echo $this->createUrl('comentario/index')?>">Checar Comentários</a></dd>
 </dl>

@@ -11,6 +11,6 @@
 </dl>
 <dl>
 	<dt>Funções</dt>
-		<dd><a href="">Alunos em PAF</a></dd>
+		<dd><a href="<?php echo Yii::app()->createUrl('aluno/listaPaf'); ?>">Alunos em PAF</a></dd>
 		<dd><a href="<?php echo Yii::app()->createUrl('comentario/paramim'); ?>">Checar comentários para mim</a></dd>
 </dl>

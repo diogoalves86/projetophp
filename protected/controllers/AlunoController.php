@@ -32,7 +32,7 @@ class AlunoController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('cadastro','update', 'view'),
+				'actions'=>array('cadastro','update', 'view', 'boletim', 'simularApoio', 'listaPaf'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -75,6 +75,15 @@ class AlunoController extends Controller
 				'notas_aluno'=>$notas_aluno,
 		));
 			
+	}
+
+	public function actionListaPaf()
+	{
+		$notas_alunos = Nota::model()->findAll();
+
+		$this->render('listaPaf', array(
+					'notas_alunos'=>$notas_alunos
+			));
 	}
 
 	/**
