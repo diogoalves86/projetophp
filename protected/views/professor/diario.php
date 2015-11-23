@@ -67,7 +67,9 @@
 									else $media_final="*"; 
 							?>
 							<td><?php echo $media_final ?></td>
-							<?php if (Nota::situacaoAluno($media_final) == "Aprovado"): ?>
+							<?php if (is_null(Nota::situacaoAluno($media_final))): ?>
+								<td></td>
+							<?php elseif (Nota::situacaoAluno($media_final) == "Aprovado"): ?>
 								<td class="approved"><?php echo Nota::situacaoAluno($media_final); ?></td>
 
 							<?php elseif (Nota::situacaoAluno($media_final) == "Reprovado"): ?>
@@ -86,7 +88,9 @@
 							<td><?php echo $media_anual ?></td>
 							<td><?php echo $media_com_pfv; ?></td>
 							
-							<?php if (Nota::situacaoAlunoComPfv($media_com_pfv) == "Aprovado"): ?>
+							<?php if (is_null(Nota::situacaoAlunoComPfv($media_com_pfv))): ?>
+								<td></td>
+							<?php elseif (Nota::situacaoAlunoComPfv($media_com_pfv) == "Aprovado"): ?>
 								<td class="approved"><?php echo Nota::situacaoAlunoComPfv($media_com_pfv); ?></td>
 							<?php elseif (Nota::situacaoAlunoComPfv($media_com_pfv) == "Reprovado"): ?>
 								<td class="reproved"><?php echo Nota::situacaoAlunoComPfv($media_com_pfv); ?></td>

@@ -189,6 +189,13 @@ header .main-menu ul li{
 .grid-view table.items{
     width: 80%;
 }
+.form .approved{
+    color:green;
+}
+
+.form .reproved{
+    color:red;
+}
 
 /* INDEX */
 .user-painel{
@@ -356,13 +363,6 @@ button{
     border: 1px solid gray;
 }
 
-.approved{
-    color:green;
-}
-
-.reproved{
-    color:red;
-}
 
 /* FOOTER */
 footer{

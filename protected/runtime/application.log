@@ -5078,3 +5078,11 @@ REQUEST_URI=/projetophp/index.php/admin/admin
 HTTP_REFERER=http://localhost:8000/projetophp/index.php/professor/cadastrar
 >>>>>>> e65300864a6f1389b7bbd5a471776675ce1ee1b1
 ---
+2015/11/23 16:24:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "error".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('error')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/projetophp/index.php/error
+---
