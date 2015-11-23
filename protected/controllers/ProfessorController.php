@@ -76,7 +76,6 @@ class ProfessorController extends Controller
 			
 		$model = Usuario::model()->find("id='".Yii::app()->user->id."'");
 		$disciplina_professor = ProfessorDisciplina::model()->find("professor_id='".Yii::app()->user->id."'");
-
 		$notas_alunos = $this->notasAlunosPorTurma($id, $disciplina_professor);
 
 		//Depois de salvar as notas, o professor volta ao diário
@@ -96,7 +95,10 @@ class ProfessorController extends Controller
 		$notas_alunos = array();
 		foreach ($alunos_turma as $chave=>$aluno_turma) {
 			$aluno = Usuario::model()->find("id='".$aluno_turma->aluno_id."'");
-			$nota_aluno = Nota::model()->findAll("usuario_id='".$aluno->id."' && disciplina_id='".$disciplina_professor->disciplina->id."'");
+			if($disciplina_professor == null)
+				$nota_aluno = null;
+			else
+				$nota_aluno = Nota::model()->findAll("usuario_id='".$aluno->id."' && disciplina_id='".$disciplina_professor->disciplina->id."'");
 			$notas_alunos["aluno"][$chave] = $aluno;
 			$notas_alunos["nota"][$chave] = $nota_aluno;
 		}

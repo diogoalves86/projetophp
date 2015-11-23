@@ -5412,6 +5412,7 @@ in C:\Users\j\Xampp\htdocs\projetophp\protected\views\site\error.php (11)
 in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\AlunoController.php (82)
 in C:\Users\j\Xampp\htdocs\projetophp\index.php (13)
 >>>>>>> e989179bd678e2c931f28899f17ec814b8d17c89
+<<<<<<< Updated upstream
 2015/11/23 17:20:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
 Stack trace:
 #0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('index')
@@ -5515,4 +5516,99 @@ Stack trace:
 #11 {main}
 REQUEST_URI=/projetophp/index.php/professorTurma/admin
 HTTP_REFERER=http://localhost:1234/projetophp/index.php/professorTurma/
+=======
+2015/11/23 17:22:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professor/index')
+#3 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/professor/index
 ---
+2015/11/23 17:22:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "listar".' in C:\xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('listar')
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('listar')
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professor/lista...')
+#3 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/professor/listar
+---
+2015/11/23 17:22:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professor')
+#3 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/professor/
+>>>>>>> Stashed changes
+---
+2015/11/23 18:02:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'A página solicitada não existe' in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php:75
+Stack trace:
+#0 [internal function]: ProfessorController->actionDiario('307')
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ProfessorController), Array)
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProfessorController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('diario')
+#12 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professor/diari...')
+#13 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/projetophp/index.php/professor/diario/307
+---
+2015/11/23 18:02:54 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php:99)
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): ProfessorController->runAction()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): ProfessorController->filterAccessControl()
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): ProfessorController->runActionWithFilters()
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): ProfessorController->run()
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/professor/diario/307
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (99)
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (80)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 18:07:13 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\projetophp\protected\views\professor\diario.php:49)
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(869): ProfessorController->renderFile()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(782): ProfessorController->renderPartial()
+#2 C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php(88): ProfessorController->render()
+#3 unknown(0): ProfessorController->actionDiario()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): ProfessorController->runAction()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): ProfessorController->filterAccessControl()
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): ProfessorController->runActionWithFilters()
+#14 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): ProfessorController->run()
+#15 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/professor/diario/307
+in C:\xampp\htdocs\projetophp\protected\views\professor\diario.php (49)
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (88)
+in C:\xampp\htdocs\projetophp\index.php (13)
