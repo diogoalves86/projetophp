@@ -100,10 +100,16 @@ header .main-menu ul li{
 .form #login-ul li .row.error{
     height: 22px;
 }
-.form #contact-ul, #comment-ul{
+.form #contact-ul, #comment-ul, #inicial-user-ul{
     width: 360px;
     height: 100%;
     margin: 40px auto 0 auto;
+}
+.form #inicial-user-ul .row{
+    padding: 5px;
+}
+.form #inicial-user-ul li{
+    margin-bottom: 20px;
 }
 .form #contact-ul .row.code{
     padding-right: 140px;
@@ -182,6 +188,36 @@ header .main-menu ul li{
 }
 .grid-view table.items{
     width: 80%;
+}
+.form .approved{
+    color:green;
+}
+
+.form .reproved{
+    color:red;
+}
+/* ERROR */
+.container .error{
+    height: 300px;
+}
+.container .error #error-title{
+    font-size: 55px;
+    text-align: center;
+    color: #993366;
+}
+.error #error-ul{
+    padding: 50px;
+    width: 50%;
+    margin: auto;
+}
+.error #error-ul li {
+    display: inline-block;
+}
+.error #error-ul li a{
+    background-color: #993366;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 /* INDEX */
@@ -350,13 +386,6 @@ button{
     border: 1px solid gray;
 }
 
-.approved{
-    color:green;
-}
-
-.reproved{
-    color:red;
-}
 
 /* FOOTER */
 footer{

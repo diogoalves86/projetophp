@@ -4827,6 +4827,60 @@ Stack trace:
 REQUEST_URI=/projetophp/index.php/usuario/admin
 HTTP_REFERER=http://localhost:1234/projetophp/index.php/usuario/
 ---
+<<<<<<< HEAD
+2015/11/23 04:50:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/admin')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/usuario/admin
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/usuario/index
+---
+2015/11/23 04:50:20 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/admin')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/usuario/admin
+---
+2015/11/23 05:00:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('view')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/view')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/site/404
+---
+2015/11/23 05:00:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('view')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/view')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/site/404
+=======
 2015/11/23 14:45:54 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
 in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (52)
 in C:\xampp\htdocs\projetophp\index.php (13)
@@ -5022,7 +5076,17 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/projetophp/index.php/admin/admin
 HTTP_REFERER=http://localhost:8000/projetophp/index.php/professor/cadastrar
+>>>>>>> e65300864a6f1389b7bbd5a471776675ce1ee1b1
 ---
+2015/11/23 16:24:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "error".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('error')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/projetophp/index.php/error
+---
+<<<<<<< HEAD
 2015/11/23 15:53:46 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
 in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (53)
 in C:\xampp\htdocs\projetophp\index.php (13)
@@ -5324,3 +5388,27 @@ Stack trace:
 #15 {main}
 REQUEST_URI=/projetophp/index.php/aluno/listapaf
 ---
+=======
+2015/11/23 16:39:38 [error] [php] Undefined variable: code (C:\Users\j\Xampp\htdocs\projetophp\protected\views\site\error.php:11)
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): AlunoController->renderFile()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): AlunoController->renderPartial()
+#2 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\AlunoController.php(82): AlunoController->render()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): AlunoController->actionListaPaf()
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): AlunoController->runAction()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): AlunoController->filterAccessControl()
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): AlunoController->runActionWithFilters()
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): AlunoController->run()
+#13 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/aluno/listaPaf
+in C:\Users\j\Xampp\htdocs\projetophp\protected\views\site\error.php (11)
+in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\AlunoController.php (82)
+in C:\Users\j\Xampp\htdocs\projetophp\index.php (13)
+>>>>>>> e989179bd678e2c931f28899f17ec814b8d17c89
