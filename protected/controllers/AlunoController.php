@@ -32,7 +32,7 @@ class AlunoController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('cadastro','update', 'view', 'boletim', 'simularApoio', 'listaPaf'),
+				'actions'=>array('cadastrar','update', 'view', 'boletim', 'simularApoio', 'listaPaf'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -101,7 +101,7 @@ class AlunoController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCadastro()
+	public function actioncadastrar()
 	{
 		if (Yii::app()->user->isInRole('ALUNO') || Yii::app()->user->isInRole('PROFESSOR') )
 			throw new CHttpException(403, "Você não possui autorização para acessar esta página");

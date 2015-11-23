@@ -15,6 +15,8 @@
  *
  * The followings are the available model relations:
  * @property AlunoTurma[] $alunoTurmas
+ * @property Comentario[] $comentarios
+ * @property Comentario[] $comentarios1
  * @property Nota[] $notas
  * @property ProfessorDisciplina[] $professorDisciplinas
  * @property ProfessorTurma[] $professorTurmas
@@ -42,8 +44,8 @@ class Usuario extends CActiveRecord
 			array('nivel, ativo', 'numerical', 'integerOnly'=>true),
 			array('nome', 'length', 'max'=>100),
 			array('cpf', 'length', 'max'=>14),
-			array('email', 'max'=>50),
 			array('matricula, senha', 'length', 'max'=>20),
+			array('email', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nome, cpf, matricula, nivel, ativo, email, senha', 'safe', 'on'=>'search'),
@@ -59,6 +61,8 @@ class Usuario extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'alunoTurmas' => array(self::HAS_MANY, 'AlunoTurma', 'aluno_id'),
+			'comentarios' => array(self::HAS_MANY, 'Comentario', 'aluno_id'),
+			'comentarios1' => array(self::HAS_MANY, 'Comentario', 'professor_id'),
 			'notas' => array(self::HAS_MANY, 'Nota', 'usuario_id'),
 			'professorDisciplinas' => array(self::HAS_MANY, 'ProfessorDisciplina', 'professor_id'),
 			'professorTurmas' => array(self::HAS_MANY, 'ProfessorTurma', 'professor_id'),

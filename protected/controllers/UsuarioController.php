@@ -28,7 +28,15 @@ class UsuarioController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'users'=>array("@"),
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('cadastrar','update', 'visualizar', 'atualizarCadastro'),
+				'users'=>array('@'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
 			),
 		);
 	}
@@ -69,9 +77,8 @@ class UsuarioController extends Controller
 
 	public function actionCadastrar()
 	{
-		if (Yii::app()->user->isInRole('ALUNO') || Yii::app()->user->isInRole('PROFESSOR') )
+		if (Yii::app()->user->isInRole('ALUNO') || Yii::app()->user->isInRole('PROFESSOR'))
 			throw new CHttpException(403, "Você não possui autorização para acessar esta página");
-
 		$model=new Usuario;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);;
