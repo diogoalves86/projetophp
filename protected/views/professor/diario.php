@@ -76,7 +76,7 @@
 							<?php elseif (Nota::situacaoAluno($media_final) == "Em Andamento"): ?>
 								<td class="progress"><?php echo Nota::situacaoAluno($media_final); ?></td>
 							<?php endif; ?>
-
+							<td><?php echo CHtml::htmlButton('Salvar', array('onClick'=>'cadastrarNota('.$notas_alunos["aluno"][$i]->id.', '.$disciplina_professor->disciplina->id.');')); ?></td>
 						<?php else: ?>
 							<?php
 								$pfv = $notas_alunos["nota"][$i][0]->terceira_recuperacao;

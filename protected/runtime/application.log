@@ -4827,6 +4827,7 @@ Stack trace:
 REQUEST_URI=/projetophp/index.php/usuario/admin
 HTTP_REFERER=http://localhost:1234/projetophp/index.php/usuario/
 ---
+<<<<<<< HEAD
 2015/11/23 04:50:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
 Stack trace:
 #0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
@@ -4879,4 +4880,201 @@ Stack trace:
 #4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
 #5 {main}
 REQUEST_URI=/projetophp/index.php/site/404
+=======
+2015/11/23 14:45:54 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (52)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:47:12 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (52)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:47:12 [error] [php] Missing argument 2 for CActiveRecord::setAttribute(), called in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php on line 55 and defined (C:\xampp\htdocs\projetophp\yii\framework\db\ar\CActiveRecord.php:710)
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): ProfessorController->runAction()
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): ProfessorController->filterAccessControl()
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): ProfessorController->runActionWithFilters()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): ProfessorController->run()
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/professor/cadastrar
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (55)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:48:16 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (52)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:49:37 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (53)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:49:58 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (53)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:49:58 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'marcelo@cardoso.com' for key 'email'. The SQL statement executed was: INSERT INTO `Usuario` (`ativo`, `nome`, `cpf`, `matricula`, `nivel`, `email`, `senha`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (54)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:49:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'marcelo@cardoso.com' for key 'email'. The SQL statement executed was: INSERT INTO `Usuario` (`ativo`, `nome`, `cpf`, `matricula`, `nivel`, `email`, `senha`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in C:\xampp\htdocs\projetophp\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\projetophp\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php(54): CActiveRecord->save()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): ProfessorController->actionCadastrar()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#13 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professor/cadas...')
+#14 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/projetophp/index.php/professor/cadastrar
+HTTP_REFERER=http://localhost:8000/projetophp/index.php/professor/cadastrar
+---
+2015/11/23 14:50:10 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (53)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:52:17 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (53)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:52:17 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'marcelo@cardoso.com' for key 'email'. The SQL statement executed was: INSERT INTO `Usuario` (`ativo`, `nome`, `cpf`, `matricula`, `nivel`, `email`, `senha`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (54)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:52:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'marcelo@cardoso.com' for key 'email'. The SQL statement executed was: INSERT INTO `Usuario` (`ativo`, `nome`, `cpf`, `matricula`, `nivel`, `email`, `senha`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in C:\xampp\htdocs\projetophp\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\projetophp\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php(54): CActiveRecord->save()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): ProfessorController->actionCadastrar()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#13 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professor/cadas...')
+#14 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/projetophp/index.php/professor/cadastrar
+HTTP_REFERER=http://localhost:8000/projetophp/index.php/professor/cadastrar
+---
+2015/11/23 14:52:35 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (53)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:52:41 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (53)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:52:41 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'marcelo@cardoso.com' for key 'email'. The SQL statement executed was: INSERT INTO `Usuario` (`ativo`, `nome`, `cpf`, `matricula`, `nivel`, `email`, `senha`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (54)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:52:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'marcelo@cardoso.com' for key 'email'. The SQL statement executed was: INSERT INTO `Usuario` (`ativo`, `nome`, `cpf`, `matricula`, `nivel`, `email`, `senha`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in C:\xampp\htdocs\projetophp\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\projetophp\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php(54): CActiveRecord->save()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): ProfessorController->actionCadastrar()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#13 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professor/cadas...')
+#14 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/projetophp/index.php/professor/cadastrar
+HTTP_REFERER=http://localhost:8000/projetophp/index.php/professor/cadastrar
+---
+2015/11/23 14:54:56 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (53)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:54:56 [error] [exception.CException] exception 'CException' with message 'Property "Usuario.professorDisciplina" is not defined.' in C:\xampp\htdocs\projetophp\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('professorDiscip...')
+#1 C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php(55): CActiveRecord->__get('professorDiscip...')
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): ProfessorController->actionCadastrar()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#12 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professor/cadas...')
+#13 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/projetophp/index.php/professor/cadastrar
+HTTP_REFERER=http://localhost:8000/projetophp/index.php/professor/cadastrar
+---
+2015/11/23 14:55:37 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (53)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:55:37 [error] [php] Undefined offset: 0 (C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php:55)
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): ProfessorController->runAction()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): ProfessorController->filterAccessControl()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): ProfessorController->runActionWithFilters()
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): ProfessorController->run()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/professor/cadastrar
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (55)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:56:41 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (53)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:56:41 [error] [php] Undefined index: disciplina_id (C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php:56)
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): ProfessorController->runAction()
+#1 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): ProfessorController->filterAccessControl()
+#4 C:\xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\projetophp\yii\framework\web\CController.php(265): ProfessorController->runActionWithFilters()
+#7 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): ProfessorController->run()
+#8 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/professor/cadastrar
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (56)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 14:57:41 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (53)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 15:00:19 [warning] [application] Failed to set unsafe attribute "disciplina" of "Usuario".
+in C:\xampp\htdocs\projetophp\protected\controllers\ProfessorController.php (53)
+in C:\xampp\htdocs\projetophp\index.php (13)
+2015/11/23 15:00:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/admin".' in C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/admin')
+#1 C:\xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/projetophp/index.php/admin/admin
+HTTP_REFERER=http://localhost:8000/projetophp/index.php/professor/cadastrar
+>>>>>>> e65300864a6f1389b7bbd5a471776675ce1ee1b1
 ---
