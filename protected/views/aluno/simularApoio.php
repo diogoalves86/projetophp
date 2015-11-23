@@ -10,10 +10,8 @@
 			var segunda_certificacao = $("#segunda_certificacao").val();
 			var terceira_certificacao = $("#terceira_certificacao").val();
 			var media_anual = ((primeira_certificacao * 3) + (segunda_certificacao * 3) + (terceira_certificacao * 4)) / 10;
-			var resultado = 25 - ((media_anual*3)/2);
-			console.log("Media Anual: "+media_anual);
-			console.log("Resultado: "+resultado);
-			//alert("Você precisa de "+resultado+" nesta disciplina. Boa sorte!");
+			var resultado = (25 - (media_anual*3)) / 2;
+			alert("Você precisa de "+resultado+" nesta disciplina. Boa sorte!");
 		}
 	</script>
 	<p>Entre com suas notas para simular os resultados.</p>
