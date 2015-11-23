@@ -5412,3 +5412,107 @@ in C:\Users\j\Xampp\htdocs\projetophp\protected\views\site\error.php (11)
 in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\AlunoController.php (82)
 in C:\Users\j\Xampp\htdocs\projetophp\index.php (13)
 >>>>>>> e989179bd678e2c931f28899f17ec814b8d17c89
+2015/11/23 17:20:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professor/index')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/professor/index
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/professor/cadastrar
+---
+2015/11/23 17:21:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('admin')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professor/admin')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/professor/admin
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/professor/cadastrar
+---
+2015/11/23 17:21:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professor/index')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/professor/index
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/professor/cadastrar
+---
+2015/11/23 17:22:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('admin')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professor/admin')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/professor/admin
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/professor/cadastrar
+---
+2015/11/23 17:22:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professor/index')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/professor/index
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/professor/cadastrar
+---
+2015/11/23 17:23:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "cadastrar".' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(270): CController->missingAction('cadastrar')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professorTurma/...')
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetophp/index.php/professorTurma/cadastrar
+---
+2015/11/23 17:27:58 [error] [php] Undefined variable: disciplinas (C:\Users\j\Xampp\htdocs\projetophp\protected\views\professorTurma\create.php:18)
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(869): ProfessorTurmaController->renderFile()
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(782): ProfessorTurmaController->renderPartial()
+#2 C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\ProfessorTurmaController.php(79): ProfessorTurmaController->render()
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\actions\CInlineAction.php(49): ProfessorTurmaController->actionCreate()
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(133): ProfessorTurmaController->runAction()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): ProfessorTurmaController->filterAccessControl()
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): ProfessorTurmaController->runActionWithFilters()
+#12 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): ProfessorTurmaController->run()
+#13 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetophp/index.php/professorTurma/create
+in C:\Users\j\Xampp\htdocs\projetophp\protected\views\professorTurma\create.php (18)
+in C:\Users\j\Xampp\htdocs\projetophp\protected\controllers\ProfessorTurmaController.php (79)
+in C:\Users\j\Xampp\htdocs\projetophp\index.php (13)
+2015/11/23 17:28:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(UserLevel), 'You are not aut...')
+#1 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('professorTurma/...')
+#9 C:\Users\j\Xampp\htdocs\projetophp\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\j\Xampp\htdocs\projetophp\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/projetophp/index.php/professorTurma/admin
+HTTP_REFERER=http://localhost:1234/projetophp/index.php/professorTurma/
+---

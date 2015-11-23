@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+<div class="form user">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'professor-turma-form',
@@ -15,9 +15,6 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<?php echo $form->errorSummary($model); ?>
-
-	<h2>Cadastro de professores</h2>
 	<dl>
 		<dt>Nome</dt>
 		<dd><?php echo $form->textField($model,'nome',array('class'=>'textbox_login', 'size'=>60,'maxlength'=>100)); ?>

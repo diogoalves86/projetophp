@@ -3,19 +3,15 @@
 /* @var $data ProfessorTurma */
 ?>
 
-<div class="view">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('professor_id')); ?>:</b>
-	<?php echo CHtml::encode($data->professor_id); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('turma_id')); ?>:</b>
-	<?php echo CHtml::encode($data->turma_id); ?>
-	<br />
-
-
+<div class="view prof">
+	<table class="data-table">
+		<thead>
+			<th>Turma</th>
+			<th>Professor</th>
+		</thead>
+		<tbody>
+			<td><?php echo CHtml::encode($data->turma->nome); ?></td>
+			<td><?php echo CHtml::encode($data->professor->nome); ?></td>
+		</tbody>
+	</table>
 </div>
