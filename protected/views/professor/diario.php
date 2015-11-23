@@ -47,27 +47,21 @@
 						<td></td>
 						<td><?php echo CHtml::htmlButton('Salvar', array('onClick'=>'cadastrarNota('.$notas_alunos["aluno"][$i]->id.', '.$disciplina_professor->disciplina->id.');')); ?></td>
 					<?php else: ?>
+						
+						<?php $medias = Nota::calcularMediasTrimestrais($notas_alunos["nota"][$i][0]); ?>
+
+
 						<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->primeira_certificacao, array('min'=>0, 'max'=>10,  'id'=>'primeira_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
 						<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->primeira_recuperacao,  array('min'=>0, 'max'=>10, 'id'=>'primeira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
 						<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->segunda_certificacao,  array('min'=>0, 'max'=>10,  'id'=>'segunda_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
 						<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->segunda_recuperacao,  array('min'=>0, 'max'=>10, 	'id'=>'segunda_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
 						<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->terceira_certificacao, array('min'=>0, 'max'=>10,  'id'=>'terceira_certificacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
 
-						<?php if($notas_alunos["nota"][$i][0]->terceira_recuperacao == null):?>
-							<?php //Se o aluno não ficou de PFV, então sua média anual é igual a média final. ?>
-							<?php $media_anual = Nota::calcularMediaAnual($notas_alunos["nota"][$i][0]->primeira_certificacao, $notas_alunos["nota"][$i][0]->segunda_certificacao, $notas_alunos["nota"][$i][0]->terceira_certificacao);?>
-							<td><?php echo CHtml::textField('', "",  array('min'=>0, 'max'=>10, 'id'=>'terceira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
-							<td><?php echo $media_anual ?></td>
-							<td><?php echo $media_anual ?></td>
-
-						<?php else: ?>
-							<?php $nota_final_terceira_recuperacao = ($notas_alunos["nota"][$i][0]->terceira_certificacao + $notas_alunos["nota"][$i][0]->terceira_recuperacao) / 2 ?>
-							<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->terceira_recuperacao,  array('min'=>0, 'max'=>10, 'id'=>'terceira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
-							<td><?php echo Nota::calcularMediaAnual($notas_alunos["nota"][$i][0]->primeira_certificacao, $notas_alunos["nota"][$i][0]->segunda_certificacao, $notas_alunos["nota"][$i][0]->terceira_certificacao) ?></td>
-
-							<?php //Nota Final com a PFV inclusa ?>
-							<td><?php echo Nota::calcularMediaAnual($notas_alunos["nota"][$i][0]->primeira_certificacao, $notas_alunos["nota"][$i][0]->segunda_certificacao, $nota_final_terceira_recuperacao) ?></td>
-						<?php endif; ?>
+						<?php $media_anual = Nota::calcularMediaAnual($medias["primeira"], $medias["segunda"], $medias["terceira"]);?>
+						<td><?php echo CHtml::textField('', $notas_alunos["nota"][$i][0]->terceira_recuperacao,  array('min'=>0, 'max'=>10, 'id'=>'terceira_recuperacao_'.$notas_alunos["aluno"][$i]->id)) ?></td>
+						<td><?php echo $media_anual ?></td>
+						<td><?php echo $media_anual ?></td>
+						<?php //Nota Final com a PFV inclusa ?>
 						<td><?php echo CHtml::htmlButton('Salvar', array('onClick'=>'cadastrarNota('.$notas_alunos["aluno"][$i]->id.', '.$disciplina_professor->disciplina->id.');')); ?></td>
 					<?php endif; ?>
 				</tr>

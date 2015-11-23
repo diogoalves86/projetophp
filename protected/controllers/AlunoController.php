@@ -28,7 +28,19 @@ class AlunoController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'users'=>array("@"),
+				'actions'=>array(),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('cadastro','update', 'view'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
 			),
 		);
 	}
@@ -37,11 +49,11 @@ class AlunoController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionVisualizar($id)
+	public function actionView($id)
 	{
 		$model = Usuario::model()->find("nivel=2 && matricula='".$id."'");
 		if($model != null)
-			Yii::app()->runController('usuario/visualizar', array('id'=>$model->id));
+			Yii::app()->runController('usuario/view', array('id'=>$model->id));
 		else
 			throw new CHttpException(404, "A página solicitada não existe.");
 			
@@ -74,7 +86,7 @@ class AlunoController extends Controller
 		if (Yii::app()->user->isInRole('ALUNO') || Yii::app()->user->isInRole('PROFESSOR') )
 			throw new CHttpException(403, "Você não possui autorização para acessar esta página");
 
-		Yii::app()->runController('usuario/cadastro');
+		Yii::app()->runController('usuario/cadastrar');
 	}
 
 	/**
@@ -99,6 +111,15 @@ class AlunoController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+	}
+
+	public function actionSimularApoio()
+	{
+		if(Yii::app()->user->isInRole('ALUNO') == false)
+			throw new CHttpException(404, "A página solicitada não existe.");
+			
+
+		$this->render('simularApoio');
 	}
 
 	/**
