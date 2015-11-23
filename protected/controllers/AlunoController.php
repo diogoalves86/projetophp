@@ -74,7 +74,6 @@ class AlunoController extends Controller
 				'aluno'=>$aluno,
 				'notas_aluno'=>$notas_aluno,
 		));
-			
 	}
 
 	public function actionListaPaf()
@@ -84,7 +83,10 @@ class AlunoController extends Controller
 			
 		if(Yii::app()->user->isInRole('PROFESSOR')){
 			$professor_disciplina = ProfessorDisciplina::model()->find("professor_id='".Yii::app()->user->id."'");
-			$notas_alunos = Nota::model()->findAll("disciplina_id='".$professor_disciplina->disciplina->id."'");
+			if($professor_disciplina != null)
+				$notas_alunos = Nota::model()->findAll("disciplina_id='".$professor_disciplina->disciplina->id."'");
+			else
+				$notas_alunos = null;
 		}
 		else
 			$notas_alunos = Nota::model()->findAll();
