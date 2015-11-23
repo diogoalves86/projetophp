@@ -29,8 +29,12 @@
 					<td><?php echo $nota_aluno->segunda_recuperacao == null ? "" : $nota_aluno->segunda_recuperacao ?></td>
 					<td><?php echo $nota_aluno->terceira_certificacao == null ? "" : $nota_aluno->terceira_certificacao ?></td>
 					<?php $media_anual = Nota::calcularMediaAnual($medias["primeira"], $medias["segunda"], $medias["terceira"]); ?>
-					<?php if($nota_aluno->terceira_recuperacao == null): $media_final = $media_anual; ?>
+					<?php if($nota_aluno->terceira_recuperacao == null): ?>
 						<td></td>
+						<?php 	if($media_anual >= 7) 
+									$media_final = $media_anual; 
+								else $media_final="*"; 
+						?>
 						<td><?php echo $media_final ?></td>
 						<td><?php echo $media_anual ?></td>
 						<td><?php echo Nota::situacaoAluno($media_final); ?></td>

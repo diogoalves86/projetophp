@@ -46,6 +46,7 @@
 						<td></td>
 						<td></td>
 						<td><?php echo CHtml::htmlButton('Salvar', array('onClick'=>'cadastrarNota('.$notas_alunos["aluno"][$i]->id.', '.$disciplina_professor->disciplina->id.');')); ?></td>
+					
 					<?php else: ?>
 						
 						<?php $medias = Nota::calcularMediasTrimestrais($notas_alunos["nota"][$i][0]); ?>
