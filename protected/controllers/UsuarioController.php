@@ -144,7 +144,9 @@ class UsuarioController extends Controller
 		if(Yii::app()->user->isInRole('ALUNO') || Yii::app()->user->isInRole('PROFESSOR'))
 			throw new CHttpException(404, "A página solicitada não existe.");
 
+
 		$dataProvider=new CActiveDataProvider('Usuario');
+		$dataProvider->pagination->pageSize=10;
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
