@@ -13,9 +13,9 @@
 			<th>REC 2</th>
 			<!--<th>MÉDIA 2</th>-->
 			<th>3º C</th>
+			<th>MÉDIA ANUAL</th>
 			<th>PFV</th>
 			<th>MÉDIA FINAL</th>
-			<th>MÉDIA ANUAL</th>
 			<th>SITUAÇÃO</th>
 		</thead>
 		<tbody>
@@ -30,9 +30,9 @@
 					<td><?php echo $nota_aluno->terceira_certificacao == null ? "" : $nota_aluno->terceira_certificacao ?></td>
 					<?php $media_anual = Nota::calcularMediaAnual($medias["primeira"], $medias["segunda"], $medias["terceira"]); ?>
 					<?php if($nota_aluno->terceira_recuperacao == null): $media_final = $media_anual; ?>
+						<td><?php echo $media_anual ?></td>
 						<td></td>
 						<td><?php echo $media_final ?></td>
-						<td><?php echo $media_anual ?></td>
 						<td><?php echo Nota::situacaoAluno($media_final); ?></td>
 					
 					<?php else: ?>
@@ -40,9 +40,9 @@
 							$pfv = $nota_aluno->terceira_recuperacao;
 							$media_com_pfv = Nota::calcularMediaComPfv($media_anual, $pfv);
 						?>
+						<td><?php echo $media_anual ?></td>
 						<td><?php echo $nota_aluno->terceira_recuperacao ?></td>
 						<td><?php echo $media_com_pfv; ?></td>
-						<td><?php echo $media_anual ?></td>
 						<td><?php echo Nota::situacaoAlunoComPfv($media_com_pfv); ?></td>
 
 					<?php endif; ?>

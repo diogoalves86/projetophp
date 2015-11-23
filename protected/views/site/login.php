@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<div class="form">
+<div class="form login">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
 	'enableClientValidation'=>true,
