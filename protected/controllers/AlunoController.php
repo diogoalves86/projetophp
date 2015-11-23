@@ -79,7 +79,7 @@ class AlunoController extends Controller
 	public function actionListaPaf()
 	{
 		if(Yii::app()->user->isInRole('ALUNO'))
-			throw new CHttpException(404, "A página solicitada não existe");
+			$this->render("//site/error");
 			
 		if(Yii::app()->user->isInRole('PROFESSOR')){
 			$professor_disciplina = ProfessorDisciplina::model()->find("professor_id='".Yii::app()->user->id."'");
