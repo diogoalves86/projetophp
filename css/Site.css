@@ -82,7 +82,7 @@ header .main-menu ul li{
     text-align: center;
     color: #C3C3C3;
 }
-.form.contact, .form.login, .form.comment, .form.data-table, .form.user{
+.form.contact, .form.login, .form.comment, .form.data-table, .form.user, .form.diary{
     width: 100%;
 }
 
@@ -166,6 +166,9 @@ header .main-menu ul li{
 .form dl dd{
     margin: 0;
     border: 1px dashed #F0F0F0;
+}
+.form dl dd input{
+    margin: auto;
 }
 .form dl dt, .form dl dd{
     padding: 5px 0;
@@ -264,12 +267,15 @@ table.main3{@include background(#33CCCC);}
     margin: auto;
 }
 
-.buttons input{
+.buttons input, button{
     background: green none repeat scroll 0% 0%;
     padding: 10px;
     margin-right: 40px;
     border-radius: 5px;
     border: 2px solid green;
+}
+button{
+    margin: 0;
 }
 /*MENU LATERAL */
 .container .portlet{

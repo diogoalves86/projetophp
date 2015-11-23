@@ -3,7 +3,7 @@
 /* @var $model Nota */
 /* @var $form CActiveForm */
 ?>
-<div class="form">
+<div class="form diary">
 	<script type="text/javascript">
 		function cadastrarNota(id, disciplina_id){
 			var data = {
@@ -19,7 +19,7 @@
 			location.href = requisicao;
 		}
 	</script>
-	<table data-table>
+	<table class="data-table">
 		<thead>
 			<th>Nomes</th>
 			<th>1ºC</th>
